@@ -27,8 +27,8 @@ class FilmDao{
                                      film_genre,
                                      film_trailer,
                                      film_jam_penayangan,
-                                     film_sutradara
-                                     ) VALUES(?,?,?,?,?,?,?,?)";
+                                     film_sutradara) 
+                                     VALUES(?,?,?,?,?,?,?,?)";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $film->getFilmJudul(), PDO::PARAM_STR);

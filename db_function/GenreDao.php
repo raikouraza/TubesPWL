@@ -53,7 +53,6 @@ class GenreDao{
 
     }
 
-// genre tidak bisa mengganti username
     function updateGenre(Genre $genre)
     {
         $link = DBHelper::createMySQLConnection();
@@ -73,7 +72,7 @@ class GenreDao{
         $link = null;
 
     }
-    
+
     function getGenreById(Genre $genre)
     {
         $link = DBHelper::createMySQLConnection();

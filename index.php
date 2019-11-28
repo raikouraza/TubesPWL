@@ -44,7 +44,6 @@
 </nav>
 <!-- Page Content -->
 <div class="container">
-
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
         <h1 class="display-3">A Warm Welcome!</h1>
@@ -65,7 +64,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
                 <img class="card-img-top" src="http://placehold.it/500x325" alt="">
@@ -78,7 +76,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
                 <img class="card-img-top" src="http://placehold.it/500x325" alt="">
@@ -91,7 +88,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
                 <img class="card-img-top" src="http://placehold.it/500x325" alt="">
@@ -104,13 +100,10 @@
                 </div>
             </div>
         </div>
-
     </div>
     <!-- /.row -->
-
 </div>
 <!-- /.container -->
-
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
@@ -118,7 +111,6 @@
     </div>
     <!-- /.container -->
 </footer>
-
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

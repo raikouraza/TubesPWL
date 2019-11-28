@@ -13,7 +13,7 @@ class UserDao{
         $link = null;
         return $result;
     }
-}
+
 
     function getAllUser()
     {
@@ -126,3 +126,4 @@ class UserDao{
         return $result;
 
     }
+}

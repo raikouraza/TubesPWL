@@ -44,10 +44,10 @@ function addMember(Member $member)
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberUsername(), PDO::PARAM_STR);
     $stmt->bindValue(2, $member->getMemberPassword(), PDO::PARAM_STR);
-    $stmt->bindValue(3, $member->getMemberEmail(), PDO::PARAM_INT);
-    $stmt->bindValue(4, $member->getMemberNamaDepan(), PDO::PARAM_INT);
-    $stmt->bindValue(5, $member->getMemberNamaBelakang(), PDO::PARAM_INT);
-    $stmt->bindValue(6, $member->getMemberPhoto(), PDO::PARAM_INT);
+    $stmt->bindValue(3, $member->getMemberEmail(), PDO::PARAM_STR);
+    $stmt->bindValue(4, $member->getMemberNamaDepan(), PDO::PARAM_STR);
+    $stmt->bindValue(5, $member->getMemberNamaBelakang(), PDO::PARAM_STR);
+    $stmt->bindValue(6, $member->getMemberPhoto(), PDO::PARAM_STR);
     if ($stmt->execute()) {
         $link->commit();
     } else {
@@ -87,10 +87,10 @@ function updateMember(Member $member){
 
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberEmail(), PDO::PARAM_STR);
-    $stmt->bindValue(2, $member->getMemberNamaDepan(), PDO::PARAM_INT);
-    $stmt->bindValue(3, $member->getMemberNamaBelakang(), PDO::PARAM_INT);
-    $stmt->bindValue(4, $member->getMemberPhoto(), PDO::PARAM_INT);
-    $stmt->bindValue(5, $member->getMemberId(), PDO::PARAM_INT);
+    $stmt->bindValue(2, $member->getMemberNamaDepan(), PDO::PARAM_STR);
+    $stmt->bindValue(3, $member->getMemberNamaBelakang(), PDO::PARAM_STR);
+    $stmt->bindValue(4, $member->getMemberPhoto(), PDO::PARAM_STR);
+    $stmt->bindValue(5, $member->getMemberId(), PDO::PARAM_STR);
     if ($stmt->execute()) {
         $link->commit();
     } else {

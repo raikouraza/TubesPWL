@@ -43,7 +43,7 @@ class UserDao{
         $stmt->bindValue(1, $user->getUserUsername(), PDO::PARAM_STR);
         $stmt->bindValue(2, $user->getUserPassword(), PDO::PARAM_STR);
         $stmt->bindValue(3, $user->getUserRole(), PDO::PARAM_STR);
-        $stmt->bindValue(4, $user->getUserName(), PDO::PARAM_INT);
+        $stmt->bindValue(4, $user->getUserName(), PDO::PARAM_STR);
         if ($stmt->execute()) {
             $link->commit();
         } else {
@@ -57,7 +57,7 @@ class UserDao{
     function deleteUser(User $user){
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "DELETE FROM tbuser WHERE id=?";
+        $query = "DELETE FROM tbuser WHERE user_id=?";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $user->getUserId(), PDO::PARAM_INT);
@@ -78,7 +78,7 @@ class UserDao{
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $user->getUserName(), PDO::PARAM_STR);
-        $stmt->bindValue(2, $user->getUserRole(), PDO::PARAM_INT);
+        $stmt->bindValue(2, $user->getUserRole(), PDO::PARAM_STR);
         $stmt->bindValue(3, $user->getUserId(), PDO::PARAM_INT);
         if ($stmt->execute()) {
             $link->commit();

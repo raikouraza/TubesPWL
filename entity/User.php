@@ -6,6 +6,23 @@ class User{
     private $user_username;
     private $user_password;
     private $user_role;
+    private $user_name;
+
+    /**
+     * @return mixed
+     */
+    public function getUserName()
+    {
+        return $this->user_name;
+    }
+
+    /**
+     * @param mixed $user_name
+     */
+    public function setUserName($user_name)
+    {
+        $this->user_name = $user_name;
+    }
 
     /**
      * @return mixed

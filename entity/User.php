@@ -4,4 +4,4 @@
 class User
 {
 
-}s
+}

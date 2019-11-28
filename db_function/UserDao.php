@@ -33,7 +33,11 @@ class UserDao{
     {
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "INSERT INTO user(user_username,user_password,user_role,user_name) VALUES(?,?,?,?)";
+        $query = "INSERT INTO tbuser(user_username,
+                                     user_password,
+                                     user_role,
+                                     user_name) 
+                                     VALUES(?,?,?,?)";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $user->getUserUsername(), PDO::PARAM_STR);
@@ -70,7 +74,7 @@ class UserDao{
     function updateUser(User $user){
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "UPDATE user SET user_name=?,user_role=?  WHERE user_id=?";
+        $query = "UPDATE tbuser SET user_name=?,user_role=?  WHERE user_id=?";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $user->getUserName(), PDO::PARAM_STR);
@@ -90,7 +94,7 @@ class UserDao{
     {
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "UPDATE user SET user_password=? WHERE user_id=?";
+        $query = "UPDATE tbuser SET user_password=? WHERE user_id=?";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $user->getUserPassword(), PDO::PARAM_STR);

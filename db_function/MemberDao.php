@@ -13,7 +13,7 @@ class MemberDao{
         $link = null;
         return $result;
     }
-}
+
 
 function getAllMember()
 {
@@ -137,4 +137,5 @@ function getMemberById(Member $member)
 
     return $result;
 
+}
 }

@@ -11,7 +11,7 @@ class CreateFilmController
     public function index()
     {
         $film_id = filter_input(INPUT_GET, 'film_id');
-        if(isset($film_id))
+        if (isset($film_id))
             $film = $this->filmDao->getFilmById($film_id);
         // Change acording to submmit create button
         $submitted = filter_input(INPUT_POST, 'btnSubmit');
@@ -19,7 +19,6 @@ class CreateFilmController
             $film_judul = filter_input(INPUT_POST, 'txtFilmJudul');
             $film_tanggal_rilis = filter_input(INPUT_POST, 'txtFilmTanggalRilis');
             $film_deskripsi = filter_input(INPUT_POST, 'txtFilmDeskripsi');
-            $film_poster = filter_input(INPUT_POST, 'txtFilmPoster');
             $film_genre = filter_input(INPUT_POST, 'txtFilmGenre');
             $film_trailer = filter_input(INPUT_POST, 'txtFilmTrailer');
             $film_jam_penayangan = filter_input(INPUT_POST, 'txtFilmJamPenayangan');
@@ -36,12 +35,24 @@ class CreateFilmController
             $updatedFilm->setFilmSutradara($film_sutradara);
 
             // Belum Selesai
-            if(fieldNotEmpty(array($film_judul, $film_tanggal_rilis, $film_deskripsi, $film_genre, $film_trailer, $film_jam_penayangan, $film_sutradara)))
-            {
-                if(isset($_FILES['txtFilmPoster']['name']))
-                {
+            if (fieldNotEmpty(array($film_judul, $film_tanggal_rilis, $film_deskripsi, $film_genre, $film_trailer, $film_jam_penayangan, $film_sutradara))) {
+                if (isset($_FILES['txtFilmPoster']['name'])) {
                     $targetDirectory = 'src/images/poster';
+                    /*@var $film Film*/
+                    $targetFile = $targetDirectory . $film->getFilmPoster() . '.' . pathinfo($_FILES['txtFilmPoster']['name'], PATHINFO_EXTENSION);
+                    move_uploaded_file($_FILES['txtFilmPoster']['tmp_name'], $targetFile);
+                    $updatedFilm->setFilmPoster($targetFile);
+                    $this->filmDao->updateFilm($updatedFilm);
+                } else {
+                    $this->filmDao->updateFilm($updatedFilm);
                 }
+                header('location:index.php?menu=fm');
+            } else {
+                $errMessage = 'Please check your input';
+            }
+
+            if (isset($errMessage)) {
+                echo '<div class="err-msg">' . $errMessage . '</div>';
             }
         }
     }

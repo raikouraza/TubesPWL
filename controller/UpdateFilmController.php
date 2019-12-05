@@ -10,10 +10,12 @@ class CreateFilmController
     }
     public function index()
     {
+        $film_id = filter_input(INPUT_GET, 'film_id');
+        if(isset($film_id))
+            $film = $this->filmDao->getFilmById($film_id);
         // Change acording to submmit create button
         $submitted = filter_input(INPUT_POST, 'btnSubmit');
         if (isset($submitted)) {
-            $film_id = filter_input(INPUT_POST, 'txtFilmId');
             $film_judul = filter_input(INPUT_POST, 'txtFilmJudul');
             $film_tanggal_rilis = filter_input(INPUT_POST, 'txtFilmTanggalRilis');
             $film_deskripsi = filter_input(INPUT_POST, 'txtFilmDeskripsi');
@@ -23,16 +25,24 @@ class CreateFilmController
             $film_jam_penayangan = filter_input(INPUT_POST, 'txtFilmJamPenayangan');
             $film_sutradara = filter_input(INPUT_POST, 'txtFilmSutradara');
 
-            $film = new Film();
-            $film->setFilmId($film_id);
-            $film->setFilmJudul($film_judul);
-            $film->setFilmTanggalRilis($film_tanggal_rilis);
-            $film->setFilmDeskripsi($film_deskripsi);
-            $film->setFilmPoster($film_poster);
-            $film->setFilmGenre($film_genre);
-            $film->setFilmTrailer($film_trailer);
-            $film->setFilmJamPenayangan($film_jam_penayangan);
-            $film->setFilmSutradara($film_sutradara);
+            $updatedFilm = new Film();
+            $updatedFilm->setFilmId($film_id);
+            $updatedFilm->setFilmJudul($film_judul);
+            $updatedFilm->setFilmTanggalRilis($film_tanggal_rilis);
+            $updatedFilm->setFilmDeskripsi($film_deskripsi);
+            $updatedFilm->setFilmGenre($film_genre);
+            $updatedFilm->setFilmTrailer($film_trailer);
+            $updatedFilm->setFilmJamPenayangan($film_jam_penayangan);
+            $updatedFilm->setFilmSutradara($film_sutradara);
+
+            // Belum Selesai
+            if(fieldNotEmpty(array($film_judul, $film_tanggal_rilis, $film_deskripsi, $film_genre, $film_trailer, $film_jam_penayangan, $film_sutradara)))
+            {
+                if(isset($_FILES['txtFilmPoster']['name']))
+                {
+                    $targetDirectory = 'src/images/poster';
+                }
+            }
         }
     }
 }

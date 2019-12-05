@@ -84,9 +84,6 @@
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
-                </li>
 
 
                 <li data-username="Sample Page" class="nav-item"><a href="sample-page.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
@@ -168,6 +165,45 @@
                                                 </form>
                                             </div>
                                             <div class="col-md-6">
+                                                <table id="myTable">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Medical Record Number</th>
+                                                        <th>Citizen id number</th>
+                                                        <th>Name</th>
+                                                        <th>Address</th>
+                                                        <th>Birth Place</th>
+                                                        <th>Birth Date</th>
+                                                        <th>Phone Number</th>
+                                                        <th>Photo</th>
+                                                        <th>Insurance Id</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <?php
+
+                                                    /* @var $patient Patient */
+                                                    foreach ($patients as $patient) {
+                                                        echo '<tr>';
+                                                        echo '<td>' . $patient->getMedRecordNumber() . '</td>';
+                                                        echo '<td>' . $patient->getCitizenIdNumber() . '</td>';
+                                                        echo '<td>' . $patient->getName() . '</td>';
+                                                        echo '<td>' . $patient->getAddress(). '</td>';
+                                                        echo '<td>' . $patient->getBirthPlace() . '</td>';
+                                                        echo '<td>' . $patient->getBirthDate() . '</td>';
+                                                        echo '<td>' . $patient->getPhoneNumber() . '</td>';
+//            if (isset($patient['photo']) && file_exists($patient['photo'])) {
+                                                        echo '<td><img src="' . $patient->getPhoto() . '"alt="Photo" class="photo-list""></td>';
+//            } else {
+//                echo '<td></td>';
+//            }
+                                                        echo '<td>' . $patient->getInsuranceId() . '</td>';
+                                                        echo '<td><button onclick="deletePatient(\'' . $patient->getMedRecordNumber() . '\');">Delete</button><button onclick="updatePatient(\'' . $patient->getMedRecordNumber() . '\');">Update</button></td>';
+                                                        echo '</tr>';
+                                                    }
+                                                    ?>
+                                                    </tbody>
                                             </div>
                                         </div>
                                         <hr>

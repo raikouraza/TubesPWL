@@ -38,7 +38,7 @@ class FilmDao{
         $stmt->bindValue(5, $film->getFilmGenre(), PDO::PARAM_STR);
         $stmt->bindValue(6, $film->getFilmTrailer(), PDO::PARAM_STR);
         $stmt->bindValue(7, $film->getFilmJamPenayangan(), PDO::PARAM_STR);
-        $stmt->bindValue(8, $film->setFilmSutradara(), PDO::PARAM_STR);
+        $stmt->bindValue(8, $film->getFilmSutradara(), PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             $link->commit();
@@ -83,14 +83,14 @@ class FilmDao{
                                     WHERE film_id=?";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $film->getFilmName(), PDO::PARAM_STR);
+        $stmt->bindValue(1, $film->getFilmJudul(), PDO::PARAM_STR);
         $stmt->bindValue(2, $film->getFilmTanggalRilis(), PDO::PARAM_STR);
         $stmt->bindValue(3, $film->getFilmDeskripsi(), PDO::PARAM_STR);
         $stmt->bindValue(4, $film->getFilmPoster(), PDO::PARAM_STR);
         $stmt->bindValue(5, $film->getFilmGenre(), PDO::PARAM_STR);
         $stmt->bindValue(6, $film->getFilmTrailer(), PDO::PARAM_STR);
         $stmt->bindValue(7, $film->getFilmJamPenayangan(), PDO::PARAM_STR);
-        $stmt->bindValue(8, $film->setFilmSutradara(), PDO::PARAM_STR);
+        $stmt->bindValue(8, $film->getFilmSutradara(), PDO::PARAM_STR);
         $stmt->bindValue(9, $film->getFilmId(), PDO::PARAM_INT);
         if ($stmt->execute()) {
             $link->commit();

@@ -23,7 +23,7 @@ class GenreDao{
         $query = "INSERT INTO tbgenre(genre_name) VALUES(?)";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $genre->getGenreUsername(), PDO::PARAM_STR);
+        $stmt->bindValue(1, $genre->getGenreName(), PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             $link->commit();

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Datta Able Free Bootstrap 4 Admin Template</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -21,157 +20,140 @@
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/style.css">
 </head>
 <body>
-    <!-- [ Pre-loader ] start -->
-    <div class="loader-bg">
-        <div class="loader-track">
-            <div class="loader-fill"></div>
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+    <div class="loader-track">
+        <div class="loader-fill"></div>
+    </div>
+</div>
+<!-- [ Pre-loader ] End -->
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Navigation</label>
+                </li>
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
+                    <a href="dashboard_home.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Form Tambah User</label>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create User</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_update_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update User</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_delete_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete User</span></a>
+                </li>
+
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Form Film</label>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Film</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Film</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Film</span></a>
+                </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Form Film</label>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
+                </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Form Jadwal</label>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
+                </li>
+
+
+                <li data-username="Sample Page" class="nav-item"><a href="sample-page.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
+                <li data-username="Disabled Menu" class="nav-item disabled"><a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
+            </ul>
         </div>
     </div>
-    <!-- [ Pre-loader ] End -->
-    <!-- [ navigation menu ] start -->
-    <nav class="pcoded-navbar">
-        <div class="navbar-wrapper">
-            <div class="navbar-content scroll-div">
-                <ul class="nav pcoded-inner-navbar">
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Navigation</label>
-                    </li>
-                    <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
-                        <a href="dashboard_home.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Form User</label>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create User</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_update_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update User</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_delete_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete User</span></a>
-                    </li>
-
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Form Film</label>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Film</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Film</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Film</span></a>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Form Film</label>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Form Jadwal</label>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
-                    </li>
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
-                    </li>
-
-
-                    <li data-username="Sample Page" class="nav-item"><a href="sample-page.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
-                    <li data-username="Disabled Menu" class="nav-item disabled"><a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
-                </ul>
+</nav>
+<!-- [ navigation menu ] end -->
+<!-- [ Header ] start -->
+<header class="navbar pcoded-header navbar-expand-lg navbar-light">
+    <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+        <a href="dashboard_home.html" class="b-brand">
+            <div class="b-bg">
+                <i class="feather icon-trending-up"></i>
             </div>
-        </div>
-    </nav>
-    <!-- [ navigation menu ] end -->
-    <!-- [ Header ] start -->
-    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
-        <div class="m-header">
-            <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
-            <a href="dashboard_home.html" class="b-brand">
-                   <div class="b-bg">
-                       <i class="feather icon-trending-up"></i>
-                   </div>
-                   <span class="b-title">Datta Able</span>
-               </a>
-        </div>
-        <a class="mobile-menu" id="mobile-header" href="javascript:">
-            <i class="feather icon-more-horizontal"></i>
+            <span class="b-title">Datta Able</span>
         </a>
-        <div class="collapse navbar-collapse">
-        </div>
-    </header>
-    <!-- [ Header ] end -->
-    <!-- [ Main Content ] start -->
-    <div class="pcoded-main-container">
-        <div class="pcoded-wrapper">
-            <div class="pcoded-content">
-                <div class="pcoded-inner-content">
-                    <div class="main-body">
-                        <div class="page-wrapper">
-                            <!-- [ Main Content ] start -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5>Form controls</h5>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputEmail1">Email address</label>
-                                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Password</label>
-                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                                    </form>
-                                                </div>
-                                                <div class="col-md-6">
-                                                </div>
+    </div>
+    <a class="mobile-menu" id="mobile-header" href="javascript:">
+        <i class="feather icon-more-horizontal"></i>
+    </a>
+    <div class="collapse navbar-collapse">
+    </div>
+</header>
+<!-- [ Header ] end -->
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>Form Update Film</h5>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="txtJudulFilm">Masukkan Username </label>
+                                                        <input type="text" class="form-control" id="txtUsername"  placeholder="Masukkan Judul">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtPassword">Masukkan Password</label>
+                                                        <input type="password" class="form-control" id="txtPassword" placeholder="Masukkan Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtRole">Masukkan Role</label>
+                                                        <input type="text" class="form-control" id="txtRole"  placeholder="Masukkan Role">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtName">Masukkan Name</label>
+                                                        <input type="file" class="form-control" id="txtPoster">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+                                                </form>
                                             </div>
-                                            <hr>
+                                            <div class="col-md-6">
+                                            </div>
+                                        </div>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>

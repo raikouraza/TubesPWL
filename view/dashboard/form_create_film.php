@@ -132,16 +132,40 @@
                                             <div class="col-md-6">
                                                 <form>
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Email address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                        <label for="txtJudulFilm">Masukkan Judul Film</label>
+                                                        <input type="text" class="form-control" id="txtjudul"  placeholder="Masukkan Judul">
                                                     </div>
-
                                                     <div class="form-group">
-                                                        <label for="exampleInputPassword1">Password</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        <label for="txtTanggalFilm">Masukkan Tanggal Rilis</label>
+                                                        <input type="date" class="form-control" id="txtTanggal" placeholder="Masukkan Tanggal">
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <div class="form-group">
+                                                        <label for="txtDeskripsi">Masukkan Deskripsi Film</label>
+                                                        <input type="text" class="form-control" id="txtDeskripsi"  placeholder="Masukkan Deskripsi">
+                                            </div>
+                                                    <div class="form-group">
+                                                        <label for="txtPoster">Masukkan Poster</label>
+                                                        <input type="file" class="form-control" id="txtPoster">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtGenre">Email address</label>
+                                                        <input type="text" class="form-control" id="txtGenre" placeholder="Masukkan Genre">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtTrailer">Email address</label>
+                                                        <input type="text" class="form-control" id="txtTrailer" placeholder="Masukkan Link Youporn">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtJam">Email address</label>
+                                                        <input type="time" class="form-control" id="txtJam"  placeholder="txtJam">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtSutradara">Email address</label>
+                                                        <input type="text" class="form-control" id="txtSutradara" placeholder="Masukkan nama sutradara">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
                                                 </form>
                                             </div>
                                             <div class="col-md-6">

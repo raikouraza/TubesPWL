@@ -43,30 +43,54 @@
                         <label>Form User</label>
                     </li>
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form User</span></a>
+                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create User</span></a>
                     </li>
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form User</span></a>
+                        <a href="form_update_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update User</span></a>
                     </li>
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form User</span></a>
+                        <a href="form_delete_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete User</span></a>
                     </li>
 
                     <li class="nav-item pcoded-menu-caption">
                         <label>Form Film</label>
                     </li>
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form User</span></a>
-                    </li>
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Forms & table</label>
+                        <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Film</span></a>
                     </li>
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form User</span></a>
+                        <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Film</span></a>
                     </li>
-                    <li data-username="Table bootstrap datatable footable" class="nav-item">
-                        <a href="tbl_bootstrap.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Table</span></a>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Film</span></a>
                     </li>
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Form Film</label>
+                    </li>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
+                    </li>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
+                    </li>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
+                    </li>
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Form Jadwal</label>
+                    </li>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
+                    </li>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
+                    </li>
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
+                    </li>
+
+
+                    <li data-username="Sample Page" class="nav-item"><a href="sample-page.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
                     <li data-username="Disabled Menu" class="nav-item disabled"><a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
                 </ul>
             </div>
@@ -110,12 +134,36 @@
                                                     <form>
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Email address</label>
-                                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Password</label>
-                                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Submit</button>
                                                     </form>

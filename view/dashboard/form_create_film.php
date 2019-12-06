@@ -45,12 +45,8 @@
                     <a href="form_create_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create User</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_update_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update User</span></a>
+                    <a href="form_update_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete User</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_delete_user.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete User</span></a>
-                </li>
-
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Film</label>
                 </li>
@@ -58,36 +54,35 @@
                     <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Film</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Film</span></a>
-                </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Film</span></a>
+                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Film</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
-                    <label>Form Film</label>
+                    <label>Form Member</label>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
+                    <a href="form_create_member.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
-                </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_delete_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Delete Member</span></a>
+                    <a href="form_update_member.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Member</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
-                    <label>Form Jadwal</label>
+                    <label>Form Studio</label>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_create_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
+                    <a href="form_create_studio.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Studio</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="form_update_film.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update Member</span></a>
+                    <a href="form_update_studio.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
                 </li>
-
-
-                <li data-username="Sample Page" class="nav-item"><a href="sample-page.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
-                <li data-username="Disabled Menu" class="nav-item disabled"><a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Form Sesi</label>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_create_sesi.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Sesi</span></a>
+                </li>
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_update_sesi.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Sesi</span></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -168,40 +163,19 @@
                                                 <table id="myTable">
                                                     <thead>
                                                     <tr>
-                                                        <th>Medical Record Number</th>
-                                                        <th>Citizen id number</th>
-                                                        <th>Name</th>
-                                                        <th>Address</th>
-                                                        <th>Birth Place</th>
-                                                        <th>Birth Date</th>
-                                                        <th>Phone Number</th>
-                                                        <th>Photo</th>
-                                                        <th>Insurance Id</th>
+                                                        <th>Judul</th>
+                                                        <th>Tanggal Rilis</th>
+                                                        <th>Deskripsi</th>
+                                                        <th>Poster</th>
+                                                        <th>Genre</th>
+                                                        <th>Video</th>
+                                                        <th>Jam</th>
+                                                        <th>Sutradara</th>
                                                         <th>Action</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <?php
-
-                                                    /* @var $patient Patient */
-                                                    foreach ($patients as $patient) {
-                                                        echo '<tr>';
-                                                        echo '<td>' . $patient->getMedRecordNumber() . '</td>';
-                                                        echo '<td>' . $patient->getCitizenIdNumber() . '</td>';
-                                                        echo '<td>' . $patient->getName() . '</td>';
-                                                        echo '<td>' . $patient->getAddress(). '</td>';
-                                                        echo '<td>' . $patient->getBirthPlace() . '</td>';
-                                                        echo '<td>' . $patient->getBirthDate() . '</td>';
-                                                        echo '<td>' . $patient->getPhoneNumber() . '</td>';
-//            if (isset($patient['photo']) && file_exists($patient['photo'])) {
-                                                        echo '<td><img src="' . $patient->getPhoto() . '"alt="Photo" class="photo-list""></td>';
-//            } else {
-//                echo '<td></td>';
-//            }
-                                                        echo '<td>' . $patient->getInsuranceId() . '</td>';
-                                                        echo '<td><button onclick="deletePatient(\'' . $patient->getMedRecordNumber() . '\');">Delete</button><button onclick="updatePatient(\'' . $patient->getMedRecordNumber() . '\');">Update</button></td>';
-                                                        echo '</tr>';
-                                                    }
                                                     ?>
                                                     </tbody>
                                             </div>

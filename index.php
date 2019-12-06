@@ -36,7 +36,7 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign in</a>
+                    <a class="nav-link" href="view/login.php">Sign in</a>
                 </li>
             </ul>
         </div>
@@ -46,9 +46,33 @@
 <div class="container">
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-        <h1 class="display-3">A Warm Welcome!</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="src/images/poster/blackchristmas.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="src/images/poster/frozen2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="src/images/poster/jumanji.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="src/images/poster/spies.jpg" alt="Fourth slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="src/images/poster/starwars.jpg" alt="Fifth slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </header>
     <!-- Page Features -->
     <div class="row text-center">

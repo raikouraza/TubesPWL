@@ -1,4 +1,16 @@
 <?php
+include_once 'entity/Film.php';
+include_once 'entity/Genre.php';
+include_once 'entity/jadwal.php';
+include_once 'entity/Member.php';
+include_once 'entity/Tiket.php';
+include_once 'entity/Film.php';
+include_once 'entity/Film.php';
+include_once 'entity/Film.php';
+
+
+
+
 SESSION_START();
 if(!isset($_SESSION['user_logged'])){
     $_SESSION['user_logged'] = false;
@@ -86,6 +98,9 @@ if(!isset($_SESSION['user_logged'])){
                 case 'mov':
                     include_once 'view/movies.php';
                     break;
+                case 'movd':
+                    include_once 'view/moviedata.php';
+                    break;
                 case 'sin':
                     include_once 'view/signinsignup.php';
                     break;
@@ -144,6 +159,9 @@ if(!isset($_SESSION['user_logged'])){
             break;
         case 'mov':
             include_once 'view/movies.php';
+            break;
+        case 'movd':
+            include_once 'view/moviedata.php';
             break;
         case 'sin':
             include_once 'view/signinsignup.php';

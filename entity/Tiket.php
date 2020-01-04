@@ -1,7 +1,7 @@
 <?php
 
 
-class Ticket{
+class Tiket{
     private $tiket_id;
     private $tiket_harga;
     private $tiket_nomor_kursi;

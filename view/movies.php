@@ -10,7 +10,7 @@ $bootstrapColWidth = 12 / $numOfCols;
         ?>
         <div class="col-md-<?php echo $bootstrapColWidth; ?>">
             <div class="thumbnail">
-                <img src="user_file/<?php echo $row->foto; ?>">
+                <?php echo $row->film_poster; ?>">
             </div>
         </div>
         <?php

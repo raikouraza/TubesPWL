@@ -36,7 +36,7 @@
                     <label>Navigation</label>
                 </li>
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
-                    <a href="dashboard_home.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                    <a href="dashboard_home.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form User</label>
@@ -92,7 +92,7 @@
 <header class="navbar pcoded-header navbar-expand-lg navbar-light">
     <div class="m-header">
         <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
-        <a href="dashboard_home.html" class="b-brand">
+        <a href="dashboard_home.php" class="b-brand">
             <div class="b-bg">
                 <i class="feather icon-trending-up"></i>
             </div>

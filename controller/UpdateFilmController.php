@@ -46,7 +46,7 @@ class CreateFilmController
                 } else {
                     $this->filmDao->updateFilm($updatedFilm);
                 }
-                header('location:index.php?menu=fm');
+                header('location:dashboard_index.php?menu=fm');
             } else {
                 $errMessage = 'Please check your input';
             }

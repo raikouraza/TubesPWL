@@ -7,7 +7,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-6">
-                        <form>
+                        <form method="post">
                             <div class="form-group">
                                 <label for="txtJudulFilm">Masukkan Judul Film</label>
                                 <input type="text" class="form-control" id="txtjudul"  placeholder="Masukkan Judul">
@@ -27,7 +27,6 @@
                             <div class="form-group">
                                 <label for="txtGenre">Masukkan Genre</label>
                                 <input type="text" class="form-control" id="txtGenre" placeholder="Masukkan Genre">
-
                             </div>
                             <div class="form-group">
                                 <label for="txtTrailer">Masukkan Link Video</label>
@@ -61,6 +60,20 @@
                             </thead>
                             <tbody>
                             <?php
+                            /* @var $film Film*/
+                            foreach ($films as $film)
+                            {
+                                echo '<tr>';
+                                echo '<td>' . $film->getFilmJudul() . '</td>';
+                                echo '<td>' . $film->getFilmTanggalRilis() . '</td>';
+                                echo '<td>' . $film->getFilmDeskripsi() . '</td>';
+                                echo '<td>' . $film->getFilmPoster() . '</td>';
+                                echo '<td>' . $film->getFilmGenre() . '</td>';
+                                echo '<td>' . $film->getFilmTrailer() . '</td>';
+                                echo '<td>' . $film->getFilmJamPenayangan() . '</td>';
+                                echo '<td>' . $film->getFilmSutradara() . '</td>';
+                                echo '</tr>';
+                            }
                             ?>
                             </tbody>
                     </div>

@@ -1,5 +1,6 @@
 <?php
 include_once '../../controller/CreateFilmController.php';
+include_once '../../controller/UpdateFilmController.php';
 include_once '../../db_function/FilmDao.php';
 include_once '../../entity/Film.php';
 include '../../util/view_util.php';
@@ -136,11 +137,12 @@ session_start();
                                 include_once 'form_update_user.php';
                                 break;
                             case 'createFilm':
-                                $createFilmController = new CreateFilmController();
-                                $createFilmController->index();
+                                $filmController = new CreateFilmController();
+                                $filmController->index();
                                 break;
                             case 'updateFilm':
-                                include_once 'form_update_film.php';
+                                $filmController = new UpdateFilmController();
+                                $filmController->index();
                                 break;
                             case 'createMember':
                                 include_once 'form_create_member.php';

@@ -1,6 +1,6 @@
 <?php
 
-class CreateFilmController
+class UpdateFilmController
 {
     private $filmDao;
 
@@ -55,5 +55,6 @@ class CreateFilmController
                 echo '<div class="err-msg">' . $errMessage . '</div>';
             }
         }
+        include_once '../../view/dashboard/form_update_film.php';
     }
 }

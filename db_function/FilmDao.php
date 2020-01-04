@@ -24,7 +24,6 @@ class FilmDao{
                                      film_tanggal_rilis,
                                      film_deskripsi,
                                      film_poster,
-                                     film_genre,
                                      film_trailer,
                                      film_jam_penayangan,
                                      film_sutradara) 
@@ -35,10 +34,9 @@ class FilmDao{
         $stmt->bindValue(2, $film->getFilmTanggalRilis(), PDO::PARAM_STR);
         $stmt->bindValue(3, $film->getFilmDeskripsi(), PDO::PARAM_STR);
         $stmt->bindValue(4, $film->getFilmPoster(), PDO::PARAM_STR);
-        $stmt->bindValue(5, $film->getFilmGenre(), PDO::PARAM_STR);
-        $stmt->bindValue(6, $film->getFilmTrailer(), PDO::PARAM_STR);
-        $stmt->bindValue(7, $film->getFilmJamPenayangan(), PDO::PARAM_STR);
-        $stmt->bindValue(8, $film->getFilmSutradara(), PDO::PARAM_STR);
+        $stmt->bindValue(5, $film->getFilmTrailer(), PDO::PARAM_STR);
+        $stmt->bindValue(6, $film->getFilmJamPenayangan(), PDO::PARAM_STR);
+        $stmt->bindValue(7, $film->getFilmSutradara(), PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             $link->commit();

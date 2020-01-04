@@ -4,49 +4,68 @@
         <div class="card">
             <div class="card-body">
                 <h5>Form Update Film</h5>
-                <hr>
+                <br>
                 <div class="row">
                     <div class="col-md-6">
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data" id="filmForm">
                             <div class="form-group">
                                 <label for="txtJudulFilm">Masukkan Judul Film</label>
-                                <input type="text" class="form-control" id="txtjudul" name="txtFilmJudul" placeholder="Masukkan Judul">
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmJudul(); ?>" type="text" class="form-control" id="txtjudul" name="txtFilmJudul" placeholder="Masukkan Judul" >
                             </div>
-                            <div class="form-group">
-                                <label for="txtTanggalFilm">Masukkan Tanggal Rilis</label>
-                                <input type="date" class="form-control" id="txtTanggal" name="txtFilmTanggalRilis" placeholder="Masukkan Tanggal">
-                            </div>
+                            <br>
                             <div class="form-group">
                                 <label for="txtDeskripsi">Masukkan Deskripsi Film</label>
-                                <input type="text" class="form-control" id="txtDeskripsi" name="txtFilmDeskripsi"  placeholder="Masukkan Deskripsi">
+                                <hr>
+                                <textarea class="form-control" rows="5" form="filmForm" name="txtFilmDeskripsi"><?php /* @var $film Film*/ echo $film->getFilmDeskripsi(); ?>"</textarea>
                             </div>
+                            <br>
                             <div class="form-group">
                                 <label for="txtPoster">Masukkan Poster</label>
-                                <input type="file" class="form-control" id="txtPoster" name="txtFilmPoster">
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmPoster(); ?>" type="file" class="form-control-file" id="txtPoster" name="txtFilmPoster">
                             </div>
-                            <div class="form-group">
-                                <label for="txtGenre">Masukkan Genre</label>
-                                <input type="text" class="form-control" id="txtGenre" name="txtFilmGenre" placeholder="Masukkan Genre">
-                            </div>
+                            <br>
                             <div class="form-group">
                                 <label for="txtTrailer">Masukkan Link Video</label>
-                                <input type="text" class="form-control" id="txtTrailer" name="txtFilmTrailer" placeholder="Masukkan Link Video">
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmTrailer(); ?>" type="url" class="form-control" id="txtTrailer" name="txtFilmTrailer" placeholder="Masukkan Link Video">
                             </div>
-                            <div class="form-group">
-                                <label for="txtJam">Masukkan Jam</label>
-                                <input type="time" class="form-control" id="txtJam" name="txtFilmJamPenayangan" placeholder="txtJam">
-                            </div>
+                            <br>
                             <div class="form-group">
                                 <label for="txtSutradara">Masukkan Nama Sutradara</label>
-                                <input type="text" class="form-control" id="txtSutradara" name="txtFilmSutradara" placeholder="Masukkan nama sutradara">
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmSutradara(); ?>" type="text" class="form-control" id="txtSutradara" name="txtFilmSutradara" placeholder="Masukkan nama sutradara">
                             </div>
-                            <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit">Submit</button>
+                            <br>
+                            <div class="form-group">
+                                <label for="txtNamaAktor">Masukkan Nama-Nama Aktor</label>
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmAktor(); ?>" type="text" class="form-control" id="txtAktor" name="txtFilmAktor" placeholder="Masukkan Nama-Nama Aktor">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="txtDurasi">Masukkan Durasi Film</label>
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmDurasi(); ?>" type="text" class="form-control" id="txtDurasi" name="txtFilmDurasi" placeholder="Masukkan Durasi Film">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="txtRating">Masukkan Rating</label>
+                                <hr>
+                                <label class="radio-inline"><input value="SU" type="radio" name="txtRating" checked>SU</label>
+                                <label class="radio-inline"><input value="BO" type="radio" name="txtRating">BO</label>
+                                <label class="radio-inline"><input value="R" type="radio" name="txtRating">R</label>
+                                <label class="radio-inline"><input value="D" type="radio" name="txtRating">D</label>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary" id="btnUpdate" name="btnUpdate">Update</button>
                         </form>
                     </div>
                     <div class="col-md-6">
                     </div>
                 </div>
-                <hr>
+                <br>
             </div>
         </div>
     </div>

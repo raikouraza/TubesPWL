@@ -73,24 +73,24 @@ class FilmDao{
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
         $query = "UPDATE tbfilm SET film_judul=?,
-                                    film_tanggal_rilis=?,
                                     film_deskripsi=?,
                                     film_poster=?,
-                                    film_genre=?,
                                     film_trailer=?,
-                                    film_jam_penayangan=?,
                                     film_sutradara=?,
+                                    film_aktor=?,
+                                    film_durasi=?,
+                                    film_rating=?  
                                     WHERE film_id=?";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $film->getFilmJudul(), PDO::PARAM_STR);
-        $stmt->bindValue(2, $film->getFilmTanggalRilis(), PDO::PARAM_STR);
-        $stmt->bindValue(3, $film->getFilmDeskripsi(), PDO::PARAM_STR);
-        $stmt->bindValue(4, $film->getFilmPoster(), PDO::PARAM_STR);
-        $stmt->bindValue(5, $film->getFilmGenre(), PDO::PARAM_STR);
-        $stmt->bindValue(6, $film->getFilmTrailer(), PDO::PARAM_STR);
-        $stmt->bindValue(7, $film->getFilmJamPenayangan(), PDO::PARAM_STR);
-        $stmt->bindValue(8, $film->getFilmSutradara(), PDO::PARAM_STR);
+        $stmt->bindValue(2, $film->getFilmDeskripsi(), PDO::PARAM_STR);
+        $stmt->bindValue(3, $film->getFilmPoster(), PDO::PARAM_STR);
+        $stmt->bindValue(4, $film->getFilmTrailer(), PDO::PARAM_STR);
+        $stmt->bindValue(5, $film->getFilmSutradara(), PDO::PARAM_STR);
+        $stmt->bindValue(6, $film->getFilmAktor(), PDO::PARAM_STR);
+        $stmt->bindValue(7, $film->getFilmDurasi(), PDO::PARAM_STR);
+        $stmt->bindValue(8, $film->getFilmRating(), PDO::PARAM_STR);
         $stmt->bindValue(9, $film->getFilmId(), PDO::PARAM_INT);
         if ($stmt->execute()) {
             $link->commit();
@@ -102,14 +102,14 @@ class FilmDao{
 
     }
 
-    function getFilmById(Film $film)
+    function getFilmById($film_id)
     {
         $link = DBHelper::createMySQLConnection();
 
         $query = "SELECT * FROM tbfilm WHERE film_id = ? LIMIT 1";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $film->getFilmId(), PDO::PARAM_INT);
+        $stmt->bindValue(1, $film_id, PDO::PARAM_INT);
         $stmt->execute();
 
         $result = $stmt->fetchObject("Film");

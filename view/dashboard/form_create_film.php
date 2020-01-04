@@ -53,10 +53,10 @@
                             <div class="form-group">
                                 <label for="txtRating">Masukkan Rating</label>
                                 <hr>
-                                <label class="radio-inline"><input type="radio" name="txtRating" checked>SU</label>
-                                <label class="radio-inline"><input type="radio" name="txtRating">BO</label>
-                                <label class="radio-inline"><input type="radio" name="txtRating">R</label>
-                                <label class="radio-inline"><input type="radio" name="txtRating">D</label>
+                                <label class="radio-inline"><input value="SU" type="radio" name="txtRating" checked>SU</label>
+                                <label class="radio-inline"><input value="BO" type="radio" name="txtRating">BO</label>
+                                <label class="radio-inline"><input value="R" type="radio" name="txtRating">R</label>
+                                <label class="radio-inline"><input value="D" type="radio" name="txtRating">D</label>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit">Submit</button>
@@ -64,7 +64,7 @@
                     </div>
                     <br>
                     <div class="col-md-6">
-                        <table id="myTable">
+                        <table>
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -76,7 +76,6 @@
                                 <th>Aktor</th>
                                 <th>Durasi</th>
                                 <th>Rating</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -99,11 +98,11 @@
                                 echo '<td>' . $film->getFilmAktor() . '</td>';
                                 echo '<td>' . $film->getFilmDurasi() . '</td>';
                                 echo '<td>' . $film->getFilmRating() . '</td>';
-                                echo '<td><button type="submit" class="btn btn-primary" id="btnUpdate" name="btnUpdate">Update</button></td>';
                                 echo '</tr>';
                             }
                             ?>
                             </tbody>
+                        </table>
                     </div>
                 </div>
                 <hr>

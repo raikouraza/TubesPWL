@@ -1,11 +1,11 @@
 <?php
-include_once '../../controller/CreateFilmController.php';
-include_once '../../controller/UpdateFilmController.php';
+include_once '../../controller/FilmController.php';
 include_once '../../db_function/FilmDao.php';
-include_once '../../entity/Film.php';
-include '../../util/view_util.php';
 include_once '../../db_function/DBHelper.php';
+include_once '../../entity/Film.php';
+include_once '../../util/view_util.php';
 session_start();
+ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@ session_start();
     <link rel="icon" href="../../src/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/animate.min.css">
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/style.css">
-
+    <script type="text/javascript" src="../../src/vendor/bootstrap/js/crudView.js"></script>
 </head>
 
 <body>
@@ -61,7 +61,7 @@ session_start();
                     <a href="?dashboard=createFilm" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Film</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=updateFilm" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Film</span></a>
+                    <a href="?dashboard=updateDeleteFilm" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Film</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Member</label>
@@ -137,12 +137,16 @@ session_start();
                                 include_once 'form_update_user.php';
                                 break;
                             case 'createFilm':
-                                $filmController = new CreateFilmController();
-                                $filmController->index();
+                                $filmController = new FilmController();
+                                $filmController->indexCreate();
                                 break;
                             case 'updateFilm':
-                                $filmController = new UpdateFilmController();
-                                $filmController->index();
+                                $filmController = new FilmController();
+                                $filmController->indexUpdate();
+                                break;
+                            case 'updateDeleteFilm':
+                                $filmController = new FilmController();
+                                $filmController->indexUpdateDelete();
                                 break;
                             case 'createMember':
                                 include_once 'form_create_member.php';
@@ -165,6 +169,8 @@ session_start();
                             default;
                                 include_once 'dashboard_home.php';
                         }
+
+                        ob_end_flush();
                         ?>
                     </div>
                 </div>

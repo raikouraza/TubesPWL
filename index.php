@@ -5,8 +5,8 @@ include_once 'entity/jadwal.php';
 include_once 'entity/Member.php';
 include_once 'entity/Tiket.php';
 include_once 'entity/Film.php';
-include_once 'entity/Film.php';
-include_once 'entity/Film.php';
+
+
 
 
 
@@ -92,6 +92,9 @@ if(!isset($_SESSION['user_logged'])){
                 case 'pro':
                     include_once 'view/promotions.php';
                     break;
+                case 'boo':
+                    include_once 'view/bookingseat.php';
+                    break;
                 case 'mem':
                     include_once 'view/membership.php';
                     break;
@@ -156,6 +159,9 @@ if(!isset($_SESSION['user_logged'])){
             break;
         case 'pro':
             include_once 'view/promotions.php';
+            break;
+        case 'boo':
+            include_once 'view/bookingseat.php';
             break;
         case 'mov':
             include_once 'view/movies.php';

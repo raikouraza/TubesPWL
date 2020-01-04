@@ -58,7 +58,7 @@ if(!isset($_SESSION['user_logged'])){
                     <a class="nav-link" href="?menu=mov">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=con">Contact</a>
+                    <a class="nav-link" href="?menu=pro">Promotions</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?menu=mem">Membership</a>
@@ -77,7 +77,8 @@ if(!isset($_SESSION['user_logged'])){
                 case 'ab':
                     include_once 'view/about.php';
                     break;
-                case 'ir':
+                case 'pro':
+                    include_once 'view/promotions.php';
                     break;
                 case 'mem':
                     include_once 'view/membership.php';
@@ -119,7 +120,7 @@ if(!isset($_SESSION['user_logged'])){
                     <a class="nav-link" href="?menu=mov">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=con">Contact</a>
+                    <a class="nav-link" href="?menu=pro">Promotion</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?menu=sin">Sign in</a>
@@ -138,10 +139,8 @@ if(!isset($_SESSION['user_logged'])){
         case 'ab':
             include_once 'view/about.php';
             break;
-        case 'ir':
-            break;
-        case 'iru':
-            include_once 'view/insurance_update.php';
+        case 'pro':
+            include_once 'view/promotions.php';
             break;
         case 'mov':
             include_once 'view/movies.php';

@@ -13,6 +13,23 @@ class Member{
     /**
      * @return mixed
      */
+    public function getMemberSaldo()
+    {
+        return $this->member_saldo;
+    }
+
+    /**
+     * @param mixed $member_saldo
+     */
+    public function setMemberSaldo($member_saldo)
+    {
+        $this->member_saldo = $member_saldo;
+    }
+    private $member_saldo;
+
+    /**
+     * @return mixed
+     */
     public function getMemberId()
     {
         return $this->member_id;

@@ -3,8 +3,7 @@
 
 class Genre{
     private $genre_id;
-    private $genre_name;
-
+    private $genre_kategori;
     /**
      * @return mixed
      */
@@ -24,17 +23,17 @@ class Genre{
     /**
      * @return mixed
      */
-    public function getGenreName()
+    public function getGenreKategori()
     {
-        return $this->genre_name;
+        return $this->genre_kategori;
     }
 
     /**
-     * @param mixed $genre_name
+     * @param mixed $genre_kategori
      */
-    public function setGenreName($genre_name)
+    public function setGenreKategori($genre_kategori)
     {
-        $this->genre_name = $genre_name;
+        $this->genre_kategori = $genre_kategori;
     }
 
 

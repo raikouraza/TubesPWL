@@ -3,14 +3,13 @@
 class Film{
     private $film_id;
     private $film_judul;
-    private $film_tanggal_rilis;
     private $film_deskripsi;
     private $film_poster;
-    private $film_genre;
     private $film_trailer;
-    private $film_jam_penayangan;
     private $film_sutradara;
-
+    private $film_aktor;
+    private $film_durasi;
+    private $film_rating;
     /**
      * @return mixed
      */
@@ -41,22 +40,6 @@ class Film{
     public function setFilmJudul($film_judul)
     {
         $this->film_judul = $film_judul;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFilmTanggalRilis()
-    {
-        return $this->film_tanggal_rilis;
-    }
-
-    /**
-     * @param mixed $film_tanggal_rilis
-     */
-    public function setFilmTanggalRilis($film_tanggal_rilis)
-    {
-        $this->film_tanggal_rilis = $film_tanggal_rilis;
     }
 
     /**
@@ -94,22 +77,6 @@ class Film{
     /**
      * @return mixed
      */
-    public function getFilmGenre()
-    {
-        return $this->film_genre;
-    }
-
-    /**
-     * @param mixed $film_genre
-     */
-    public function setFilmGenre($film_genre)
-    {
-        $this->film_genre = $film_genre;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getFilmTrailer()
     {
         return $this->film_trailer;
@@ -121,22 +88,6 @@ class Film{
     public function setFilmTrailer($film_trailer)
     {
         $this->film_trailer = $film_trailer;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFilmJamPenayangan()
-    {
-        return $this->film_jam_penayangan;
-    }
-
-    /**
-     * @param mixed $film_jam_penayangan
-     */
-    public function setFilmJamPenayangan($film_jam_penayangan)
-    {
-        $this->film_jam_penayangan = $film_jam_penayangan;
     }
 
     /**
@@ -154,4 +105,54 @@ class Film{
     {
         $this->film_sutradara = $film_sutradara;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFilmAktor()
+    {
+        return $this->film_aktor;
+    }
+
+    /**
+     * @param mixed $film_aktor
+     */
+    public function setFilmAktor($film_aktor)
+    {
+        $this->film_aktor = $film_aktor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFilmDurasi()
+    {
+        return $this->film_durasi;
+    }
+
+    /**
+     * @param mixed $film_durasi
+     */
+    public function setFilmDurasi($film_durasi)
+    {
+        $this->film_durasi = $film_durasi;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFilmRating()
+    {
+        return $this->film_rating;
+    }
+
+    /**
+     * @param mixed $film_rating
+     */
+    public function setFilmRating($film_rating)
+    {
+        $this->film_rating = $film_rating;
+    }
+
+
 }

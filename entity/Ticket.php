@@ -2,89 +2,107 @@
 
 
 class Ticket{
-    private $ticket_id;
-    private $ticket_harga;
-    private $ticket_kode;
-    private $studio;
-    private $film;
-
+    private $tiket_id;
+    private $tiket_harga;
+    private $tiket_nomor_kursi;
+    private $tbMember_member_id;
+    private $tbStudio_studio_id;
+    private $tbJadwal_jadwal_id;
     /**
      * @return mixed
      */
-    public function getTicketId()
+    public function getTiketId()
     {
-        return $this->ticket_id;
+        return $this->tiket_id;
     }
 
     /**
-     * @param mixed $ticket_id
+     * @param mixed $tiket_id
      */
-    public function setTicketId($ticket_id)
+    public function setTiketId($tiket_id)
     {
-        $this->ticket_id = $ticket_id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTicketHarga()
-    {
-        return $this->ticket_harga;
-    }
-
-    /**
-     * @param mixed $ticket_harga
-     */
-    public function setTicketHarga($ticket_harga)
-    {
-        $this->ticket_harga = $ticket_harga;
+        $this->tiket_id = $tiket_id;
     }
 
     /**
      * @return mixed
      */
-    public function getTicketKode()
+    public function getTiketHarga()
     {
-        return $this->ticket_kode;
+        return $this->tiket_harga;
     }
 
     /**
-     * @param mixed $ticket_kode
+     * @param mixed $tiket_harga
      */
-    public function setTicketKode($ticket_kode)
+    public function setTiketHarga($tiket_harga)
     {
-        $this->ticket_kode = $ticket_kode;
+        $this->tiket_harga = $tiket_harga;
     }
 
     /**
-     * @return Studio
+     * @return mixed
      */
-    public function getStudio()
+    public function getTiketNomorKursi()
     {
-        return $this->studio;
+        return $this->tiket_nomor_kursi;
     }
 
     /**
-     * @param mixed $studio
+     * @param mixed $tiket_nomor_kursi
      */
-    public function setStudio($studio)
+    public function setTiketNomorKursi($tiket_nomor_kursi)
     {
-        $this->studio = $studio;
+        $this->tiket_nomor_kursi = $tiket_nomor_kursi;
     }
 
     /**
-     * @return Film
+     * @return mixed
      */
-    public function getFilm()
+    public function getTbMemberMemberId()
     {
-        return $this->film;
+        return $this->tbMember_member_id;
     }
 
     /**
-     * @param mixed $film
+     * @param mixed $tbMember_member_id
      */
-    public function setFilm($film)
+    public function setTbMemberMemberId($tbMember_member_id)
     {
-        $this->film = $film;
+        $this->tbMember_member_id = $tbMember_member_id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTbStudioStudioId()
+    {
+        return $this->tbStudio_studio_id;
+    }
+
+    /**
+     * @param mixed $tbStudio_studio_id
+     */
+    public function setTbStudioStudioId($tbStudio_studio_id)
+    {
+        $this->tbStudio_studio_id = $tbStudio_studio_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTbJadwalJadwalId()
+    {
+        return $this->tbJadwal_jadwal_id;
+    }
+
+    /**
+     * @param mixed $tbJadwal_jadwal_id
+     */
+    public function setTbJadwalJadwalId($tbJadwal_jadwal_id)
+    {
+        $this->tbJadwal_jadwal_id = $tbJadwal_jadwal_id;
+    }
+
+
 }

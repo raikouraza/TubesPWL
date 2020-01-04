@@ -52,13 +52,13 @@ if(!isset($_SESSION['user_logged'])){
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=ab">About</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="?menu=mov">Movies</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?menu=pro">Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?menu=ab">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?menu=mem">Membership</a>
@@ -114,13 +114,13 @@ if(!isset($_SESSION['user_logged'])){
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=ab">About</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="?menu=mov">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=pro">Promotion</a>
+                    <a class="nav-link" href="?menu=pro">Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?menu=ab">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?menu=sin">Sign in</a>

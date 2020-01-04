@@ -42,52 +42,52 @@ session_start();
                 <li class="nav-item pcoded-menu-caption">
                     <label>Navigation</label>
                 </li>
-                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item <?php echo ($_SESSION['targetMenu']=="home")?'active':''?>">
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
                     <a href="?dashboard=home" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form User</label>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="createUser")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=createUser" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create User</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="updateUser")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=updateUser" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete User</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Film</label>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="createFilm")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item ">
                     <a href="?dashboard=createFilm" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Film</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="updateFilm")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=updateFilm" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Film</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Member</label>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="createMember")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=createMember" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="updateMember")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=updateMember" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Member</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Studio</label>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="createStudio")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=createStudio" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Studio</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="updateStudio")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=updateStudio" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Sesi</label>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="createSesi")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=createSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Sesi</span></a>
                 </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item <?php echo ($_SESSION['targetMenu']=="updateSesi")?'active':''?>">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=updateSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Sesi</span></a>
                 </li>
             </ul>

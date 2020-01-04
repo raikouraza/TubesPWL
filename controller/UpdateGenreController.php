@@ -26,7 +26,7 @@ class GenreUpdateController
             $updatedGenre->setGenreName($genre_name);
             $updatedGenre->setGenreId($genre_id);
             $this->genreDao->updateGenre($updatedGenre);
-            header("location:dashboard_index.php?menu=gen");
+            header("location:index.php?menu=gen");
         }
     }
 }

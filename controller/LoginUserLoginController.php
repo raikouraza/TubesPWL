@@ -32,7 +32,7 @@ class UserLoginController
                 $_SESSION['name'] = $registeredUser->getUserName();
                 $_SESSION['role_id'] = (int)$registeredUser->getUserRole();
 
-                header("location:dashboard_index.php");
+                header("location:index.php");
             } else
             {
                 $errMsg = "Invalid username or password";

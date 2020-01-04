@@ -14,23 +14,25 @@ class CreateFilmController
         $submitted = filter_input(INPUT_POST, 'btnSubmit');
         if (isset($submitted)) {
             $film_judul = filter_input(INPUT_POST, 'txtFilmJudul');
-            $film_tanggal_rilis = filter_input(INPUT_POST, 'txtFilmTanggalRilis');
             $film_deskripsi = filter_input(INPUT_POST, 'txtFilmDeskripsi');
-            $film_genre = filter_input(INPUT_POST, 'txtFilmGenre');
+            $film_poster = filter_input(INPUT_POST, 'txtFilmPoster');
             $film_trailer = filter_input(INPUT_POST, 'txtFilmTrailer');
-            $film_jam_penayangan = filter_input(INPUT_POST, 'txtFilmJamPenayangan');
             $film_sutradara = filter_input(INPUT_POST, 'txtFilmSutradara');
+            $film_nama_aktor = filter_input(INPUT_POST, 'txtFilmAktor');
+            $film_durasi = filter_input(INPUT_POST, 'txtFilmDurasi');
+            $film_rating = filter_input(INPUT_POST, 'txtRating');
 
             $film = new Film();
             $film->setFilmJudul($film_judul);
-            $film->setFilmTanggalRilis($film_tanggal_rilis);
             $film->setFilmDeskripsi($film_deskripsi);
-            $film->setFilmGenre($film_genre);
+            $film->setFilmPoster($film_poster);
             $film->setFilmTrailer($film_trailer);
-            $film->setFilmJamPenayangan($film_jam_penayangan);
             $film->setFilmSutradara($film_sutradara);
+            $film->setFilmAktor($film_nama_aktor);
+            $film->setFilmDurasi($film_durasi);
+            $film->setFilmRating($film_rating);
 
-            if(fieldNotEmpty(array($film_judul, $film_tanggal_rilis, $film_deskripsi, $film_genre, $film_jam_penayangan, $film_sutradara)))
+            if(fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating)))
             {
                 if(isset($_FILES['txtFilmPoster']['name']))
                 {

@@ -11,12 +11,11 @@ if(!isset($_SESSION['user_logged'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title> Heroic Features - Start Bootstrap Template </title>
     <!-- Bootstrap core CSS -->
     <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="src/vendor/bootstrap/css/heroic-features.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -37,9 +36,11 @@ if(!isset($_SESSION['user_logged'])){
 </head>
 <body>
 <!-- Navigation -->
+<!-- Jika User Sudah Login -->
+<?php if($_SESSION['user_logged']){?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">CINEMA YAS!</a>
+        <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,16 +52,16 @@ if(!isset($_SESSION['user_logged'])){
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=hm">About</a>
+                    <a class="nav-link" href="?menu=ab">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=ser">Services</a>
+                    <a class="nav-link" href="?menu=mov">Movies</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?menu=con">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=sin">Sign in</a>
+                    <a class="nav-link" href="?menu=mem">Membership</a>
                 </li>
             </ul>
         </div>
@@ -73,20 +74,16 @@ if(!isset($_SESSION['user_logged'])){
                 case 'hm':
                     include_once 'view/home.php';
                     break;
-                case 'at':
+                case 'ab':
                     include_once 'view/about.php';
                     break;
                 case 'ir':
                     break;
-                case 'iru':
-                    include_once 'view/insurance_update.php';
+                case 'mem':
+                    include_once 'view/membership.php';
                     break;
-                case 'pt':
-                    break;
-                case 'ptu':
-                    include_once 'view/patient_update.php';
-                    break;
-                case 'us':
+                case 'mov':
+                    include_once 'view/movies.php';
                     break;
                 case 'sin':
                     include_once 'view/signinsignup.php';
@@ -100,93 +97,69 @@ if(!isset($_SESSION['user_logged'])){
         }
     ?>
 </main>
-<!-- Page Content -->
-<div class="container">
-    <!-- Jumbotron Header -->
-    <header class="jumbotron my-3">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="src/images/poster/blackchristmas.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/frozen2.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/jumanji.jpg" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/spies.jpg" alt="Fourth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/starwars.jpg" alt="Fifth slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </header>
-    <!-- Page Features -->
-    <div class="row text-center">
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
+    <!-- Jika User Belum Login -->
+<?php } else { ?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul id="mainMenu" class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="?menu=hm">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?menu=ab">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?menu=mov">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?menu=con">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?menu=sin">Sign in</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <!-- /.row -->
-</div>
-<!-- /.container -->
-<!-- Footer -->
+</nav>
+<main>
+    <?php
+    $targetMenu = filter_input(INPUT_GET, 'menu');
+    switch($targetMenu){
+        case 'hm':
+            include_once 'view/home.php';
+            break;
+        case 'ab':
+            include_once 'view/about.php';
+            break;
+        case 'ir':
+            break;
+        case 'iru':
+            include_once 'view/insurance_update.php';
+            break;
+        case 'mov':
+            include_once 'view/movies.php';
+            break;
+        case 'sin':
+            include_once 'view/signinsignup.php';
+            break;
+        case 'out':
+            session_destroy();
+            header('view/home.php');
+        default:
+            include_once 'view/home.php';
+            break;
+    }
+    ?>
+</main>
+<?php }?>
+    <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; YAS 2019</p>
@@ -203,7 +176,6 @@ if(!isset($_SESSION['user_logged'])){
         });
     });
 </script>
-
 <!--===============================================================================================-->
 <script src="src/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

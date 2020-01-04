@@ -15,128 +15,39 @@
 </head>
 <body>
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">CINEMA YAS!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="view/login.php">Sign in</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+
 <!-- Page Content -->
 <div class="container">
-    <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="src/images/poster/blackchristmas.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/frozen2.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/jumanji.jpg" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/spies.jpg" alt="Fourth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="src/images/poster/starwars.jpg" alt="Fifth slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </header>
-    <!-- Page Features -->
-    <div class="row text-center">
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
+   <fieldset>
+       <p style="background-color: whitesmoke ;text-align: center">
+           TENTANG CJ CGV* CINEMAS INDONESIA
+
+           PT. Graha Layar Prima, Tbk juga dikenal sebagai CJ CGV* CINEMAS (atau sebelumnya dikenal sebagai Blitz Megaplex) adalah jaringan bioskop terkemuka di Indonesia yang pertama kali didirikan pada tahun 2004 yang membuka bioskop pertamanya di Paris Van Java, Bandung pada tahun 2006.
+
+           CJ CGV* CINEMAS memberikan pengalaman menonton melalui kemajuan teknologi yang digunakan seperti; 3D, 4DX, Screen X, SphereX, Dolby Atmos, melalui beberapa kelas auditorium: Regular Class, Velvet Class, Gold Class, Satin Class, Sweetbox.
+
+           Dengan kapasitas layar yang terus bertambah pesat, CJ CGV* CINEMAS memutarkan berbagai macam jenis film dari berbagai Negara seperti India, Korea, Jepang, dan tentunya konten lokal dari dalam negeri.
+
+           Hingga kini CJ CGV* CINEMAS telah memiliki 50 bioskop dengan 314 layar yang tersebar di 23 kota dan 11 propinsi di seluruh Indonesia. CJ CGV* CINEMAS akan terus membuka lokasi baru hingga mencapai 360 layar melalui 7 bioskop di seluruh Indonesia di tahun ini.
+
+
+           KEUNIKAN CJ CGV* CINEMAS INDONESIA
+
+           Tetap mengangkat konsep Cultureplex dimana tidak hanya sebagai ‘tempat nonton’, CJ CGV* CINEMAS sudah menjadi wadah bagi komunitas kesenian disekitar area bioskop yang ingin mengekspresikan diri dengan memberikan pertunjukan musik, tarian dan aktifitas kesenian lainnya.
+
+           Untuk memberikan nilai lebih dan kemudahan bagi para pengunjung, CJ CGV* CINEMAS memberikan layanan melalui sistem aplikasi, website, self-ticketing machine, juga dengan menggunakan CGV member card, maupun E-Card.
+
+
+
+           Website: www.cgv.id | Facebook: CGV Cinemas Indonesia |
+           Twitter: @CGV_ID | Instagram: @CGV.ID | LINE: CGV Cinemas
+       </p>
+
+   </fieldset>
 </div>
 <!-- /.container -->
 <!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
+
 <!-- Bootstrap core JavaScript -->
 <script src="../src/vendor/jquery/jquery.min.js"></script>
 <script src="../src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

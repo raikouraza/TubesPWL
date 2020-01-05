@@ -120,7 +120,7 @@ if (!isset($_SESSION['user_logged'])) {
                 break;
             case 'sin':
                 $loginMember = new LoginMemberLoginController();
-                $loginMember->login();
+                $loginMember->index();
                 break;
             case 'out':
                 session_destroy();
@@ -186,7 +186,8 @@ if (!isset($_SESSION['user_logged'])) {
                 include_once 'view/moviedata.php';
                 break;
             case 'sin':
-                include_once 'view/signinsignup.php';
+                $loginMember = new LoginMemberLoginController();
+                $loginMember->index();
                 break;
             case 'out':
                 session_destroy();

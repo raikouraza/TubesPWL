@@ -11,9 +11,9 @@ class LoginMemberLoginController
         $this->memberLogin = new Member();
     }
 
-    public function login(){
+    public function index(){
 
-        $loginPressed = filter_input(INPUT_POST,'btnSubmit');
+        $loginPressed = filter_input(INPUT_POST,'btnLogin');
         if(isset($loginPressed)){
 
             $username = filter_input(INPUT_POST, 'txtUsername');
@@ -22,12 +22,14 @@ class LoginMemberLoginController
             $memberLogin = new Member();
             $memberLogin->setMemberUsername($username);
             $memberLogin->setMemberPassword($password);
-            $registeredUser = $this->memberDao->getMemberById($memberLogin);
-            if(isset($registeredUser)&& !empty($registeredUser->name)){
+            $registeredMember = $this->memberDao->login($memberLogin);
+            /* @var $registeredMember Member*/
+            echo '<div class="err-msg">' . $registeredMember->getMemberUsername() .'</div>';
+            if($registeredMember != null && $registeredMember->getMemberUsername() == $username){
                 $_SESSION['user_logged'] = true;
-                $_SESSION['name'] = $registeredUser->name;
-                $_SESSION['id'] = $registeredUser->id;
-                header('location:index.php');
+                $_SESSION['name'] = $registeredMember->getMemberNamaBelakang() . $registeredMember->getMemberNamaBelakang();
+                $_SESSION['id'] = $registeredMember->getMemberId();
+                header('location:index.php?menu=hm');
             }
             else{
                 $errMsg = "Invalid Username or Password!";
@@ -36,7 +38,7 @@ class LoginMemberLoginController
         if (isset($errMsg)){
             echo '<div class="err-msg">' . $errMsg .'</div>';
         }
-        include_once '..\..\view\signinsignup.php';
+        include_once 'view\signinsignup.php';
     }
 }
 

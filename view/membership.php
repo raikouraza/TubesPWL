@@ -1,4 +1,12 @@
 <?php
+$id = filter_input(INPUT_GET,'id');
+if (isset($id)) {
+    $member = new Member();
+    $memberDao = new MemberDao();
+    $member->setMemberId($id);
+    $member = $memberDao->getMemberById($member);
+
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,8 +53,8 @@
                 <div class="card mb-8">
 
                     <div class="card-body">
-                        <h2 class="card-title">Post Title</h2><a href="#" class="btn btn-primary">Edit Profile &rarr;</a>
-                        <img class="card-img-top" src="" alt="Card image cap">
+                        <h2 class="card-title"></h2><a href="#" class="btn btn-primary">Edit Profile &rarr;</a>
+                        <img class="card-img-top" src="<?php echo $member->getMemberPhoto(); ?>" alt="Card image cap">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
 
                     </div>

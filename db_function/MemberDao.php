@@ -124,17 +124,12 @@ function updatePassword(Member $member)
 function getMemberById(Member $member)
 {
     $link = DBHelper::createMySQLConnection();
-
     $query = "SELECT * FROM tbmember WHERE member_id = ? LIMIT 1";
-
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberId(), PDO::PARAM_INT);
     $stmt->execute();
-
     $result = $stmt->fetchObject("Member");
-
     $link = null;
-
     return $result;
 }
 

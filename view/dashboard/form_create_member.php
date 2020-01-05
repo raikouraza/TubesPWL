@@ -10,30 +10,35 @@
                         <form>
                             <div class="form-group">
                                 <label for="txtJudulFilm">Masukkan Username</label>
-                                <input type="text" class="form-control" id="txtUsername"  placeholder="Masukkan Username">
+                                <input type="text" class="form-control" name="txtMemberUsername"
+                                       placeholder="Masukkan Username">
                             </div>
                             <div class="form-group">
                                 <label for="txtTanggalFilm">Masukkan Password</label>
-                                <input type="date" class="form-control" id="txtPassword" placeholder="Masukkan Password">
+                                <input type="date" class="form-control" name="txtMemberPassword"
+                                       placeholder="Masukkan Password">
                             </div>
                             <div class="form-group">
-                                <label for="txtDeskripsi">Masukkan email</label>
-                                <input type="email" class="form-control" id="txtEmail"  placeholder="Masukkan Nama Depan">
+                                <label for="txtDeskripsi">Masukkan Email</label>
+                                <input type="email" class="form-control" name="txtMemberEmail"
+                                       placeholder="Masukkan Nama Depan">
                             </div>
                             <div class="form-group">
                                 <label for="txtFirstName">Masukkan Nama Depan</label>
-                                <input type="text" class="form-control" id="txtFirstName">
+                                <input type="text" class="form-control" name="txtMemberFirstName">
                             </div>
                             <div class="form-group">
                                 <label for="txtLastName">Masukkan Nama Belakang</label>
-                                <input type="text" class="form-control" id="txtLastName" placeholder="Masukkan Nama Belakang">
+                                <input type="text" class="form-control" name="txtMemberLastName"
+                                       placeholder="Masukkan Nama Belakang">
 
                             </div>
                             <div class="form-group">
                                 <label for="txtPhoto">Masukkan Photo</label>
-                                <input type="file" class="form-control" id="txtPhoto" placeholder="Masukkan Photo">
+                                <input type="file" class="form-control" name="txtMemberPhoto"
+                                       placeholder="Masukkan Photo">
                             </div>
-                            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+                            <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
                         </form>
                     </div>
                     <div class="col-md-6">
@@ -47,7 +52,6 @@
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Photo</th>
-                                <th>Action</th>
 
                             </tr>
                             </thead>

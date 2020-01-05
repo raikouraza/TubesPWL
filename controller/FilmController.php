@@ -8,6 +8,7 @@ class FilmController
     {
         $this->filmDao = new FilmDao();
     }
+
     public function indexCreate()
     {
         // Change acording to submmit create button
@@ -32,24 +33,20 @@ class FilmController
             $film->setFilmDurasi($film_durasi);
             $film->setFilmRating($film_rating);
 
-            if(fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating)))
-            {
-                if(isset($_FILES['txtFilmPoster']['name']))
-                {
+            if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating))) {
+                if (isset($_FILES['txtFilmPoster']['name'])) {
                     $targetDirectory = '../../src/images/poster/';
                     $targetFile = $targetDirectory . $_FILES['txtFilmPoster']['name'];
                     move_uploaded_file($_FILES['txtFilmPoster']['tmp_name'], $targetFile);
                     $film->setFilmPoster($targetFile);
                     $this->filmDao->addFilm($film);
-                }
-                else
+                } else
                     $this->filmDao->addFilm($film);
-            }
-            else
+            } else
                 $errMessage = 'Please check your input!';
         }
 
-        if(isset($errMessage))
+        if (isset($errMessage))
             echo '<div class="err-msg">' . $errMessage . '</div>';
         $films = $this->filmDao->getAllFilm();
         include_once '../../view/dashboard/form_create_film.php';
@@ -59,7 +56,7 @@ class FilmController
     {
         // Block below for fetch data
         $film_id = filter_input(INPUT_GET, 'film_id');
-        if (isset($film_id)){
+        if (isset($film_id)) {
             $film = new Film();
             $film->setFilmId($film_id);
             $film = $this->filmDao->getFilmById($film);
@@ -112,7 +109,7 @@ class FilmController
 
     public function indexUpdateDelete()
     {
-        $deleteCommand =filter_input(INPUT_GET, 'delcom');
+        $deleteCommand = filter_input(INPUT_GET, 'delcom');
         if (isset($deleteCommand) && $deleteCommand == 1) {
             $film_id = filter_input(INPUT_GET, 'film_id');
             $toBeDeletedFilm = new Film();
@@ -124,10 +121,11 @@ class FilmController
         include_once '../../view/dashboard/form_update_delete_film.php';
     }
 
-    public function movieDetails(){
+    public function movieDetails()
+    {
         //Fetch Data  Function
-        $id = filter_input(INPUT_GET,'id');
-        if (isset($id)){
+        $id = filter_input(INPUT_GET, 'id');
+        if (isset($id)) {
             $film = new Film();
             $film->setFilmId($id);
             $film = $this->filmDao->getFilmById($film);

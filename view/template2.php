@@ -9,7 +9,6 @@
   <meta name="author" content="">
 
   <title>Small Business - Start Bootstrap Template</title>
-
   <!-- Bootstrap core CSS -->
   <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

@@ -6,11 +6,14 @@ $bootstrapColWidth = 12 / $numOfCols;
 ?>
 <div class="row">
     <?php
-    foreach ($rows as $row){
+    $filmDao = new FilmDao();
+    $films = $filmDao->getAllFilm();
+    /* @var $film film */
+    foreach ($films as $film){
         ?>
         <div class="col-md-<?php echo $bootstrapColWidth; ?>">
             <div class="thumbnail">
-                <?php echo $row->film_poster; ?>">
+                <?php echo $film->getFilmJudul(); ?>">
             </div>
         </div>
         <?php

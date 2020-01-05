@@ -1,9 +1,14 @@
 <?php
 include_once '../../controller/FilmController.php';
+include_once '../../controller/UserController.php';
 include_once '../../db_function/FilmDao.php';
-include_once '../../db_function/DBHelper.php';
+include_once '../../db_function/UserDao.php';
 include_once '../../entity/Film.php';
+include_once '../../entity/User.php';
+
+include_once '../../db_function/DBHelper.php';
 include_once '../../util/view_util.php';
+
 session_start();
 ob_start();
 ?>
@@ -52,7 +57,7 @@ ob_start();
                     <a href="?dashboard=createUser" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create User</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=updateUser" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete User</span></a>
+                    <a href="?dashboard=updateDeleteUser" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete User</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Film</label>
@@ -131,10 +136,16 @@ ob_start();
                                 include_once 'dashboard_home.php';
                                 break;
                             case 'createUser':
-                                include_once 'form_create_user.php';
+                                $userController = new UserController();
+                                $userController->indexCreate();
                                 break;
                             case 'updateUser':
-                                include_once 'form_update_user.php';
+                                $userController = new UserController();
+                                $userController->indexUpdate();
+                                break;
+                            case 'updateDeleteUser':
+                                $userController = new UserController();
+                                $userController->indexUpdateDelete();
                                 break;
                             case 'createFilm':
                                 $filmController = new FilmController();

@@ -3,28 +3,32 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5>Form Update Film</h5>
-                <hr>
+                <h5>Form Create User</h5>
+                <br>
                 <div class="row">
                     <div class="col-md-6">
-                        <form>
+                        <form method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="txtJudulFilm">Masukkan Username </label>
-                                <input type="text" class="form-control" id="txtUsername"  placeholder="Masukkan Judul">
+                                <label for="txtUsername">Masukkan Username </label>
+                                <hr>
+                                <input type="text" class="form-control" name="txtUserUsername"  placeholder="Masukkan Judul">
                             </div>
+                            <br>
                             <div class="form-group">
                                 <label for="txtPassword">Masukkan Password</label>
-                                <input type="password" class="form-control" id="txtPassword" placeholder="Masukkan Password">
+                                <hr>
+                                <input type="password" class="form-control" name="txtUserPassword" placeholder="Masukkan Password">
                             </div>
-                            <div class="form-group">
-                                <label for="txtRole">Masukkan Role</label>
-                                <input type="text" class="form-control" id="txtRole"  placeholder="Masukkan Role">
-                            </div>
+                            <br>
                             <div class="form-group">
                                 <label for="txtName">Masukkan Name</label>
-                                <input type="file" class="form-control" id="txtPoster">
+                                <hr>
+                                <input type="text" class="form-control" name="txtUserName"  placeholder="Masukkan Name">
                             </div>
-                            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+                            <br>
+                            <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
+                            <br>
+                            <br>
                         </form>
                     </div>
                     <div class="col-md-6">
@@ -33,14 +37,20 @@
                             <tr>
                                 <th>Id User</th>
                                 <th>Username</th>
-                                <th>Passsword</th>
-                                <th>Role</th>
                                 <th>Name</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
+                            /* @var $user User*/
+                            foreach ($users as $user)
+                            {
+                                echo '<tr align="center">';
+                                echo '<td>' . $user->getUserId() . '</td>';
+                                echo '<td>' . $user->getUserUsername() . '</td>';
+                                echo '<td>' . $user->getUserName() . '</td>';
+                                echo '</tr>';
+                            }
                             ?>
                             </tbody>
                     </div>

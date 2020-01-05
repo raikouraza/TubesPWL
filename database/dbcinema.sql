@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2020 at 03:39 PM
+-- Generation Time: Jan 05, 2020 at 02:54 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -150,21 +150,6 @@ CREATE TABLE `tbtiket` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbtopup`
---
-
-CREATE TABLE `tbtopup` (
-  `Topup_id` int(11) NOT NULL,
-  `Topup_image` varchar(200) DEFAULT NULL,
-  `Topup_tanggal` varchar(45) DEFAULT NULL,
-  `tbMember_member_id` int(11) NOT NULL,
-  `Topup_status` varchar(45) DEFAULT NULL,
-  `Topup_amount` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbtransaksi`
 --
 
@@ -241,13 +226,6 @@ ALTER TABLE `tbtiket`
   ADD KEY `fk_tbTiket_tbJadwal1_idx` (`tbJadwal_jadwal_id`);
 
 --
--- Indexes for table `tbtopup`
---
-ALTER TABLE `tbtopup`
-  ADD PRIMARY KEY (`Topup_id`,`tbMember_member_id`),
-  ADD KEY `fk_tbTopup_tbMember1_idx` (`tbMember_member_id`);
-
---
 -- Indexes for table `tbtransaksi`
 --
 ALTER TABLE `tbtransaksi`
@@ -305,12 +283,6 @@ ALTER TABLE `tbtiket`
   ADD CONSTRAINT `fk_tbTiket_tbJadwal1` FOREIGN KEY (`tbJadwal_jadwal_id`) REFERENCES `tbjadwal` (`jadwal_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbTiket_tbMember1` FOREIGN KEY (`tbMember_member_id`) REFERENCES `tbmember` (`member_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbTiket_tbStudio1` FOREIGN KEY (`tbStudio_studio_id`) REFERENCES `tbstudio` (`studio_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `tbtopup`
---
-ALTER TABLE `tbtopup`
-  ADD CONSTRAINT `fk_tbTopup_tbMember1` FOREIGN KEY (`tbMember_member_id`) REFERENCES `tbmember` (`member_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

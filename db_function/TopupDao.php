@@ -108,4 +108,24 @@ class TopupDao{
         return $result;
 
     }
+
+    function changeTopupStatus(Topup $topup)
+    {
+        $link = DBHelper::createMySQLConnection();
+        $link->beginTransaction();
+        $query = "UPDATE tbtopup SET topup_status=?
+                                    WHERE topup_id=?";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $topup->getTopupStatus(), PDO::PARAM_STR);
+        $stmt->bindValue(2, $topup->getTopupId(), PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            $link->commit();
+        } else {
+            $link->rollBack();
+        }
+
+        $link = null;
+
+    }
 }

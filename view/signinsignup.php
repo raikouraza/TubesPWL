@@ -46,7 +46,7 @@
                         <div class="login100-pic js-tilt" data-tilt>
                             <img src="src/images/movieicon.png" alt="IMG">
                         </div>
-                        <form class="login100-form validate-form">
+                        <form class="login100-form validate-form" method="post"   enc>
                         <span class="login100-form-title">
                             Member Login
                         </span>
@@ -66,11 +66,9 @@
                             </span>
                             </div>
                             <div class="container-login100-form-btn">
-                                <button class="login100-form-btn">
+                                <button class="login100-form-btn" onclick="">
                                     <input type="submit" name="btnSubmit" id="btnSubmit">
                                 </button>
-
-
                             </div>
                             <div class="text-center p-t-12">
                             <span class="txt1">
@@ -97,7 +95,7 @@
             <div class="limiter">
                 <div class="container-login100">
                     <div class="wrap-login100">
-                        <form class="login100-form validate-form">
+                        <form class="login100-form validate-form" method="post">
                             <!-- untuk field pada form -->
                             <legend>SIGN UP</legend>
                             <label for="txtUsername" class="form-label"> Username </label>

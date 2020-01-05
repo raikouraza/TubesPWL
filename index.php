@@ -59,6 +59,7 @@ if (!isset($_SESSION['user_logged'])) {
 <!-- Navigation -->
 <!-- Jika User Sudah Login -->
 <?php if ($_SESSION['user_logged']) { ?>
+    <h4> <?php echo "Selamat Datang" . $_SESSION['name'] ?> </h4>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
@@ -84,6 +85,9 @@ if (!isset($_SESSION['user_logged'])) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=mem">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=out">Log Out</a>
                     </li>
                 </ul>
             </div>
@@ -115,7 +119,8 @@ if (!isset($_SESSION['user_logged'])) {
                 include_once 'view/moviedata.php';
                 break;
             case 'sin':
-                include_once 'view/signinsignup.php';
+                $loginMember = new LoginMemberLoginController();
+                $loginMember->login();
                 break;
             case 'out':
                 session_destroy();

@@ -13,7 +13,7 @@ class UserLoginController
 
     public function index()
     {
-        $loginPressed = filter_input(INPUT_POST, 'btnLogin');
+        $loginPressed = filter_input(INPUT_POST, 'btnSubmit');
 
         if(isset($loginPressed))
         {

@@ -20,10 +20,10 @@ class GenreDao{
     {
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "INSERT INTO tbgenre(genre_name) VALUES(?)";
+        $query = "INSERT INTO tbgenre(genre_kategori) VALUES(?)";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $genre->getGenreName(), PDO::PARAM_STR);
+        $stmt->bindValue(1, $genre->getGenreKategori(), PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             $link->commit();
@@ -57,11 +57,11 @@ class GenreDao{
     {
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "UPDATE tbgenre SET genre_name=?
+        $query = "UPDATE tbgenre SET genre_kategori=?
                                     WHERE genre_id=?";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $genre->getGenreName(), PDO::PARAM_STR);
+        $stmt->bindValue(1, $genre->getGenreKategori(), PDO::PARAM_STR);
         $stmt->bindValue(2, $genre->getGenreId(), PDO::PARAM_INT);
         if ($stmt->execute()) {
             $link->commit();

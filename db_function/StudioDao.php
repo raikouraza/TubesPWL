@@ -20,12 +20,11 @@ class StudioDao{
     {
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "INSERT INTO tbstudio(studio_kapasitas,
+        $query = "INSERT INTO tbstudio(
                                      studio_nama) 
-                                     VALUES(?,?)";
+                                     VALUES(?)";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $studio->getStudioKapasitas(), PDO::PARAM_INT);
         $stmt->bindValue(2, $studio->getStudioNama(), PDO::PARAM_STR);
 
 
@@ -61,14 +60,12 @@ class StudioDao{
     {
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
-        $query = "UPDATE tbstudio SET studio_kapasitas=?,
-                                    studio_nama=?
+        $query = "UPDATE tbstudio SET studio_nama=?
                                     WHERE studio_id=?";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $studio->getStudioKapasitas(), PDO::PARAM_INT);
-        $stmt->bindValue(2, $studio->getStudioNama(), PDO::PARAM_STR);
-        $stmt->bindValue(9, $studio->getStudioId(), PDO::PARAM_INT);
+        $stmt->bindValue(1, $studio->getStudioNama(), PDO::PARAM_STR);
+        $stmt->bindValue(2, $studio->getStudioId(), PDO::PARAM_INT);
         if ($stmt->execute()) {
             $link->commit();
         } else {

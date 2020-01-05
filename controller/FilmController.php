@@ -59,9 +59,11 @@ class FilmController
     {
         // Block below for fetch data
         $film_id = filter_input(INPUT_GET, 'film_id');
-        if (isset($film_id))
-            $film = $this->filmDao->getFilmById($film_id);
-
+        if (isset($film_id)){
+            $film = new Film();
+            $film->setFilmId($film_id);
+            $film = $this->filmDao->getFilmById($film);
+        }
         // Change according to submit create button
         $submitted = filter_input(INPUT_POST, 'btnUpdate');
         if (isset($submitted)) {
@@ -75,7 +77,8 @@ class FilmController
             $film_rating = filter_input(INPUT_POST, 'txtRating');
 
             $updatedFilm = new Film();
-            $updatedFilm->setFilmId($film_id);
+            /* @var $film Film */
+            $updatedFilm->setFilmId($film->getFilmId());
             $updatedFilm->setFilmJudul($film_judul);
             $updatedFilm->setFilmDeskripsi($film_deskripsi);
             $updatedFilm->setFilmPoster($film_poster);
@@ -85,7 +88,6 @@ class FilmController
             $updatedFilm->setFilmDurasi($film_durasi);
             $updatedFilm->setFilmRating($film_rating);
 
-            // Belum Selesai
             if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating))) {
                 if (isset($_FILES['txtFilmPoster']['name'])) {
                     $targetDirectory = '../../src/images/poster/';

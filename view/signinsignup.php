@@ -35,6 +35,9 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#signup">Sign Up</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#forgot">Forgot Password</a>
+        </li>
     </ul>
     <!-- Tab panes -->
     <!-- untuk sign in -->
@@ -118,6 +121,24 @@
             </div>
         </div>
         <!-- untuk sign up end -->
+        <!-- untuk forgot password start -->
+        <div id="forgot" class="container tab-pane fade"><br>
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100">
+                        <form class="login100-form validate-form" method="post">
+                            <!-- untuk field pada form -->
+                            <legend>Forgot Password</legend>
+                            <label for="txtEmail" class="txtEmail"> Email </label>
+                            <input type="email" id="txtEmail" name="txtEmail" placeholder="xyz@email.com"
+                                   class="input100" required aria-errormessage="Email is Required">
+                            <button class="login100-form-btn" name="btnSubmit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- untuk forgot password end -->
     </div>
 </div>
 <!-- CONTAINER TAB UNTUK SIGN IN DAN SIGN UP END-->

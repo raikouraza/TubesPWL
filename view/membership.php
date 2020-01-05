@@ -11,52 +11,55 @@
 </head>
 <body>
 <div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <div class="login100-pic js-tilt" data-tilt>
-                <img src="src/images/movieicon.png" alt="IMG">
-            </div>
-            <form class="login100-form validate-form">
-                        <span class="login100-form-title">
-                            Member Login
-                        </span>
-                <div class="wrap-input100 validate-input"
-                     data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Username">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Blog Home - Start Bootstrap Template</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../src/vendor/bootstrap/css/blog-home.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                <h1 class="my-5">Member Profile
+                    <small></small>
+                </h1>
+                <!-- Blog Post -->
+                <div class="card mb-8">
+
+                    <div class="card-body">
+                        <h2 class="card-title">Post Title</h2><a href="#" class="btn btn-primary">Edit Profile &rarr;</a>
+                        <img class="card-img-top" src="" alt="Card image cap">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+
+                    </div>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </span>
-                </div>
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Login
-                    </button>
-                </div>
-                <div class="text-center p-t-12">
-                            <span class="txt1">
-                                Forgot
-                            </span>
-                    <a class="txt2" href="#">
-                        Username / Password?
-                    </a>
-                </div>
-                <div class="text-center p-t-136">
-                    <a class="txt2" href="#">
-                        Create your Account
-                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </form>
-        </div>
+        <!-- /.row -->
     </div>
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="../src/vendor/jquery/jquery.js"></script>
+    <script src="../src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+</div>
 </div>
 </body>
 </html>

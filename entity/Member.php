@@ -9,6 +9,7 @@ class Member{
     private $member_nama_depan;
     private $member_nama_belakang;
     private $member_photo;
+    private $member_saldo;
 
     /**
      * @return mixed
@@ -25,8 +26,6 @@ class Member{
     {
         $this->member_saldo = $member_saldo;
     }
-    private $member_saldo;
-
     /**
      * @return mixed
      */

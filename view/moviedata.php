@@ -117,6 +117,12 @@
         </div>
         <!-- /.col-md-4 -->
     </div>
+    <div class="row align-items-center my-8">
+        <div class="col-lg-8">
+            <iframe src="<?php echo $row['film_trailer'] ?>" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- /.col-lg-8 -->
+    </div>
     <!-- /.row -->
     <!-- Content Row -->
     <div class="row">
@@ -142,12 +148,17 @@
                     <h2 class="card-title">Synopsis</h2>
                     <p class="card-text"> <?php $row['film_deskripsi']?></p>
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary btn-sm">More Info</a>
-                </div>
             </div>
         </div>
     </div>
+    <div class="col-md-8 mb-8">
+        <div class="card h-100">
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary btn-sm">Book Ticket</a>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- /.row -->
     <!-- Call to Action Well -->
     <div class="card text-white bg-secondary my-5 py-4 text-center">

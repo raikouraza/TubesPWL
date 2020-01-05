@@ -4,7 +4,7 @@ class MemberDao{
     function login(Member $member)
     {
         $link = DBHelper::createMySQLConnection();
-        $query = "SELECT * FROM tbmember WHERE member_username=? AND member_password=? LIMIT 1";
+        $query = "SELECT * FROM tbMember WHERE member_username=? AND member_password=? LIMIT 1";
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $member->getMemberUsername(), PDO::PARAM_STR);
         $stmt->bindValue(2, $member->getMemberPassword(), PDO::PARAM_STR);
@@ -19,7 +19,7 @@ function getAllMember()
 {
     $link = DBHelper::createMySQLConnection();
 
-    $query = "SELECT * FROM tbmember";
+    $query = "SELECT * FROM tbMember";
 
     $result = $link->query($query);
 
@@ -33,7 +33,7 @@ function addMember(Member $member)
 {
     $link = DBHelper::createMySQLConnection();
     $link->beginTransaction();
-    $query = "INSERT INTO tbmember(member_username,
+    $query = "INSERT INTO tbMember(member_username,
                                  member_password,
                                  member_email,
                                  member_nama_depan,
@@ -61,7 +61,7 @@ function addMember(Member $member)
 function deleteMember(Member $member){
     $link = DBHelper::createMySQLConnection();
     $link->beginTransaction();
-    $query = "DELETE FROM tbmember WHERE member_id=?";
+    $query = "DELETE FROM tbMember WHERE member_id=?";
 
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberId(), PDO::PARAM_INT);
@@ -79,7 +79,7 @@ function deleteMember(Member $member){
 function updateMember(Member $member){
     $link = DBHelper::createMySQLConnection();
     $link->beginTransaction();
-    $query = "UPDATE tbmember SET   member_email=?,
+    $query = "UPDATE tbMember SET   member_email=?,
                                     member_nama_depan=?,
                                     member_nama_belakang=?,
                                     member_photo=?  
@@ -105,7 +105,7 @@ function updatePassword(Member $member)
 {
     $link = DBHelper::createMySQLConnection();
     $link->beginTransaction();
-    $query = "UPDATE tbmember SET member_password=? WHERE member_id=?";
+    $query = "UPDATE tbMember SET member_password=? WHERE member_id=?";
 
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberPassword(), PDO::PARAM_STR);
@@ -124,7 +124,7 @@ function getMemberById(Member $member)
 {
     $link = DBHelper::createMySQLConnection();
 
-    $query = "SELECT * FROM tbmember WHERE member_id = ? LIMIT 1";
+    $query = "SELECT * FROM tbMember WHERE member_id = ? LIMIT 1";
 
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberId(), PDO::PARAM_INT);
@@ -135,7 +135,6 @@ function getMemberById(Member $member)
     $link = null;
 
     return $result;
-
 }
 
     function addMemberSaldoById(Member $member){

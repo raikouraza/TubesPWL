@@ -32,15 +32,15 @@
 					<span class="login100-form-title">
 						Member Login
 					</span>
-                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                <div class="wrap-input100 validate-input" data-validate = "Registered Username is Required">
+                    <input class="input100" type="text" name="txtUsername" id="txtUsername" placeholder="Username">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input class="input100" type="password" name="txtPassword" id="txtPassword" placeholder="Password">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -50,6 +50,7 @@
                     <button class="login100-form-btn">
                         Login
                     </button>
+                    <input type="submit" name="btnSubmit" id="btnSubmit">
                 </div>
                 <div class="text-center p-t-12">
 						<span class="txt1">

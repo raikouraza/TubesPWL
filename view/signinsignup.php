@@ -71,11 +71,8 @@
                                     <button class="login100-form-btn" type="submit" name="btnLogin">SIGN IN</button>
                                 </div>
                                 <div class="text-center p-t-12">
-                                <span class="txt1">
-                                    Forgot
-                                </span>
                                     <a class="txt2" href="#">
-                                        Username / Password?
+                                        Forgot Password?
                                     </a>
                                 </div>
                                 <div class="text-center p-t-136">
@@ -99,23 +96,22 @@
                             <!-- untuk field pada form -->
                             <legend>SIGN UP</legend>
                             <label for="txtUsername" class="form-label"> Username </label>
-                            <input type="text" id="txtUsername" name="txtUsername" placeholder="Username"
+                            <input type="text" id="txtUsername" name="txtSUUsername" placeholder="Username"
                                    class="input100" required>
                             <label for="txtPassword" class="form-label"> Password </label>
-                            <input type="password" id="txtPassword" name="txtPassword" placeholder="Password"
+                            <input type="password" id="txtPassword" name="txtSUPassword" placeholder="Password"
                                    class="input100" required>
                             <label for="txtFirstName" class="txtFirstName"> First Name </label>
-                            <input type="text" id="txtFirstName" name="txtFirstName" placeholder="Your First Name"
+                            <input type="text" id="txtFirstName" name="txtSUFirstName" placeholder="Your First Name"
                                    class="input100" required>
                             <label for="txtLastName" class="txtLastName"> Last Name </label>
-                            <input type="text" id="txtLastName" name="txtLastName" placeholder="Your Last Name"
+                            <input type="text" id="txtLastName" name="txtSULastName" placeholder="Your Last Name"
                                    class="input100" required>
                             <label for="txtEmail" class="txtEmail"> Email </label>
-                            <input type="email" id="txtEmail" name="txtEmail" placeholder="xyz@email.com"
+                            <input type="email" id="txtEmail" name="txtSUEmail" placeholder="xyz@email.com"
                                    class="input100" required>
-                            <label for="txtPhoto" class="txtPhoto"> Photo </label>
-                            <input type="file" id="txtPhoto" name="txtPhoto">
-                            <button class="login100-form-btn">Submit</button>
+
+                            <button class="login100-form-btn" name="btnSignup">Submit</button>
                         </form>
                     </div>
                 </div>

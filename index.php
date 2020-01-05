@@ -121,6 +121,10 @@ if (!isset($_SESSION['user_logged'])) {
                 $loginMember = new LoginMemberLoginController();
                 $loginMember->index();
                 break;
+            case 'forgotPassword':
+                $loginMember = new LoginMemberLoginController();
+                $loginMember->index();
+                break;
             case 'out':
                 session_destroy();
                 header('view/home.php');
@@ -156,7 +160,7 @@ if (!isset($_SESSION['user_logged'])) {
                         <a class="nav-link" href="?menu=ab">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?menu=sin">Sign in</a>
+                        <a class="nav-link" href="?menu=sin">Login/SignUp</a>
                     </li>
                 </ul>
             </div>

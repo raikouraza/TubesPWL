@@ -51,11 +51,14 @@ function addMember(Member $member)
     $stmt->bindValue(6, $member->getMemberPhoto(), PDO::PARAM_STR);
     if ($stmt->execute()) {
         $link->commit();
+        $status = 1;
     } else {
         $link->rollBack();
+        $status = 0;
     }
 
     $link = null;
+    return $status;
 
 }
 
@@ -156,5 +159,27 @@ function addMemberSaldoById(Member $member){
     $link = null;
 
 }
+
+    function isExist(Member $member)
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbmember WHERE member_email = ? LIMIT 1";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $member->getMemberEmail(), PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetchObject("Member");
+
+        if($result!=null){
+            return true;
+        }else{
+            return false;
+        }
+        $link = null;
+
+    }
+
 
 }

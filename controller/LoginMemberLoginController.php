@@ -12,7 +12,7 @@ class LoginMemberLoginController
     }
 
     public function index(){
-
+        // LOGIN FUNCTION
         $loginPressed = filter_input(INPUT_POST,'btnLogin');
         if(isset($loginPressed)){
 
@@ -38,45 +38,48 @@ class LoginMemberLoginController
         if (isset($errMsg)){
             echo '<div class="err-msg">' . $errMsg .'</div>';
         }
+
+        // SIGN UP FUNCTION
+         $signupPressed = filter_input(INPUT_POST,'btnSignup');
+         if(isset($signupPressed)){
+
+            $username = filter_input(INPUT_POST, 'txtSUUsername');
+            $password =filter_input(INPUT_POST, 'txtSUPassword');
+            $firstName =filter_input(INPUT_POST, 'txtSUFirstName');
+            $lastName =filter_input(INPUT_POST, 'txtSULastName');
+            $email =filter_input(INPUT_POST, 'txtSUEmail');
+
+            $memberSignup = new Member();
+            $memberSignup->setMemberUsername($username);
+            $memberSignup->setMemberPassword($password);
+            $memberSignup->setMemberNamaDepan($firstName);
+            $memberSignup->setMemberNamaBelakang($lastName);
+            $memberSignup->setMemberEmail($email);
+            $signedup = $this->memberDao->addMember($memberSignup);
+
+            if($signedup == 1){
+                $errMsg = "Pendaftaran Akun Berhasil!,Silakan Login";
+
+            }
+            else{
+                $errMsg = "Pendaftaran Akun Baru ERROR!,Silakan coba lagi";
+            }
+        }
+        if (isset($errMsg)){
+            echo '<div class="err-msg">' . $errMsg .'</div>';
+        }
+
+
         include_once 'view\signinsignup.php';
+    }
+
+
+    public function forgotPassword(){
+
     }
 }
 
-//
-//    public function index()
-//    {
-//        $loginPressed = filter_input(INPUT_POST, 'btnLogin');
 
-//        if(isset($loginPressed))
-//        {
-//            $username = filter_input(INPUT_POST, 'txtUsername');
-//            $password = filter_input(INPUT_POST, 'txtPassword');
-//
-//            $md5Password = md5($password);
-//
-//            $this->memberLogin->setMemberUsername($username);
-//            $this->memberLogin->setMemberPassword($md5Password);
-//            $registeredMember = $this->memberDao->login($this->memberLogin);
-//
-//
-//
-//            if($registeredMember != null && $registeredMember->getUserUsername() == $username)
-//            {
-//                $_SESSION['user_logged'] = true;
-//                $_SESSION['name'] = $registeredMember->getUserName();
-//                header("location:index.php");
-//            } else
-//            {
-//                $errMsg = "Invalid username or password";
-//            }
-//
-//            if(isset($errMsg))
-//            {
-//                echo '<div class="err-msg">' . $errMsg . '</div>';
-//            }
-//        }
-//        include_once 'index.php';
-//    }
 
 ?>
 

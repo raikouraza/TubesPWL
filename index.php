@@ -56,7 +56,8 @@ if (!isset($_SESSION['user_logged'])) {
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
 </head>
-<body>
+<body style="  display:flex;
+  flex-direction:column; ">
 <!-- Navigation -->
 <!-- Jika User Sudah Login -->
 <?php if ($_SESSION['user_logged']) { ?>
@@ -204,7 +205,7 @@ if (!isset($_SESSION['user_logged'])) {
     </main>
 <?php } ?>
 <!-- Footer -->
-<footer class="py-5 bg-dark">
+<footer class="py-5 bg-dark" style="  margin-top:auto; height: 10%; ">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; YAS 2019</p>
     </div>

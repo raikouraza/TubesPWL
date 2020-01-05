@@ -11,19 +11,19 @@
                             <div class="form-group">
                                 <label for="txtUsername">Masukkan Username </label>
                                 <hr>
-                                <input value="<?php /* @var $user User*/ echo $user->getUserUsername(); ?>" type="text" class="form-control" name="txtUsername"  placeholder="Masukkan Judul">
+                                <input value="<?php /* @var $user User*/ echo $user->getUserUsername(); ?>" type="text" class="form-control" name="txtUserUsername"  placeholder="Masukkan Judul">
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="txtPassword">Masukkan Password</label>
                                 <hr>
-                                <input value="<?php /* @var $user User*/ echo $user->getUserPassword(); ?>" type="password" class="form-control" name="txtPassword" placeholder="Masukkan Password">
+                                <input value="<?php /* @var $user User*/ echo $user->getUserPassword(); ?>" type="password" class="form-control" name="txtUserPassword" placeholder="Masukkan Password">
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="txtName">Masukkan Name</label>
                                 <hr>
-                                <input value="<?php /* @var $user User*/ echo $user->getUserName(); ?>" type="text" class="form-control" name="txtName"  placeholder="Masukkan Name">
+                                <input value="<?php /* @var $user User*/ echo $user->getUserName(); ?>" type="text" class="form-control" name="txtUserName"  placeholder="Masukkan Name">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary" name="btnUpdate">Update</button>

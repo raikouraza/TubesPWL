@@ -52,7 +52,7 @@ class UserController
         // Change according to submit create button
         $submitted = filter_input(INPUT_POST, 'btnUpdate');
         if (isset($submitted)) {
-            $user_username = filter_input(INPUT_POST, 'txtUsername');
+            $user_username = filter_input(INPUT_POST, 'txtUserUsername');
             $user_password = filter_input(INPUT_POST, 'txtUserPassword');
             $user_name = filter_input(INPUT_POST, 'txtUserName');
 

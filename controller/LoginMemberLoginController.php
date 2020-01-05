@@ -43,7 +43,7 @@ class LoginMemberLoginController
                 echo '<div class="err-msg">' . $errMsg . '</div>';
             }
         }
-        include_once 'view/login.php';
+        include_once 'view/signinsignup.php';
     }
 }
 

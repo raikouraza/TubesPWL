@@ -1,4 +1,5 @@
 <?php
+SESSION_START();
 include_once 'entity/Film.php';
 include_once 'entity/Genre.php';
 include_once 'entity/jadwal.php';
@@ -6,15 +7,23 @@ include_once 'entity/Member.php';
 include_once 'entity/Tiket.php';
 include_once 'entity/Film.php';
 
+include_once 'db_function/MemberDao.php';
+include_once 'db_function/DBHelper.php';
+include_once 'db_function/FilmDao.php';
+include_once 'db_function/UserDao.php';
+include_once 'db_function/GenreDao.php';
+include_once 'db_function/TicketDao.php';
 
 
+include_once 'controller/LoginMemberLoginController.php';
+include_once 'controller/FilmController.php';
+include_once 'controller/LoginUserLoginController.php';
 
 
-
-SESSION_START();
-if(!isset($_SESSION['user_logged'])){
+if (!isset($_SESSION['user_logged'])) {
     $_SESSION['user_logged'] = false;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,140 +58,142 @@ if(!isset($_SESSION['user_logged'])){
 <body>
 <!-- Navigation -->
 <!-- Jika User Sudah Login -->
-<?php if($_SESSION['user_logged']){?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul id="mainMenu" class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="?menu=hm">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=mov">Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=pro">Promotions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=ab">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=mem">Membership</a>
-                </li>
-            </ul>
+<?php if ($_SESSION['user_logged']) { ?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul id="mainMenu" class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="?menu=hm">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=mov">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=pro">Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=ab">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=mem">Membership</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<main>
-    <?php
+    </nav>
+    <main>
+        <?php
         $targetMenu = filter_input(INPUT_GET, 'menu');
-        switch($targetMenu){
-                case 'hm':
-                    include_once 'view/home.php';
-                    break;
-                case 'ab':
-                    include_once 'view/about.php';
-                    break;
-                case 'pro':
-                    include_once 'view/promotions.php';
-                    break;
-                case 'boo':
-                    include_once 'view/bookingseat.php';
-                    break;
-                case 'mem':
-                    include_once 'view/membership.php';
-                    break;
-                case 'mov':
-                    include_once 'view/movies.php';
-                    break;
-                case 'movd':
-                    include_once 'view/moviedata.php';
-                    break;
-                case 'sin':
-                    include_once 'view/signinsignup.php';
-                    break;
-                case 'out':
-                    session_destroy();
-                    header('view/home.php');
-                default:
-                    include_once 'view/home.php';
-                    break;
+        switch ($targetMenu) {
+            case 'hm':
+                include_once 'view/home.php';
+                break;
+            case 'ab':
+                include_once 'view/about.php';
+                break;
+            case 'pro':
+                include_once 'view/promotions.php';
+                break;
+            case 'boo':
+                include_once 'view/bookingseat.php';
+                break;
+            case 'mem':
+                include_once 'view/membership.php';
+                break;
+            case 'mov':
+                include_once 'view/movies.php';
+                break;
+            case 'movd':
+                include_once 'view/moviedata.php';
+                break;
+            case 'sin':
+                include_once 'view/signinsignup.php';
+                break;
+            case 'out':
+                session_destroy();
+                header('view/home.php');
+            default:
+                include_once 'view/home.php';
+                break;
         }
-    ?>
-</main>
+        ?>
+    </main>
     <!-- Jika User Belum Login -->
 <?php } else { ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul id="mainMenu" class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="?menu=hm">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=mov">Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=pro">Promotions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=ab">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?menu=sin">Sign in</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul id="mainMenu" class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="?menu=hm">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=mov">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=pro">Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=ab">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=sin">Sign in</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<main>
-    <?php
-    $targetMenu = filter_input(INPUT_GET, 'menu');
-    switch($targetMenu){
-        case 'hm':
-            include_once 'view/home.php';
-            break;
-        case 'ab':
-            include_once 'view/about.php';
-            break;
-        case 'pro':
-            include_once 'view/promotions.php';
-            break;
-        case 'boo':
-            include_once 'view/bookingseat.php';
-            break;
-        case 'mov':
-            include_once 'view/movies.php';
-            break;
-        case 'movd':
-            include_once 'view/moviedata.php';
-            break;
-        case 'sin':
-            include_once 'view/signinsignup.php';
-            break;
-        case 'out':
-            session_destroy();
-            header('view/home.php');
-        default:
-            include_once 'view/home.php';
-            break;
-    }
-    ?>
-</main>
-<?php }?>
-    <!-- Footer -->
+    </nav>
+    <main>
+        <?php
+        $targetMenu = filter_input(INPUT_GET, 'menu');
+        switch ($targetMenu) {
+            case 'hm':
+                include_once 'view/home.php';
+                break;
+            case 'ab':
+                include_once 'view/about.php';
+                break;
+            case 'pro':
+                include_once 'view/promotions.php';
+                break;
+            case 'boo':
+                include_once 'view/bookingseat.php';
+                break;
+            case 'mov':
+                include_once 'view/movies.php';
+                break;
+            case 'movd':
+                include_once 'view/moviedata.php';
+                break;
+            case 'sin':
+                include_once 'view/signinsignup.php';
+                break;
+            case 'out':
+                session_destroy();
+                header('view/home.php');
+            default:
+                include_once 'view/home.php';
+                break;
+        }
+        ?>
+    </main>
+<?php } ?>
+<!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; YAS 2019</p>

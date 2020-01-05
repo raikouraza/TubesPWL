@@ -109,7 +109,7 @@ function updatePassword(Member $member)
 {
     $link = DBHelper::createMySQLConnection();
     $link->beginTransaction();
-    $query = "UPDATE tbmsember SET member_password=? WHERE member_id=?";
+    $query = "UPDATE tbmember SET member_password=? WHERE member_id=?";
 
     $stmt = $link->prepare($query);
     $stmt->bindValue(1, $member->getMemberPassword(), PDO::PARAM_STR);

@@ -77,6 +77,7 @@ class LoginMemberLoginController
              $memberForgotPassword = new Member();
              $memberForgotPassword->setMemberEmail($fpemail);
              $result = $this->memberDao->getMemberByEmail($memberForgotPassword);
+             var_dump($result);
 
 
              // generate new password
@@ -89,18 +90,25 @@ class LoginMemberLoginController
              }
              $newPassword = implode($pass);
 
+             $to = $result->getMemberEmail();
+             $subject = 'New Password - CinemaYAS';
+             $message = 'Hello ' . $result->getMemberUsername() . ' Your New Password is ' . $newPassword;
+             $from = "From: Cinema YAS <DoNotReply@CinemaYAS.com>";
 
-             $memberWithNewPassword = new Member();
-             $memberWithNewPassword->setMemberId($result->getMemberId());
+
+             $MemberWithNewPassword = new Member();
+             $MemberWithNewPassword->setMemberId($result->getMemberId());
+             $MemberWithNewPassword->setMemberPassword($newPassword);
              if($result!=null){
-                 $pesan = 'TEST '.$result->getMemberId() . $result->getMemberUsername() . $newPassword . $memberWithNewPassword->getMemberUsername();
-                 //$pesan = "Silakan cek email untuk mendapatkan password yang baru";
+                 $this->memberDao->updatePassword($MemberWithNewPassword);
+                 mail($to,$subject,$message,$from);
+                 $pesan = "Silakan cek folder inbox atau spam di email anda untuk mendapatkan password yang baru";
              }else{
                  $pesan = "Email tidak ditemukan!";
              }
 
              if (isset($pesan)){
-                 echo '<div class="err-msg">' . $pesan .'</div>';
+                 echo '<script type="text/javascript">alert("' . $pesan . '")</script>';
              }
          }
 

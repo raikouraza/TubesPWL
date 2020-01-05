@@ -120,8 +120,8 @@
                 </div>
             </div>
         </div>
-        <!-- untuk sign up end -->
-        <!-- untuk forgot password start -->
+<!--        <!-- untuk sign up end -->-->
+<!--         untuk forgot password start-->
         <div id="forgot" class="container tab-pane fade"><br>
             <div class="limiter">
                 <div class="container-login100">
@@ -129,10 +129,11 @@
                         <form class="login100-form validate-form" method="post">
                             <!-- untuk field pada form -->
                             <legend>Forgot Password</legend>
-                            <label for="txtEmail" class="txtEmail"> Email </label>
-                            <input type="email" id="txtEmail" name="txtEmail" placeholder="xyz@email.com"
+                            <label for="txtEmail" class="txtEmail"> Email: </label>
+                            <input type="email" id="txtEmail" name="txtFPEmail" placeholder="xyz@email.com"
                                    class="input100" required aria-errormessage="Email is Required">
-                            <button class="login100-form-btn" name="btnSubmit">Submit</button>
+                            <button class="login100-form-btn" name="btnForgotPassword">Submit</button>
+
                         </form>
                     </div>
                 </div>

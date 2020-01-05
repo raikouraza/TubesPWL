@@ -21,47 +21,73 @@ if (isset($id)) {
 <div class="limiter">
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Blog Home - Start Bootstrap Template</title>
-
         <!-- Bootstrap core CSS -->
         <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
         <!-- Custom styles for this template -->
         <link href="../src/vendor/bootstrap/css/blog-home.css" rel="stylesheet">
 
     </head>
-
     <body>
 
     <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-                <h1 class="my-5">Member Profile
-                    <small></small>
-                </h1>
-                <!-- Blog Post -->
-                <div class="card mb-8">
-
-                    <?php echo $member->getMemberPhoto(); ?>
-                    <div class="card-body">
-                        <h2 class="card-title"></h2><a href="#" class="btn btn-primary">Edit Profile &rarr;</a>
+    <div class="container" style="background-color: whitesmoke">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
                         <img class="card-img-top" src="<?php echo $member->getMemberPhoto(); ?>" alt="Card image cap">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name" align="center">
+                            <?php echo $member->getMemberNamaDepan(); ?>
+                            <?php echo $member->getMemberNamaBelakang(); ?>
+                        </div>
 
                     </div>
+                    <!-- END SIDEBAR USER TITLE -->
+
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                   Edit Profile
+                                </a>
+                            </li>
+                            <li>
+                                <p>&nbsp;&nbsp;</p>
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Top Up Saldo
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
                 </div>
-        <!-- /.row -->
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    Email : <?php echo $member->getMemberEmail(); ?> <br>
+                    Member Id : <?php echo $member->getMemberId(); ?> <br>
+                    Saldo : <?php echo $member->getMemberSaldo(); ?> <br>
+                </div>
+            </div>
+        </div>
     </div>
+    <center>
     <!-- /.container -->
     <!-- Bootstrap core JavaScript -->
     <script src="../src/vendor/jquery/jquery.js"></script>

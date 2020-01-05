@@ -1,23 +1,31 @@
 <?php
-    if(isset($_GET['ID'])){
-        require_once '../db_function/DBHelper.php';
-        $ID = mysqli_real_escape_string($dbc, $_GET['ID']);
+//    if(isset($_GET['ID'])){
+//        require_once '../db_function/DBHelper.php';
+//        $ID = mysqli_real_escape_string($dbc, $_GET['ID']);
+//
+//        $sql = "SELECT * FROM tbFilm WHERE film_id ='$ID' ";
+//        $result = mysqli_query($dbc, $sql) or die("BAD QUERY : $sql");
+//        $row = mysqli_fetch_array($result);
+//        if(isset($_GET['post'])) {
+//            $name = mysqli_real_escape_string($dbc,$_GET['film_judul']);
+//            $aktor = mysqli_real_escape_string($dbc,$_GET['film_aktor']);
+//            $sutradara = mysqli_real_escape_string($dbc,$_GET['film_sutradara']);
+//            $durasi = mysqli_real_escape_string($dbc,$_GET['film_durasi']);
+//            $rating = mysqli_real_escape_string($dbc,$_GET['film_rating']);
+//            $genre = mysqli_real_escape_string($dbc,$_GET['film_genre']);
+//            $deskripsi = mysqli_real_escape_string($dbc,$_GET['film_deskripsi']);
+//        }
+//    }else{
+//        header('movies.php');
+//    }
 
-        $sql = "SELECT * FROM tbFilm WHERE film_id ='$ID' ";
-        $result = mysqli_query($dbc, $sql) or die("BAD QUERY : $sql");
-        $row = mysqli_fetch_array($result);
-        if(isset($_GET['post'])) {
-            $name = mysqli_real_escape_string($dbc,$_GET['film_judul']);
-            $aktor = mysqli_real_escape_string($dbc,$_GET['film_aktor']);
-            $sutradara = mysqli_real_escape_string($dbc,$_GET['film_sutradara']);
-            $durasi = mysqli_real_escape_string($dbc,$_GET['film_durasi']);
-            $rating = mysqli_real_escape_string($dbc,$_GET['film_rating']);
-            $genre = mysqli_real_escape_string($dbc,$_GET['film_genre']);
-            $deskripsi = mysqli_real_escape_string($dbc,$_GET['film_deskripsi']);
-        }
-    }else{
-        header('movies.php');
-    }
+$id = filter_input(INPUT_GET,'id');
+if (isset($id)){
+    $film = new Film();
+    $filmDao = new FilmDao();
+    $film->setFilmId($id);
+    $film = $filmDao->getFilmById($film);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,17 +117,20 @@
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
         <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="<?php $row['film_poster']?>" alt="">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo $film->getFilmPoster()?>" alt="">
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-5">
-            <h1 class="font-weight-light"> <?php echo $row['film_judul'] ?> ></h1>
+            <h1 class="font-weight-light"> <?php echo $film->getFilmJudul() ?> </h1>
         </div>
         <!-- /.col-md-4 -->
     </div>
     <div class="row align-items-center my-8">
         <div class="col-lg-8">
-            <iframe src="<?php echo $row['film_trailer'] ?>" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            <?php echo '<iframe width="560" height="315" ';?>
+            <?php echo "src='".$film->getFilmTrailer()."'>";?>
+            <?php echo '</iframe>';?>
+
         </div>
         <!-- /.col-lg-8 -->
     </div>
@@ -131,12 +142,12 @@
                 <div class="card-body">
                     <h2 class="card-title">Card One</h2>
                     <p class="card-text">
-                        STARRING    : <?php $row['film_aktor']; ?>
-                        DIRECTOR    : <?php $row['film_sutradara']; ?>
-                        DURASI      : <?php $row['film_durasi']; ?>
-                        RATING      : <?php $row['film_rating']; ?>
-                        GENRE       : <?php $row['film_rating']; ?>
-                        ?>
+                        STARRING    : <?php echo $film->getFilmAktor(); ?><br>
+                        DIRECTOR    : <?php echo $film->getFilmSutradara(); ?><br>
+                        DURASI      : <?php echo $film->getFilmDurasi(); ?><br>
+                        RATING      : <?php echo $film->getFilmRating(); ?><br>
+                        GENRE       : <?php echo $film->getFilmRating(); ?><br>
+
                     </p>
                 </div>
             </div>
@@ -146,7 +157,7 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title">Synopsis</h2>
-                    <p class="card-text"> <?php $row['film_deskripsi']?></p>
+                    <p class="card-text"> <?php  echo $film->getFilmDeskripsi()?></p>
                 </div>
             </div>
         </div>

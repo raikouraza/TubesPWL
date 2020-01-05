@@ -229,5 +229,6 @@ if (!isset($_SESSION['user_logged'])) {
 </script>
 <!--===============================================================================================-->
 <script src="src/vendor/bootstrap/js/main.js"></script>
+<script src="src/functions.js"></script>
 </body>
 </html>

@@ -102,14 +102,14 @@ class FilmDao{
 
     }
 
-    function getFilmById($film_id)
+    function getFilmById(Film $film)
     {
         $link = DBHelper::createMySQLConnection();
 
         $query = "SELECT * FROM tbfilm WHERE film_id = ? LIMIT 1";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(1, $film_id, PDO::PARAM_INT);
+        $stmt->bindValue(1, $film->getFilmId(), PDO::PARAM_INT);
         $stmt->execute();
 
         $result = $stmt->fetchObject("Film");

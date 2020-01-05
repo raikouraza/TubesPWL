@@ -121,4 +121,15 @@ class FilmController
         $films = $this->filmDao->getAllFilm();
         include_once '../../view/dashboard/form_update_delete_film.php';
     }
+
+    public function movieDetails(){
+        //Fetch Data  Function
+        $id = filter_input(INPUT_GET,'id');
+        if (isset($id)){
+            $film = new Film();
+            $film->setFilmId($id);
+            $film = $this->filmDao->getFilmById($film);
+        }
+        include_once 'view/moviedata.php';
+    }
 }

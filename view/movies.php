@@ -30,12 +30,14 @@ $bootstrapColWidth = 12 / $numOfCols;
         <?php
         $filmDao = new FilmDao();
         $films = $filmDao->getAllFilm();
-        /* @var $film film */
+        /* @var $film Film */
         foreach ($films as $film){
             ?>
             <div style="padding-top: 10px;" align="center" class="col-md-<?php echo $bootstrapColWidth; ?>">
                 <div class="thumbnail">
+                    <?php echo '<a onclick="movieDetails(\'' . $film->getFilmId() . '\')">';?>
                     <?php echo "<img src='".$film->getFilmPoster()."' height='350' width='235'' />";?>
+                    <?php echo '</a>';?>
                 </div>
             </div>
             <?php

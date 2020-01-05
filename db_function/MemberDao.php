@@ -155,7 +155,7 @@ function addMemberSaldoById(Member $member){
 
 }
 
-    function isExist(Member $member)
+    function getMemberByEmail(Member $member)
     {
         $link = DBHelper::createMySQLConnection();
 
@@ -167,13 +167,8 @@ function addMemberSaldoById(Member $member){
 
         $result = $stmt->fetchObject("Member");
 
-        if($result!=null){
-            return true;
-        }else{
-            return false;
-        }
         $link = null;
-
+        return $result;
     }
 
 

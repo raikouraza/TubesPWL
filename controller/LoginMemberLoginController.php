@@ -69,14 +69,47 @@ class LoginMemberLoginController
             echo '<div class="err-msg">' . $errMsg .'</div>';
         }
 
+         // FORGOT PASSWORD FUNCTION
+         $fpPressed = filter_input(INPUT_POST,'btnForgotPassword');
+         if(isset($fpPressed)){
+             $fpemail =filter_input(INPUT_POST, 'txtFPEmail');
+
+             $memberForgotPassword = new Member();
+             $memberForgotPassword->setMemberEmail($fpemail);
+             $result = $this->memberDao->getMemberByEmail($memberForgotPassword);
+
+
+             // generate new password
+             $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+             $pass = array(); //remember to declare $pass as an array
+             $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+             for ($i = 0; $i < 6; $i++) {
+                 $n = rand(0, $alphaLength);
+                 $pass[] = $alphabet[$n];
+             }
+             $newPassword = implode($pass);
+
+
+             $memberWithNewPassword = new Member();
+             $memberWithNewPassword->setMemberId($result->getMemberId());
+             if($result!=null){
+                 $pesan = 'TEST '.$result->getMemberId() . $result->getMemberUsername() . $newPassword . $memberWithNewPassword->getMemberUsername();
+                 //$pesan = "Silakan cek email untuk mendapatkan password yang baru";
+             }else{
+                 $pesan = "Email tidak ditemukan!";
+             }
+
+             if (isset($pesan)){
+                 echo '<div class="err-msg">' . $pesan .'</div>';
+             }
+         }
+
 
         include_once 'view\signinsignup.php';
     }
 
 
-    public function forgotPassword(){
 
-    }
 }
 
 

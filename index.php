@@ -12,7 +12,7 @@ include_once 'db_function/DBHelper.php';
 include_once 'db_function/FilmDao.php';
 include_once 'db_function/UserDao.php';
 include_once 'db_function/GenreDao.php';
-include_once 'db_function/TicketDao.php';
+include_once 'db_function/TiketDao.php';
 
 
 include_once 'controller/LoginMemberLoginController.php';

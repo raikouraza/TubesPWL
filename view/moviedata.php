@@ -37,6 +37,17 @@ if (isset($id)){
     <title>Small Business - Start Bootstrap Template</title>
     <!-- Bootstrap core CSS -->
     <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        iframe {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -113,34 +124,33 @@ if (isset($id)){
     ?>
 </main>
 <!-- Page Content -->
-<div class="container">
+<div class="container" style="background-color: whitesmoke">
+    <div class="row align-items-center my-8">
+        <div class="col-lg-5" >
+            <h1 align="center" style="background-color: whitesmoke"><?php echo $film->getFilmJudul(); ?></h1>
+        </div>
+    </div>
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
-        <div class="col-lg-7">
+        <div class="col-lg-4">
             <img class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo $film->getFilmPoster()?>" alt="">
         </div>
         <!-- /.col-lg-8 -->
-        <div class="col-lg-5">
-            <h1 class="font-weight-light"> <?php echo $film->getFilmJudul() ?> </h1>
+        <div class="col-lg-8">
+            <h1 class="font-weight-light"> <?php echo '<iframe width="860" height="525" ';?>
+                <?php echo "src='".$film->getFilmTrailer()."'>";?>
+                <?php echo '</iframe>';?> </h1>
         </div>
         <!-- /.col-md-4 -->
     </div>
-    <div class="row align-items-center my-8">
-        <div class="col-lg-8">
-            <?php echo '<iframe width="560" height="315" ';?>
-            <?php echo "src='".$film->getFilmTrailer()."'>";?>
-            <?php echo '</iframe>';?>
 
-        </div>
-        <!-- /.col-lg-8 -->
-    </div>
     <!-- /.row -->
     <!-- Content Row -->
     <div class="row">
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Card One</h2>
+                    <h2 class="card-title">About : </h2>
                     <p class="card-text">
                         STARRING    : <?php echo $film->getFilmAktor(); ?><br>
                         DIRECTOR    : <?php echo $film->getFilmSutradara(); ?><br>
@@ -181,13 +191,7 @@ if (isset($id)){
 
 </div>
 <!-- /.container -->
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="../src/vendor/jquery/jquery.js"></script>

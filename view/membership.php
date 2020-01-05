@@ -36,7 +36,7 @@ if (isset($id)) {
     <body>
 
     <!-- Page Content -->
-    <div class="container" style="background-color: whitesmoke">
+    <div class="containerProfile" style="background-color: whitesmoke">
         <div class="row profile">
             <div class="col-md-3">
                 <div class="profile-sidebar">
@@ -59,19 +59,91 @@ if (isset($id)) {
                     <div class="profile-usermenu">
                         <ul class="nav">
                             <li class="active">
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-home"></i>
-                                   Edit Profile
-                                </a>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                    Edit Profile
+                                </button>
+                                <!-- The Modal Profile-->
+                                <div class="modal" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Update Profile</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="txtJudulFilm">Masukkan Username Baru</label>
+                                                        <input type="text"  value="<?php echo $member->getMemberUsername(); ?>" class="form-control" id="txtUsername"  placeholder="Masukkan Username">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtTanggalFilm">Masukkan Password Baru</label>
+                                                        <input type="password" value="<?php echo $member->getMemberPassword(); ?>" class="form-control" id="txtPassword" placeholder="Masukkan Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtDeskripsi">Masukkan email Baru</label>
+                                                        <input type="email" value="<?php echo $member->getMemberEmail(); ?>" class="form-control" id="txtEmail"  placeholder="Masukkan Nama Depan">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtFirstName">Masukkan Nama Depan Baru</label>
+                                                        <input type="text" value="<?php echo $member->getMemberNamaDepan(); ?>" class="form-control" id="txtFirstName">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtLastName">Masukkan Nama Belakang Baru</label>
+                                                        <input type="text" value="<?php echo $member->getMemberNamaBelakang(); ?>" class="form-control" id="txtLastName" placeholder="Masukkan Nama Belakang">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txtPhoto">Masukkan Photo Baru</label>
+                                                        <input type="file" value="<?php echo $member->getMemberPhoto(); ?>" class="form-control" id="txtPhoto" placeholder="Masukkan Photo">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+                                                </form>
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <p>&nbsp;&nbsp;</p>
                             </li>
                             <li class="active">
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-home"></i>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                     Top Up Saldo
-                                </a>
+                                </button>
+                                <!-- The Modal Saldo -->
+                                <div class="modal" id="myModal2">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Modal Heading</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                Modal body..
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -80,6 +152,7 @@ if (isset($id)) {
             </div>
             <div class="col-md-9">
                 <div class="profile-content">
+                    Username : <?php echo $member->getMemberUsername(); ?> <br>
                     Email : <?php echo $member->getMemberEmail(); ?> <br>
                     Member Id : <?php echo $member->getMemberId(); ?> <br>
                     Saldo : <?php echo $member->getMemberSaldo(); ?> <br>

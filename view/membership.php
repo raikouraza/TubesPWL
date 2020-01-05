@@ -1,5 +1,5 @@
 <?php
-$id = filter_input(INPUT_GET,'id');
+$id = $_SESSION['id'];
 if (isset($id)) {
     $member = new Member();
     $memberDao = new MemberDao();
@@ -52,6 +52,7 @@ if (isset($id)) {
                 <!-- Blog Post -->
                 <div class="card mb-8">
 
+                    <?php echo $member->getMemberPhoto(); ?>
                     <div class="card-body">
                         <h2 class="card-title"></h2><a href="#" class="btn btn-primary">Edit Profile &rarr;</a>
                         <img class="card-img-top" src="<?php echo $member->getMemberPhoto(); ?>" alt="Card image cap">

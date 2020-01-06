@@ -148,9 +148,9 @@ if (isset($id)){
     <!-- Content Row -->
     <div class="row">
         <div class="col-md-4 mb-100 ">
-            <div class="card h-100">
+            <div class="card h-100 bg-dark">
                 <div class="card-body">
-                    <h2 class="card-title">About : </h2>
+                    <h2 class="card-title text-white">About : </h2>
                     <p class="card-text">
                         STARRING    : <?php echo $film->getFilmAktor(); ?><br>
                         DIRECTOR    : <?php echo $film->getFilmSutradara(); ?><br>
@@ -164,9 +164,9 @@ if (isset($id)){
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-8 mb-8">
-            <div class="card h-100">
+            <div class="card h-100 bg-dark">
                 <div class="card-body">
-                    <h2 class="card-title">Synopsis</h2>
+                    <h2 class="card-title text-white">Synopsis</h2>
                     <p class="card-text"> <?php  echo $film->getFilmDeskripsi()?></p>
                 </div>
             </div>

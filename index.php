@@ -2,7 +2,7 @@
 SESSION_START();
 include_once 'entity/Film.php';
 include_once 'entity/Genre.php';
-include_once 'entity/jadwal.php';
+include_once 'entity/Jadwal.php';
 include_once 'entity/Member.php';
 include_once 'entity/Tiket.php';
 include_once 'entity/Film.php';

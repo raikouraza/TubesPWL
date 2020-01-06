@@ -5,7 +5,6 @@ class Studio{
     private $studio_id;
     private $studio_nama;
     private $studio_kapasitas;
-
     /**
      * @return mixed
      */

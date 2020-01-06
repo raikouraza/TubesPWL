@@ -36,7 +36,7 @@ class StudioController
     {
         // Block below for fetch data
         $studio_id = filter_input(INPUT_GET, 'studio_id');
-        if (isset($film_id)) {
+        if (isset($studio_id)) {
             $studio = new Studio();
             $studio->setStudioId($studio_id);
             $studio = $this->studioDao->getStudioById($studio);
@@ -51,9 +51,8 @@ class StudioController
             $updatedStudio->setStudioId($studio->getStudioId());
             $updatedStudio->setStudioNama($studio_nama);
 
-            if (fieldNotEmpty(array($studio->getStudioId(), $studio_nama))) {
-
-                    $this->studioDao->updateStudio($updatedStudio);
+            if (fieldNotEmpty(array($studio_nama))) {
+                $this->studioDao->updateStudio($updatedStudio);
                 header("location:../../view/dashboard/index.php?dashboard=updateDeleteStudio");
             } else {
                 $errMessage = 'Please check your input';

@@ -13,7 +13,7 @@ include_once '../../db_function/DBHelper.php';
 include_once '../../util/view_util.php';
 
 session_start();
-//ob_start();
+ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">

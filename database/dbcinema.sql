@@ -118,8 +118,12 @@ CREATE TABLE `tbmember` (
 -- Dumping data for table `tbmember`
 --
 
-INSERT INTO `tbmember` (`member_id`, `member_username`, `member_password`, `member_email`, `member_nama_depan`, `member_nama_belakang`, `member_photo`, `member_saldo`) VALUES
-(1, 'member', '12345', 'member@gmail.com', 'john', 'doe', NULL, 50000);
+
+
+
+
+
+
 
 -- --------------------------------------------------------
 

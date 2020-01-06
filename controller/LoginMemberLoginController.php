@@ -1,7 +1,10 @@
 <?php
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 class LoginMemberLoginController
 {
+
     private $memberDao;
     private $memberLogin;
 
@@ -24,8 +27,9 @@ class LoginMemberLoginController
             $memberLogin->setMemberPassword($password);
             $registeredMember = $this->memberDao->login($memberLogin);
             /* @var $registeredMember Member*/
-            echo '<div class="err-msg">' . $registeredMember->getMemberUsername() .'</div>';
+
             if($registeredMember != null && $registeredMember->getMemberUsername() == $username){
+                echo '<div class="err-msg">' . $registeredMember->getMemberUsername() .'</div>';
                 $_SESSION['user_logged'] = true;
                 $_SESSION['name'] = $registeredMember->getMemberNamaBelakang() . $registeredMember->getMemberNamaBelakang();
                 $_SESSION['id'] = $registeredMember->getMemberId();
@@ -36,7 +40,8 @@ class LoginMemberLoginController
             }
         }
         if (isset($errMsg)){
-            echo '<div class="err-msg">' . $errMsg .'</div>';
+            echo '<script type="text/javascript">alert("' . $errMsg . '")</script>';
+//            echo '<div class="err-msg">' . $errMsg .'</div>';
         }
 
         // SIGN UP FUNCTION
@@ -55,6 +60,7 @@ class LoginMemberLoginController
             $memberSignup->setMemberNamaDepan($firstName);
             $memberSignup->setMemberNamaBelakang($lastName);
             $memberSignup->setMemberEmail($email);
+
             $signedup = $this->memberDao->addMember($memberSignup);
 
             if($signedup == 1){
@@ -66,7 +72,7 @@ class LoginMemberLoginController
             }
         }
         if (isset($errMsg)){
-            echo '<div class="err-msg">' . $errMsg .'</div>';
+            echo '<script type="text/javascript">alert("' . $errMsg . '")</script>';
         }
 
          // FORGOT PASSWORD FUNCTION
@@ -77,7 +83,7 @@ class LoginMemberLoginController
              $memberForgotPassword = new Member();
              $memberForgotPassword->setMemberEmail($fpemail);
              $result = $this->memberDao->getMemberByEmail($memberForgotPassword);
-             var_dump($result);
+
 
 
              // generate new password
@@ -90,18 +96,15 @@ class LoginMemberLoginController
              }
              $newPassword = implode($pass);
 
-             $to = $result->getMemberEmail();
-             $subject = 'New Password - CinemaYAS';
-             $message = 'Hello ' . $result->getMemberUsername() . ' Your New Password is ' . $newPassword;
-             $from = "From: Cinema YAS <DoNotReply@CinemaYAS.com>";
+            // SEND NEW PASSWORD TO EMAIl !!!
 
 
              $MemberWithNewPassword = new Member();
-             $MemberWithNewPassword->setMemberId($result->getMemberId());
-             $MemberWithNewPassword->setMemberPassword($newPassword);
              if($result!=null){
+                 $MemberWithNewPassword->setMemberId($result->getMemberId());
+                 $MemberWithNewPassword->setMemberPassword($newPassword);
                  $this->memberDao->updatePassword($MemberWithNewPassword);
-                 mail($to,$subject,$message,$from);
+
                  $pesan = "Silakan cek folder inbox atau spam di email anda untuk mendapatkan password yang baru";
              }else{
                  $pesan = "Email tidak ditemukan!";

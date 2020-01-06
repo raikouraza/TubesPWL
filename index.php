@@ -17,8 +17,8 @@ include_once 'db_function/TiketDao.php';
 
 include_once 'controller/LoginMemberLoginController.php';
 include_once 'controller/FilmController.php';
-include_once 'controller/LoginUserLoginController.php';
 include_once 'controller/MemberController.php';
+include_once 'controller/UserController.php';
 
 require 'util/Exception.php';
 require 'util/PHPMailer.php';

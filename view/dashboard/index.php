@@ -218,11 +218,11 @@ if (!isset($_SESSION['user_logged'])) {
                                         $jadwalController->indexCreate();
                                         break;
                                     case 'updateJadwal':
-                                        $jadwalController = new FilmController();
+                                        $jadwalController = new JadwalController();
                                         $jadwalController->indexUpdate();
                                         break;
                                     case 'updateDeleteJadwal':
-                                        $jadwalController = new FilmController();
+                                        $jadwalController = new JadwalController();
                                         $jadwalController->indexUpdateDelete();
                                         break;
                                     case 'createMember':

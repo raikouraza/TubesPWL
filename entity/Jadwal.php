@@ -4,8 +4,42 @@ class Jadwal{
     private $jadwal_id;
     private $jadwal_tanggal;
     private $jadwal_sesi;
+    private $tbFilm_film_id;
+    private $tbStudio_studio_id;
     private $film;
     private $studio;
+
+    /**
+     * @return mixed
+     */
+    public function getTbFilmFilmId()
+    {
+        return $this->tbFilm_film_id;
+    }
+
+    /**
+     * @param mixed $tbFilm_film_id
+     */
+    public function setTbFilmFilmId($tbFilm_film_id)
+    {
+        $this->tbFilm_film_id = $tbFilm_film_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTbStudioStudioId()
+    {
+        return $this->tbStudio_studio_id;
+    }
+
+    /**
+     * @param mixed $tbStudio_studio_id
+     */
+    public function setTbStudioStudioId($tbStudio_studio_id)
+    {
+        $this->tbStudio_studio_id = $tbStudio_studio_id;
+    }
 
     public function __construct()
     {

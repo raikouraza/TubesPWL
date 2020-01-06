@@ -73,7 +73,7 @@ class MemberController
                         $inputTopup->setTopupTanggal($date);
                         $inputTopup->setTopupAmount($amount);
                         $inputTopup->setTbMemberMemberId($_SESSION['id']);
-                        $inputTopup->setTopupStatus(0);
+                        $inputTopup->setTopupStatus(null);
                         $this->topupDao->addTopup($inputTopup);
                     } else {
                         $errMessage = "Bukti Transfer Tidak Boleh Kosong!!";

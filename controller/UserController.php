@@ -23,6 +23,7 @@ class UserController
             $user->setUserUsername($user_username);
             $user->setUserPassword($user_password);
             $user->setUserName($user_name);
+            $user->setUserRole('kasir');
 
             if(fieldNotEmpty(array($user_username, $user_password, $user_name)))
             {
@@ -62,6 +63,7 @@ class UserController
             $updatedUser->setUserUsername($user_username);
             $updatedUser->setUserPassword($user_password);
             $updatedUser->setUserName($user_name);
+            $updatedUser->setUserRole('kasir');
 
             if(fieldNotEmpty(array($user_username, $user_password, $user_name)))
             {
@@ -89,5 +91,39 @@ class UserController
 
         $users = $this->userDao->getAllUser();
         include_once '../../view/dashboard/form_update_delete_user.php';
+    }
+
+    public function indexLogin()
+    {
+        $loginPressed = filter_input(INPUT_POST, 'btnLogin');
+
+        if(isset($loginPressed))
+        {
+            $username = filter_input(INPUT_POST, 'txtUsername');
+            $password = filter_input(INPUT_POST, 'txtPassword');
+
+            $userLogin = new User();
+            $userLogin->setUserUsername($username);
+            $userLogin->setUserPassword($password);
+            $registeredUser = $this->userDao->login($userLogin);
+
+            if($registeredUser != null && $registeredUser->getUserUsername() == $username)
+            {
+                $_SESSION['user_logged'] = true;
+                $_SESSION['name'] = $registeredUser->getUserName();
+                $_SESSION['user_role'] = $registeredUser->getUserRole();
+
+                header("location:../../view/dashboard/index.php");
+            } else
+            {
+                $errMsg = "Invalid username or password";
+            }
+
+            if(isset($errMsg))
+            {
+                echo '<div class="err-msg">' . $errMsg . '</div>';
+            }
+        }
+        include_once '../../view/dashboard/dashboard_login.php';
     }
 }

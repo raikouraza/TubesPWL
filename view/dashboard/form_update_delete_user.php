@@ -22,7 +22,10 @@
                                 echo '<tr align="center">';
                                 echo '<td>' . $user->getUserId() . '</td>';
                                 echo '<td>' . $user->getUserUsername() . '</td>';
-                                echo '<td><button class="btn btn-primary" onclick="updateUser(\''. $user->getUserId() .'\')">Update</button><button class="btn btn-primary" onclick="deleteUser(\''. $user->getUserId() .'\')">Delete</button></td>';
+                                if($user->getUserRole() == "kasir")
+                                {
+                                    echo '<td><button class="btn btn-primary" onclick="updateUser(\''. $user->getUserId() .'\')">Update</button><button class="btn btn-primary" onclick="deleteUser(\''. $user->getUserId() .'\')">Delete</button></td>';
+                                }
                                 echo '</tr>';
                             }
                             ?>

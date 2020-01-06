@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label for="txtName">Masukkan Name</label>
                                 <hr>
-                                <input value="<?php /* @var $user User*/ echo $user->getUserName(); ?>" type="text" class="form-control" name="txtUser  Name"  placeholder="Masukkan Name">
+                                <input value="<?php /* @var $user User*/ echo $user->getUserName(); ?>" type="text" class="form-control" name="txtUserName"  placeholder="Masukkan Name">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary" name="btnUpdate">Update</button>

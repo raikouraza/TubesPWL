@@ -28,26 +28,26 @@
             <div class="login100-pic js-tilt" data-tilt>
                 <img src="../../src/images/movieicon.png" alt="IMG">
             </div>
-            <form class="login100-form validate-form">
+            <form method="post" enctype="multipart/form-data" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Admin Login
 					</span>
                 <div class="wrap-input100 validate-input" data-validate = "Registered Username is Required">
-                    <input class="input100" type="text" name="txtUsername" id="txtUsername" placeholder="Username">
+                    <input class="input100" type="text" name="txtUsername" placeholder="Username">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="txtPassword" id="txtPassword" placeholder="Password">
+                    <input class="input100" type="password" name="txtPassword" placeholder="Password">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
                 </div>
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" type="submit" name="btnSubmit" id="btnSubmit">
+                    <button class="login100-form-btn" type="submit" name="btnLogin">
                         Login
                     </button>
                 </div>

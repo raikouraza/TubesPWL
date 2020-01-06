@@ -8,11 +8,13 @@ INSERT INTO `tbfilm` (`film_id`, `film_judul`, `film_deskripsi`, `film_poster`, 
 (7, 'THE GRUDGE ', 'Sebuah rumah dikutuk oleh roh jahat yang menyerang dan melukai dengan cara yang kejam siapapun yang memasukinya.', 'src/images/poster/grudge.jfif', 'https://www.youtube.com/embed/88spCoDfEg4', 'Nicolas Pesce', ' Betty Gilpin, Andrea Riseborough, William Sadler', '94 Minutes', 'R', 'Horror'),
 (9, 'ASHFALL', 'Bencana mengguncang Korea secara tak terduga. Ketika Baekdu - gunung tertinggi di Korea meletus dan menyemburkan abu ke atmosfer. Petaka besar kini mengancam Seoul (Korea Selatan) maupun Pyongyang (Korea Utara).', 'src/images/poster/ashfall.jfif', 'https://www.youtube.com/embed/_Xq7XWHbGag', 'LEE Hae Jun, KIM Byung Seo', ' LEE Byung Hun, HA Jung Woo, MA Dong Seok a.k.a. Don LEE, JEON Hye Jin, BAE Su Zy', '128 Minutes', 'R', 'Thriller');
 
+INSERT INTO `tbstudio` (`studio_id`, `studio_nama`, `studio_kapasitas`) VALUES
+(1, 'A', 40),
+(2, 'B', 35);
 
-INSERT INTO `tbjadwal` (`jadwal_id`, `jadwal_tanggal`, `jadwal_sesi`, `tbFilm_film_id`) VALUES
-(1, '2020-01-13', 1, 1),
-(2, '2020-01-13', 2, 1);
-
+INSERT INTO `tbjadwal` (`jadwal_id`, `jadwal_tanggal`, `jadwal_sesi`, `tbFilm_film_id`, `tbStudio_studio_id`) VALUES
+(1, '2020-01-13', 1, 1, 2),
+(2, '2020-01-13', 2, 1, 1);
 
 INSERT INTO `tbmember` (`member_id`, `member_username`, `member_password`, `member_email`, `member_nama_depan`, `member_nama_belakang`, `member_photo`, `member_saldo`) VALUES
 (1, 'member', '12345', 'member@gmail.com', 'john', 'doe', NULL, 50000);

@@ -11,5 +11,9 @@
     <orderEntry type="library" name="respond" level="application" />
     <orderEntry type="library" name="tempusdominus-bootstrap-4" level="application" />
     <orderEntry type="library" name="jquery.dataTables" level="application" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="datatables" level="application" />
+>>>>>>> 2bc98d6b4e14286ccf3a24b3464504241cb8c054
   </component>
 </module>

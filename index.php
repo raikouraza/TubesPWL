@@ -2,7 +2,7 @@
 SESSION_START();
 include_once 'entity/Film.php';
 include_once 'entity/Genre.php';
-include_once 'entity/jadwal.php';
+include_once 'entity/Jadwal.php';
 include_once 'entity/Member.php';
 include_once 'entity/Tiket.php';
 include_once 'entity/Film.php';
@@ -19,8 +19,8 @@ include_once 'db_function/TopupDao.php';
 
 include_once 'controller/LoginMemberLoginController.php';
 include_once 'controller/FilmController.php';
-include_once 'controller/LoginUserLoginController.php';
 include_once 'controller/MemberController.php';
+include_once 'controller/UserController.php';
 
 require 'util/Exception.php';
 require 'util/PHPMailer.php';

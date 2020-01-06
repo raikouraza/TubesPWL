@@ -23,6 +23,7 @@ class UserController
             $user->setUserUsername($user_username);
             $user->setUserPassword($user_password);
             $user->setUserName($user_name);
+            $user->setUserRole('kasir');
 
             if(fieldNotEmpty(array($user_username, $user_password, $user_name)))
             {
@@ -62,6 +63,7 @@ class UserController
             $updatedUser->setUserUsername($user_username);
             $updatedUser->setUserPassword($user_password);
             $updatedUser->setUserName($user_name);
+            $updatedUser->setUserRole('kasir');
 
             if(fieldNotEmpty(array($user_username, $user_password, $user_name)))
             {

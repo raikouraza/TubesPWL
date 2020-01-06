@@ -26,13 +26,6 @@
                                 <input type="text" class="form-control" name="txtUserName"  placeholder="Masukkan Name">
                             </div>
                             <br>
-                            <div class="form-group">
-                                <label for="txtName">Pilih Role</label>
-                                <hr>
-                                <label class="radio-inline"><input value="admin" type="radio" name="txtUserRole" checked>Admin</label>
-                                <label class="radio-inline"><input value="kasir" type="radio" name="txtUserRole">Kasir</label>
-                            </div>
-                            <br>
                             <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
                             <br>
                             <br>

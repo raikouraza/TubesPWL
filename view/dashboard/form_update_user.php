@@ -23,14 +23,7 @@
                             <div class="form-group">
                                 <label for="txtName">Masukkan Name</label>
                                 <hr>
-                                <input value="<?php /* @var $user User*/ echo $user->getUserName(); ?>" type="text" class="form-control" name="txtUser  Name"  placeholder="Masukkan Name">
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <label for="txtName">Pilih Role User</label>
-                                <hr>
-                                <label class="radio-inline"><input value="admin" type="radio" name="txtUserRole" <?php /* @var $user User*/ echo ($user->getUserRole() == 'admin')? 'checked' : ''?>>Admin</label>
-                                <label class="radio-inline"><input value="kasir" type="radio" name="txtUserRole" <?php /* @var $user User*/ echo ($user->getUserRole() == 'kasir')? 'checked' : ''?>>Kasir</label>
+                                <input value="<?php /* @var $user User*/ echo $user->getUserName(); ?>" type="text" class="form-control" name="txtUserName"  placeholder="Masukkan Name">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary" name="btnUpdate">Update</button>

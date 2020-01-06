@@ -22,6 +22,7 @@ class FilmController
             $film_nama_aktor = filter_input(INPUT_POST, 'txtFilmAktor');
             $film_durasi = filter_input(INPUT_POST, 'txtFilmDurasi');
             $film_rating = filter_input(INPUT_POST, 'txtRating');
+            $film_genre = filter_input(INPUT_POST, 'txtGenre');
 
             $film = new Film();
             $film->setFilmJudul($film_judul);
@@ -32,8 +33,9 @@ class FilmController
             $film->setFilmAktor($film_nama_aktor);
             $film->setFilmDurasi($film_durasi);
             $film->setFilmRating($film_rating);
+            $film->setFilmGenre($film_genre);
 
-            if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating))) {
+            if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating,$film_genre))) {
                 if (isset($_FILES['txtFilmPoster']['name'])) {
                     $targetDirectory = '../../src/images/poster/';
                     $targetFile = $targetDirectory . $_FILES['txtFilmPoster']['name'];
@@ -72,6 +74,7 @@ class FilmController
             $film_nama_aktor = filter_input(INPUT_POST, 'txtFilmAktor');
             $film_durasi = filter_input(INPUT_POST, 'txtFilmDurasi');
             $film_rating = filter_input(INPUT_POST, 'txtRating');
+            $film_genre = filter_input(INPUT_POST, 'txtGenre');
 
             $updatedFilm = new Film();
             /* @var $film Film */
@@ -84,8 +87,9 @@ class FilmController
             $updatedFilm->setFilmAktor($film_nama_aktor);
             $updatedFilm->setFilmDurasi($film_durasi);
             $updatedFilm->setFilmRating($film_rating);
+            $updatedFilm->setFilmGenre($film_genre);
 
-            if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating))) {
+            if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating,$film_genre))) {
                 if (isset($_FILES['txtFilmPoster']['name'])) {
                     $targetDirectory = '../../src/images/poster/';
                     $targetFile = $targetDirectory . $_FILES['txtFilmPoster']['name'];

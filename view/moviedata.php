@@ -156,7 +156,7 @@ if (isset($id)){
                         DIRECTOR    : <?php echo $film->getFilmSutradara(); ?><br>
                         DURASI      : <?php echo $film->getFilmDurasi(); ?><br>
                         RATING      : <?php echo $film->getFilmRating(); ?><br>
-                        GENRE       : <?php echo $film->getFilmRating(); ?><br>
+                        GENRE       : <?php echo $film->getFilmGenre(); ?><br>
 
                     </p>
                 </div>

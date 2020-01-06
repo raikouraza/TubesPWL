@@ -9,15 +9,15 @@
                     <div class="col-md-6">
                         <form method="post" enctype="multipart/form-data" id="filmForm">
                             <div class="form-group">
-                                <label for="txtJudulFilm">Masukkan Judul Film</label>
+                                <label for="txtJudulFilm">Masukkan Judul</label>
                                 <hr>
                                 <input type="text" class="form-control" id="txtjudul" name="txtFilmJudul" placeholder="Masukkan Judul">
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="txtDeskripsi">Masukkan Deskripsi Film</label>
+                                <label for="txtDeskripsi">Masukkan Deskripsi</label>
                                 <hr>
-                                <textarea class="form-control" rows="5" form="filmForm" name="txtFilmDeskripsi"></textarea>
+                                <textarea class="form-control" rows="5" form="filmForm" name="txtFilmDeskripsi" placeholder="Masukan Deskripsi"></textarea>
                             </div>
                             <br>
                             <div class="form-group">
@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label for="txtSutradara">Masukkan Nama Sutradara</label>
                                 <hr>
-                                <input type="text" class="form-control" id="txtSutradara" name="txtFilmSutradara" placeholder="Masukkan nama sutradara">
+                                <input type="text" class="form-control" id="txtSutradara" name="txtFilmSutradara" placeholder="Masukkan Nama Sutradara">
                             </div>
                             <br>
                             <div class="form-group">
@@ -45,18 +45,24 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="txtDurasi">Masukkan Durasi Film</label>
+                                <label for="txtDurasi">Masukkan Durasi</label>
                                 <hr>
-                                <input type="text" class="form-control" id="txtDurasi" name="txtFilmDurasi" placeholder="Masukkan Durasi Film">
+                                <input type="text" class="form-control" id="txtDurasi" name="txtFilmDurasi" placeholder="Masukkan Durasi">
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="txtRating">Masukkan Rating</label>
+                                <label for="txtRating">Pilih Rating</label>
                                 <hr>
-                                <label class="radio-inline"><input value="SU" type="radio" name="txtRating" checked>SU</label>
-                                <label class="radio-inline"><input value="BO" type="radio" name="txtRating">BO</label>
-                                <label class="radio-inline"><input value="R" type="radio" name="txtRating">R</label>
-                                <label class="radio-inline"><input value="D" type="radio" name="txtRating">D</label>
+                                <label class="radio-inline"><input value="SU" type="radio" name="txtFilmRating" checked>SU</label>
+                                <label class="radio-inline"><input value="BO" type="radio" name="txtFilmRating">BO</label>
+                                <label class="radio-inline"><input value="R" type="radio" name="txtFilmRating">R</label>
+                                <label class="radio-inline"><input value="D" type="radio" name="txtFilmRating">D</label>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="txtNamaAktor">Masukkan Genre Film</label>
+                                <hr>
+                                <input type="text" class="form-control" name="txtFilmGenre" placeholder="Masukkan Genre">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit">Submit</button>
@@ -64,10 +70,10 @@
                     </div>
                     <br>
                     <div class="col-md-6">
-                        <table>
+                        <table id="myTable" class="display compact">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>ID User</th>
                                 <th>Judul</th>
                                 <th>Deskripsi</th>
                                 <th>Poster</th>
@@ -76,6 +82,7 @@
                                 <th>Aktor</th>
                                 <th>Durasi</th>
                                 <th>Rating</th>
+                                <th>Genre</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -88,7 +95,7 @@
                                 echo '<td>' . $film->getFilmJudul() . '</td>';
                                 echo '<td>' . $film->getFilmDeskripsi() . '</td>';
                                 if (!empty($film->getFilmPoster())) {
-                                    echo '<td> <img src="' . $film->getFilmPoster() . '" width="50" height="50" alt="Photo" class="photo-list"> </td>';
+                                    echo '<td> <img src="../../' . $film->getFilmPoster() . '" width="50" height="50" alt="Photo" class="photo-list"> </td>';
                                 }
                                 else {
                                     echo '<td width="50" height="50">';
@@ -98,6 +105,7 @@
                                 echo '<td>' . $film->getFilmAktor() . '</td>';
                                 echo '<td>' . $film->getFilmDurasi() . '</td>';
                                 echo '<td>' . $film->getFilmRating() . '</td>';
+                                echo '<td>' . $film->getFilmGenre() . '</td>';
                                 echo '</tr>';
                             }
                             ?>

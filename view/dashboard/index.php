@@ -37,7 +37,8 @@ if (!isset($_SESSION['user_logged'])) {
     <link rel="icon" href="../../src/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/animate.min.css">
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/style.css">
-    <script type="text/javascript" src="../../src/crudView.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="../../src/vendor/datatables/datatables.min.css"/>
 </head>
 
 <body>
@@ -346,17 +347,14 @@ if (!isset($_SESSION['user_logged'])) {
 ?>
 </body>
 <!-- Required Js -->
+<script type="text/javascript" src="../../src/crudView.js"></script>
 <script src="../../src/vendor/bootstrap/js/vendor-all.min.js"></script>
 <script src="../../src/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../src/vendor/bootstrap/js/pcoded.min.js"></script>
+<!--<script type="text/javascript" charset="utf8" src="../../src/vendor/datatables/datatables.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    $(document).ready(function () {-->
+<!--        $('#myTable').DataTable();-->
+<!--    });-->
+<!--</script>-->
 </html>
-
-<!--                <li class="nav-item pcoded-menu-caption">-->
-<!--                    <label>Form Sesi</label>-->
-<!--                </li>-->
-<!--                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">-->
-<!--                    <a href="?dashboard=createSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Sesi</span></a>-->
-<!--                </li>-->
-<!--                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">-->
-<!--                    <a href="?dashboard=updateSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Sesi</span></a>-->
-<!--                </li>-->

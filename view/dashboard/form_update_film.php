@@ -53,10 +53,16 @@
                             <div class="form-group">
                                 <label for="txtRating">Masukkan Rating</label>
                                 <hr>
-                                <label class="radio-inline"><input value="SU" type="radio" name="txtRating" checked>SU</label>
-                                <label class="radio-inline"><input value="BO" type="radio" name="txtRating">BO</label>
-                                <label class="radio-inline"><input value="R" type="radio" name="txtRating">R</label>
-                                <label class="radio-inline"><input value="D" type="radio" name="txtRating">D</label>
+                                <label class="radio-inline"><input value="SU" type="radio" name="txtRating" <?php /* @var $film Film*/ echo ($film->getFilmRating() == 'SU')? 'checked' : ''?>>SU</label>
+                                <label class="radio-inline"><input value="BO" type="radio" name="txtRating" <?php /* @var $film Film*/ echo ($film->getFilmRating() == 'BO')? 'checked' : ''?>>BO</label>
+                                <label class="radio-inline"><input value="R" type="radio" name="txtRating" <?php /* @var $film Film*/ echo ($film->getFilmRating() == 'R')? 'checked' : ''?>>R</label>
+                                <label class="radio-inline"><input value="D" type="radio" name="txtRating" <?php /* @var $film Film*/ echo ($film->getFilmRating() == 'D')? 'checked' : ''?>>D</label>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="txtNamaAktor">Masukkan Genre Film</label>
+                                <hr>
+                                <input value="<?php /* @var $film Film*/ echo $film->getFilmGenre(); ?>" type="text" class="form-control" name="txtFilmGenre" placeholder="Masukkan Genre">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary" id="btnUpdate" name="btnUpdate">Update</button>

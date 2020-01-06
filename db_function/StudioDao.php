@@ -23,7 +23,7 @@ class StudioDao
         $link->beginTransaction();
         $query = "INSERT INTO tbstudio(
                                      studio_nama, studio_kapasitas) 
-                                     VALUES(?)";
+                                     VALUES(?, ?)";
 
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $studio->getStudioNama(), PDO::PARAM_STR);

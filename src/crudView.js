@@ -36,3 +36,16 @@ function deleteStudio(studio_id) {
         window.location = "../../view/dashboard/index.php?dashboard=updateDeleteStudio&delcom=1&studio_id=" + studio_id;
     }
 }
+
+function updateJadwal(jadwal_id) {
+    window.location = "../../view/dashboard/index.php?dashboard=updateJadwal&jadwal_id=" + jadwal_id;
+}
+
+function deleteJadwal(jadwal_id) {
+    var confirmation = window.confirm("Are you sure want to delete?")
+
+    if(confirmation)
+    {
+        window.location = "../../view/dashboard/index.php?dashboard=updateDeleteJadwal&delcom=1&jadwal_id=" + jadwal_id;
+    }
+}

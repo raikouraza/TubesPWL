@@ -172,4 +172,23 @@ function addMemberSaldoById(Member $member){
     }
 
 
+    function getMemberByUsername(Member $member)
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbmember WHERE member_username = ? LIMIT 1";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $member->getMemberUsername(), PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetchObject("Member");
+
+        $link = null;
+        return $result;
+    }
+
+
+
+
 }

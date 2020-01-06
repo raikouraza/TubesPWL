@@ -26,12 +26,14 @@
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <table id="myTable" class="display">
+                        <table id="myTable" class="table">
                             <thead>
                             <tr>
                                 <th>ID Jadwal</th>
                                 <th>Tanggal</th>
                                 <th>Sesi</th>
+                                <th>Film Judul</th>
+                                <th>Studio Nama</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -2,12 +2,15 @@
 include_once '../../controller/FilmController.php';
 include_once '../../controller/UserController.php';
 include_once '../../controller/StudioController.php';
+include_once '../../controller/JadwalController.php';
 include_once '../../db_function/FilmDao.php';
 include_once '../../db_function/UserDao.php';
 include_once '../../db_function/StudioDao.php';
+include_once '../../db_function/JadwalDao.php';
 include_once '../../entity/Film.php';
 include_once '../../entity/User.php';
 include_once '../../entity/Studio.php';
+include_once '../../entity/Jadwal.php';
 
 include_once '../../db_function/DBHelper.php';
 include_once '../../util/view_util.php';
@@ -203,7 +206,7 @@ if (!isset($_SESSION['user_logged'])) {
                                         $filmController->indexUpdateDelete();
                                         break;
                                     case 'createJadwal':
-                                        $jadwalController = new FilmController();
+                                        $jadwalController = new JadwalController();
                                         $jadwalController->indexCreate();
                                         break;
                                     case 'updateJadwal':

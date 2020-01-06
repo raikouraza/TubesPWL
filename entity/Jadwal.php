@@ -7,12 +7,7 @@ class Jadwal{
     private $film;
     private $studio;
 
-    /**
-     * Jadwal constructor.
-     * @param $film
-     * @param $studio
-     */
-    public function __construct($film, $studio)
+    public function __construct()
     {
         $this->film = new Film();
         $this->studio = new Studio();
@@ -67,22 +62,6 @@ class Jadwal{
     }
 
     /**
-     * @return mixed
-     */
-    public function getTbFilmFilmId()
-    {
-        return $this->tbFilm_film_id;
-    }
-
-    /**
-     * @param mixed $tbFilm_film_id
-     */
-    public function setTbFilmFilmId($tbFilm_film_id)
-    {
-        $this->tbFilm_film_id = $tbFilm_film_id;
-    }
-
-    /**
      * @return Film
      */
     public function getFilm()
@@ -130,11 +109,38 @@ class Jadwal{
                 case 'film_judul':
                     $this->film->setFilmJudul($value);
                     break;
+                case 'film_deskripsi':
+                    $this->film->setFilmDeskripsi($value);
+                    break;
+                case 'film_poster':
+                    $this->film->setFilmPoster($value);
+                    break;
+                case 'film_trailer':
+                    $this->film->setFilmTrailer($value);
+                    break;
+                case 'film_sutradara':
+                    $this->film->setFilmSutradara($value);
+                    break;
+                case ' film_aktor ':
+                    $this->film->setFilmAktor($value);
+                    break;
+                case 'film_durasi':
+                    $this->film->setFilmDurasi($value);
+                    break;
+                case 'film_rating':
+                    $this->film->setFilmRating($value);
+                    break;
+                case 'film_genre':
+                    $this->film->setFilmGenre($value);
+                    break;
                 case 'studio_id':
                     $this->studio->setStudioId($value);
                     break;
                 case 'studio_nama':
                     $this->studio->setStudioNama($value);
+                    break;
+                case 'studio_kapasitas':
+                    $this->studio->setStudioKapasitas($value);
                     break;
                 default:
                     break;

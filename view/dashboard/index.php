@@ -3,14 +3,22 @@ include_once '../../controller/FilmController.php';
 include_once '../../controller/UserController.php';
 include_once '../../controller/StudioController.php';
 include_once '../../controller/JadwalController.php';
+include_once '../../controller/TopupController.php';
 include_once '../../db_function/FilmDao.php';
 include_once '../../db_function/UserDao.php';
 include_once '../../db_function/StudioDao.php';
 include_once '../../db_function/JadwalDao.php';
+include_once '../../db_function/TopupDao.php';
+include_once '../../db_function/MemberDao.php';
+
+
 include_once '../../entity/Film.php';
 include_once '../../entity/User.php';
 include_once '../../entity/Studio.php';
 include_once '../../entity/Jadwal.php';
+include_once '../../entity/Member.php';
+include_once '../../entity/Topup.php';
+
 
 include_once '../../db_function/DBHelper.php';
 include_once '../../util/view_util.php';
@@ -283,6 +291,21 @@ if (!isset($_SESSION['user_logged'])) {
                             <a href="?dashboard=directBooking" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-file-text"></i></span><span class="pcoded-mtext">Direct Booking</span></a>
                         </li>
+                        <!-- TOPUP -->
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Top up</label>
+                        </li>
+                        <li data-username="form elements advance componant validation masking wizard picker select"
+                            class="nav-item">
+                            <a href="?dashboard=manualTopup" class="nav-link "><span class="pcoded-micon"><i
+                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Top up manual</span></a>
+                        </li>
+                        <li data-username="form elements advance componant validation masking wizard picker select"
+                            class="nav-item">
+                            <a href="?dashboard=verification" class="nav-link "><span class="pcoded-micon"><i
+                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Acc Top up</span></a>
+                        </li>
+
                         <!-- LOGOUT -->
                     </ul>
                 </div>
@@ -323,6 +346,13 @@ if (!isset($_SESSION['user_logged'])) {
                                         break;
                                     case 'directBooking':
                                         include_once 'directbooking.php';
+                                        break;
+                                    case 'manualTopup':
+                                        $topupController = new TopupController();
+                                        $topupController->Index();
+                                        break;
+                                    case 'verification':
+                                        include_once 'form_topup_verification.php';
                                         break;
                                     case 'out':
                                         session_destroy();

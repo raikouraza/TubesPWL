@@ -32,7 +32,9 @@
     <!-- Page Content -->
     <div class="containerProfile" style="background-color: whitesmoke">
         <div class="row profile">
-            <div class="col-md-4" >
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3" >
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
@@ -58,8 +60,8 @@
                     <div class="profile-usermenu">
                         <ul class="nav">
                             <li class="active">
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#myModal">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                        data-target="#myModal" >
                                     Edit Profile
                                 </button>
                                 <!-- The Modal Profile-->
@@ -129,7 +131,7 @@
                                 <p>&nbsp;&nbsp;</p>
                             </li>
                             <li class="active">
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
                                         data-target="#myModal2">
                                     Top Up Saldo
                                 </button>
@@ -141,7 +143,7 @@
                                             <!-- Modal Header -->
                                             <div class="modal-header">
                                                 <h4 class="modal-title">Topup Saldo</h4>
-                                                <button type="button" class="close" data-dismiss="modal">&times;
+                                                <button type="button" class="close" data-dismiss="modal" style="font-size: 16px;">&times;
                                                 </button>
                                             </div>
 
@@ -177,10 +179,10 @@
                                 </div>
                             </li>
                             <!-- Change Password -->
-                            &nbsp;
+
                             &nbsp;
                             <li class="active">
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
                                         data-target="#myModal3">
                                     Change Password
                                 </button>
@@ -211,11 +213,11 @@
                                                         <input type="password" class="form-control" id="txtNewPassword"
                                                                name="txtNewPassword2" placeholder="**************">
                                                     </div>
-                                                    <center>
+
                                                     <button type="submit" class="btn btn-primary" name="btnChangePassword">
                                                         Change Password
                                                     </button>
-                                                    </center>
+
                                             </div>
 
                                         </div>
@@ -227,15 +229,18 @@
                     <!-- END MENU -->
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="profile-content">
                     Username : <?php echo $member->getMemberUsername(); ?> <br>
                     Email : <?php echo $member->getMemberEmail(); ?> <br>
                     Saldo : Rp <?php echo $member->getMemberSaldo(); ?>.- <br>
                 </div>
             </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-12"></div>
             <br><br><br><br>
-            <div class="col-md-6" align="center">
+            <div class="col-md-1" align="center"></div>
+            <div class="col-md-5" align="center">
                 <h5 align="center">HISTORI TRANSAKSI TIKET</h5>
                 <table id="myTable" >
                     <thead>
@@ -266,7 +271,7 @@
             </div>
             <br>
             <!--histori transaksi topup-->
-            <div class="col-md-6" align="center">
+            <div class="col-md-5" align="center">
                 <h5 align="center">HISTORI TRANSAKSI TOP UP</h5>
                 <table id="myTable2" >
                     <thead>
@@ -279,26 +284,27 @@
                     </tr>
                     </thead>
                     <tbody>
-
                         <?php
                         $topid = new Topup();
                         $topupDao = new TopupDao();
                         $topid->setTbMemberMemberId($_SESSION['id']);
                         $topups = $topupDao->getAllTopupByMemberId($topid);
                         /* @var $topup Topup */
-                        foreach ($topups as $topup) {
-                        echo '<tr>';
-                        echo '<td>' . $topup->getTopupId() . '</td>';
-                        echo '<td>' . $topup . '</td>';
-                        echo '<td> Rp.' . $topup . '.-</td>';
-                        echo '<td>' . $topup . '</td>';
-                        echo '</tr>';
-                         }
+                        if (is_array($topups) || is_object($topups)) {
+                            foreach ($topups as $topup) {
+                                echo '<tr>';
+                                echo '<td>' . $topup->getTopupId() . '</td>';
+                                echo '<td>' . $topup->getTbMemberMemberId() . '</td>';
+                                echo '<td> Rp.' . $topup . '.-</td>';
+                                echo '<td>' . $topup . '</td>';
+                                echo '</tr>';
+                            }
+                        }
                         ?>
                     </tbody>
                 </table>
             </div>
-
+            <div class="col-md-1" align="center"></div>
         </div>
     </div>
     <!-- /.container -->

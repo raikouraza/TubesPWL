@@ -4,11 +4,11 @@
 
 <div class="container">
     <!-- Jumbotron Header -->
-<<<<<<< HEAD
+
     <header class="jumbotron my-3" style="max-width: 100%;">
-=======
+
     <header class="jumbotron my-3" >
->>>>>>> 2bc98d6b4e14286ccf3a24b3464504241cb8c054
+
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">

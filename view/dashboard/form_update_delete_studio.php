@@ -3,27 +3,15 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5>Form Add Studio</h5>
-                <br>
+                <h5>Form Update Delete Studio</h5>
                 <div class="row">
-                    <div class="col-md-6">
-                        <form method="post" enctype="multipart/form-data" id="filmForm">
-                            <div class="form-group">
-                                <label for="txtNamaStudio">Masukkan Nama Studio</label>
-                                <hr>
-                                <input type="text" class="form-control" name="txtStudioNama" placeholder="Masukkan Nama">
-                            </div>
-                            <br>
-                            <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
-                        </form>
-                    </div>
-                    <br>
-                    <div class="col-md-6">
-                        <table>
+                    <div class="col-md-12">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Nama</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,14 +22,14 @@
                                 echo '<tr align="center">';
                                 echo '<td>' . $studio->getStudioId() . '</td>';
                                 echo '<td>' . $studio->getStudioNama() . '</td>';
+                                echo '<td><button class="btn btn-primary" onclick="updateStudio(\''. $studio->getStudioId() .'\')">Update</button><button class="btn btn-primary" onclick="deleteStudio(\''. $studio->getStudioId() .'\')">Delete</button></td>';
                                 echo '</tr>';
                             }
                             ?>
                             </tbody>
-                        </table>
                     </div>
                 </div>
-                <hr>
+                <br>
             </div>
         </div>
     </div>

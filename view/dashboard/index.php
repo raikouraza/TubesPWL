@@ -1,10 +1,13 @@
 <?php
 include_once '../../controller/FilmController.php';
 include_once '../../controller/UserController.php';
+include_once '../../controller/StudioController.php';
 include_once '../../db_function/FilmDao.php';
 include_once '../../db_function/UserDao.php';
+include_once '../../db_function/StudioDao.php';
 include_once '../../entity/Film.php';
 include_once '../../entity/User.php';
+include_once '../../entity/Studio.php';
 
 include_once '../../db_function/DBHelper.php';
 include_once '../../util/view_util.php';
@@ -28,7 +31,7 @@ ob_start();
     <link rel="icon" href="../../src/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/animate.min.css">
     <link rel="stylesheet" href="../../src/vendor/bootstrap/css/style.css">
-    <script type="text/javascript" src="../../src/vendor/bootstrap/js/crudView.js"></script>
+    <script type="text/javascript" src="../../src/crudView.js"></script>
 </head>
 
 <body>
@@ -68,15 +71,15 @@ ob_start();
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="?dashboard=updateDeleteFilm" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Film</span></a>
                 </li>
-                <li class="nav-item pcoded-menu-caption">
-                    <label>Form Member</label>
-                </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=createMember" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
-                </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=updateMember" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Member</span></a>
-                </li>
+<!--                <li class="nav-item pcoded-menu-caption">-->
+<!--                    <label>Form Member</label>-->
+<!--                </li>-->
+<!--                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">-->
+<!--                    <a href="?dashboard=createMember" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>-->
+<!--                </li>-->
+<!--                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">-->
+<!--                    <a href="?dashboard=updateMember" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Member</span></a>-->
+<!--                </li>-->
                 <li class="nav-item pcoded-menu-caption">
                     <label>Form Studio</label>
                 </li>
@@ -84,17 +87,17 @@ ob_start();
                     <a href="?dashboard=createStudio" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Studio</span></a>
                 </li>
                 <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=updateStudio" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
+                    <a href="?dashboard=updateDeleteStudio" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
                 </li>
-                <li class="nav-item pcoded-menu-caption">
-                    <label>Form Sesi</label>
-                </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=createSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Sesi</span></a>
-                </li>
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                    <a href="?dashboard=updateSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Sesi</span></a>
-                </li>
+<!--                <li class="nav-item pcoded-menu-caption">-->
+<!--                    <label>Form Sesi</label>-->
+<!--                </li>-->
+<!--                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">-->
+<!--                    <a href="?dashboard=createSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Sesi</span></a>-->
+<!--                </li>-->
+<!--                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">-->
+<!--                    <a href="?dashboard=updateSesi" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Sesi</span></a>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>
@@ -159,17 +162,23 @@ ob_start();
                                 $filmController = new FilmController();
                                 $filmController->indexUpdateDelete();
                                 break;
-                            case 'createMember':
-                                include_once 'form_create_member.php';
-                                break;
-                            case 'updateMember':
-                                include_once 'form_update_member.php';
-                                break;
+//                            case 'createMember':
+//                                include_once 'form_create_member.php';
+//                                break;
+//                            case 'updateMember':
+//                                include_once 'form_update_member.php';
+//                                break;
                             case 'createStudio':
-                                include_once 'form_create_studio.php';
+                                $studioController = new StudioController();
+                                $studioController->indexCreate();
                                 break;
                             case 'updateStudio':
-                                include_once 'form_update_studio.php';
+                                $studioController = new StudioController();
+                                $studioController->indexUpdate();
+                                break;
+                            case 'updateDeleteStudio':
+                                $studioController = new StudioController();
+                                $studioController->indexUpdateDelete();
                                 break;
                             case 'createSesi':
                                 include_once 'form_create_sesi.php';

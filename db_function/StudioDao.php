@@ -1,6 +1,7 @@
 <?php
 
-class StudioDao{
+class StudioDao
+{
 
     function getAllStudio()
     {
@@ -25,7 +26,7 @@ class StudioDao{
                                      VALUES(?)";
 
         $stmt = $link->prepare($query);
-        $stmt->bindValue(2, $studio->getStudioNama(), PDO::PARAM_STR);
+        $stmt->bindValue(1, $studio->getStudioNama(), PDO::PARAM_STR);
 
 
         if ($stmt->execute()) {

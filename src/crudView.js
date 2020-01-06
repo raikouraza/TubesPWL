@@ -23,3 +23,16 @@ function deleteUser(user_id) {
         window.location = "../../view/dashboard/index.php?dashboard=updateDeleteUser&delcom=1&user_id=" + user_id;
     }
 }
+
+function updateStudio(studio_id) {
+    window.location = "../../view/dashboard/index.php?dashboard=updateStudio&studio_id=" + studio_id;
+}
+
+function deleteStudio(studio_id) {
+    var confirmation = window.confirm("Are you sure want to delete?")
+
+    if(confirmation)
+    {
+        window.location = "../../view/dashboard/index.php?dashboard=updateDeleteStudio&delcom=1&studio_id=" + studio_id;
+    }
+}

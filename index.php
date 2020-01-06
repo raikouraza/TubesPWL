@@ -20,6 +20,9 @@ include_once 'controller/FilmController.php';
 include_once 'controller/LoginUserLoginController.php';
 include_once 'controller/MemberController.php';
 
+require 'util/Exception.php';
+require 'util/PHPMailer.php';
+require 'util/SMTP.php';
 
 if (!isset($_SESSION['user_logged'])) {
     $_SESSION['user_logged'] = false;

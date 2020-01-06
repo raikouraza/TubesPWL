@@ -74,15 +74,15 @@
                                     <button class="login100-form-btn" type="submit" name="btnLogin">SIGN IN</button>
                                 </div>
                                 <div class="text-center p-t-12">
-                                    <a class="txt2" href="#">
-                                        Forgot Password?
-                                    </a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#forgot">Forgot Password?</a>
+
+                                    </li>
                                 </div>
                                 <div class="text-center p-t-136">
-                                    <a class="txt2" href="">
-                                        Create your Account
-                                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                                    </a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#signup">Create new account</a>
+                                    </li>
                                 </div>
                         </form>
                     </div>

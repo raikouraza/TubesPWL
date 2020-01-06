@@ -20,6 +20,32 @@
                                 <input type="number" class="form-control" name="txtJadwalSesi" placeholder="Masukkan Sesi">
                             </div>
                             <br>
+                            <div class="form-group">
+                                <label for="txtFilm">Pilih Film</label>
+                                <hr>
+                                <select name="txtJadwalFilm" class="form-control">
+                                    <?php
+                                    /* @var $film Film */
+                                    foreach ($films as $film) {
+                                        echo '<option value="' . $film->getFilmId() . '">' . $film->getFilmJudul() . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="txtStudio">Pilih Studio</label>
+                                <hr>
+                                <select name="txtJadwalStudio" class="form-control">
+                                    <?php
+                                    /* @var $studio Studio */
+                                    foreach ($studios as $studio) {
+                                        echo '<option value="' . $studio->getStudioId() . '">' . $studio->getStudioNama() . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <br>
                             <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
                             <br>
                             <br>
@@ -33,6 +59,7 @@
                                 <th>Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Film Judul</th>
+                                <th>Film Poser</th>
                                 <th>Studio Nama</th>
                             </tr>
                             </thead>
@@ -46,6 +73,12 @@
                                 echo '<td>' . $jadwal->getJadwalTanggal() . '</td>';
                                 echo '<td>' . $jadwal->getJadwalSesi() . '</td>';
                                 echo '<td>' . $jadwal->getFilm()->getFilmJudul() . '</td>';
+                                if (!empty($jadwal->getFilm()->getFilmPoster())) {
+                                    echo '<td> <img src="../../' . $jadwal->getFilm()->getFilmPoster() . '" width="50" alt="Photo" class="photo-list"> </td>';
+                                }
+                                else {
+                                    echo '<td width="50">';
+                                }
                                 echo '<td>' . $jadwal->getStudio()->getStudioNama() . '</td>';
                                 echo '</tr>';
                             }

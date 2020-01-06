@@ -264,7 +264,12 @@ if (!isset($_SESSION['user_logged'])) {
                         <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
                             <a href="?dashboard=home" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-home"></i></span><span
-                                        class="pcoded-mtext">Dashboard</span></a>
+                                        class="pcoded-mtext">Home</span></a>
+                        </li>
+                        <li data-username="form elements advance componant validation masking wizard picker select"
+                            class="nav-item">
+                            <a href="?dashboard=out" class="nav-link "><span class="pcoded-micon"><i
+                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Logging Out</span></a>
                         </li>
                         <!-- DIRECT BOOKING -->
                         <li class="nav-item pcoded-menu-caption">
@@ -276,12 +281,6 @@ if (!isset($_SESSION['user_logged'])) {
                                             class="feather icon-file-text"></i></span><span class="pcoded-mtext">Direct Booking</span></a>
                         </li>
                         <!-- LOGOUT -->
-
-                        <li data-username="form elements advance componant validation masking wizard picker select"
-                            class="nav-item">
-                            <a href="?dashboard=out" class="nav-link "><span class="pcoded-micon"><i
-                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Logging Out</span></a>
-                        </li>
                     </ul>
                 </div>
             </div>

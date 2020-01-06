@@ -1,12 +1,6 @@
 <?php
-$id = $_SESSION['id'];
-if (isset($id)) {
-    $member = new Member();
-    $memberDao = new MemberDao();
-    $member->setMemberId($id);
-    $member = $memberDao->getMemberById($member);
 
-}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,7 +36,10 @@ if (isset($id)) {
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
-                        <img class="card-img-top" src="<?php echo $member->getMemberPhoto(); ?>" alt="Card image cap">
+                        <?php
+                        /* @var $member Member */
+                        ?>
+                        <img class="card-img-top" src=<?php echo $member->getMemberPhoto(); ?> alt="<?php echo $member->getMemberNamaDepan(); ?>"  width="200" height="200">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
@@ -77,55 +74,47 @@ if (isset($id)) {
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form>
+                                                <form method="post" enctype="multipart/form-data">
                                                     <div class="form-group">
-                                                        <label for="txtJudulFilm">Masukkan Username Baru</label>
+                                                        <label for="txtMemberUsername">Username</label>
                                                         <input type="text"
                                                                value="<?php echo $member->getMemberUsername(); ?>"
-                                                               class="form-control" id="txtUsername"
-                                                               placeholder="Masukkan Username">
+                                                               class="form-control" name="txtMemberUsername"
+                                                               placeholder="Masukkan Username" disabled>
                                                     </div>
+
                                                     <div class="form-group">
-                                                        <label for="txtTanggalFilm">Masukkan Password Baru</label>
-                                                        <input type="password"
-                                                               value="<?php echo $member->getMemberPassword(); ?>"
-                                                               class="form-control" id="txtPassword"
-                                                               placeholder="Masukkan Password">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="txtDeskripsi">Masukkan email Baru</label>
+                                                        <label for="txtMemberEmail">Masukkan email Baru</label>
                                                         <input type="email"
                                                                value="<?php echo $member->getMemberEmail(); ?>"
-                                                               class="form-control" id="txtEmail"
+                                                               class="form-control" name="txtMemberEmail"
                                                                placeholder="Masukkan Nama Depan">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="txtFirstName">Masukkan Nama Depan Baru</label>
+                                                        <label for="txtMemberFirstName">Masukkan Nama Depan Baru</label>
                                                         <input type="text"
                                                                value="<?php echo $member->getMemberNamaDepan(); ?>"
-                                                               class="form-control" id="txtFirstName">
+                                                               class="form-control" name="txtMemberFirstName">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="txtLastName">Masukkan Nama Belakang Baru</label>
-                                                        <input type="date"
+                                                        <label for="txtMemberLastName">Masukkan Nama Belakang Baru</label>
+                                                        <input type="text"
                                                                value="<?php echo $member->getMemberNamaBelakang(); ?>"
-                                                               class="form-control" id="txtLastName"
+                                                               class="form-control" name="txtMemberLastName"
                                                                placeholder="Masukkan Nama Belakang">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="txtPhoto">Masukkan Photo Baru</label>
+                                                        <label for="txtMemberPhoto">Masukkan Photo Baru</label>
                                                         <input type="file"
                                                                value="<?php echo $member->getMemberPhoto(); ?>"
-                                                               class="form-control" id="txtPhoto"
+                                                               class="form-control" name="txtMemberPhoto"
                                                                placeholder="Masukkan Photo">
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary" id="btnSubmit">
-                                                        Submit
-                                                    </button>
+                                                    <button class="btn btn-danger" name="btnMemberUpdate">Update</button>
                                                 </form>
                                             </div>
 
-                                            <!-- Modal footer -->
+<!--                                           Modal footer -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                                                     Close
@@ -151,7 +140,7 @@ if (isset($id)) {
 
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Modal Heading</h4>
+                                                <h4 class="modal-title">Topup Saldo</h4>
                                                 <button type="button" class="close" data-dismiss="modal">&times;
                                                 </button>
                                             </div>
@@ -160,25 +149,25 @@ if (isset($id)) {
                                             <div class="modal-body">
                                                 <form method="post" enctype="multipart/form-data" id="filmForm">
                                                     <div class="form-group">
-                                                        <label for="txtAmount">Masukkan Amount Saldo : </label>
-                                                        <hr>
+                                                        <label for="txtAmount">Masukkan Jumlah Saldo : </label>
+
                                                         <input type="text" class="form-control" id="txtAmount"
                                                                name="txtAmount" placeholder="Masukkan Jumlah Saldo">
                                                     </div>
                                                     <br>
                                                     <!-- tanggal waktu -->
-                                                    <label for="txtAmount">Tanggal dan Waktu Pembayaran: </label>
-                                                         <input type="datetime-local" name="bdaytime">
-                                                    <br>
+                                                    <label for="txtDate">Tanggal dan Waktu Pembayaran: </label><br>
+                                                         <input type="datetime-local" name="txtDate">
+                                                    <br><br>
                                                     <div class="form-group">
                                                         <label for="txtTransfer">Masukkan Bukti Transfer</label>
-                                                        <hr>
+
                                                         <input type="file" class="form-control-file" id="txtTransfer"
                                                                name="txtTransfer">
                                                     </div>
                                                     <br>
-                                                    <button type="submit" class="btn btn-primary" id="btnTopup">Top
-                                                        Up!
+                                                    <button type="submit" class="btn btn-primary" id="btnTopup">
+                                                        Proses
                                                     </button>
                                             </div>
                                             <!-- Modal footer -->

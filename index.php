@@ -114,7 +114,8 @@ if (!isset($_SESSION['user_logged'])) {
                 include_once 'view/bookingseat.php';
                 break;
             case 'mem':
-                include_once 'view/membership.php';
+                $memberController = new MemberController();
+                $memberController->Index();
                 break;
             case 'mov':
                 include_once 'view/movies.php';
@@ -129,6 +130,7 @@ if (!isset($_SESSION['user_logged'])) {
             case 'forgotPassword':
                 $loginMember = new LoginMemberLoginController();
                 $loginMember->index();
+
                 break;
             case 'out':
                 session_destroy();
@@ -200,6 +202,7 @@ if (!isset($_SESSION['user_logged'])) {
             case 'out':
                 session_destroy();
                 header('view/home.php');
+                break;
             default:
                 include_once 'view/home.php';
                 break;

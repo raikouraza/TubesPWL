@@ -10,7 +10,7 @@ class LoginMemberLoginController
 
     public function __construct()
     {
-        $this->memberDao = new MemberDao();        
+        $this->memberDao = new MemberDao();
         $this->memberLogin = new Member();
     }
 
@@ -18,10 +18,9 @@ class LoginMemberLoginController
         // LOGIN FUNCTION
         $loginPressed = filter_input(INPUT_POST,'btnLogin');
         if(isset($loginPressed)){
-
+            echo '<div class="err-msg">' . $loginPressed .'</div>';
             $username = filter_input(INPUT_POST, 'txtUsername');
             $password =filter_input(INPUT_POST, 'txtPassword');
-
             $memberLogin = new Member();
             $memberLogin->setMemberUsername($username);
             $memberLogin->setMemberPassword($password);
@@ -47,7 +46,6 @@ class LoginMemberLoginController
         // SIGN UP FUNCTION
          $signupPressed = filter_input(INPUT_POST,'btnSignup');
          if(isset($signupPressed)){
-
             $username   = filter_input(INPUT_POST, 'txtSUUsername');
             $password   = filter_input(INPUT_POST, 'txtSUPassword');
             $firstName  = filter_input(INPUT_POST, 'txtSUFirstName');
@@ -139,17 +137,9 @@ class LoginMemberLoginController
                  echo '<script type="text/javascript">alert("' . $pesan . '")</script>';
              }
          }
-
-
         include_once 'view\signinsignup.php';
     }
-
-
-
 }
-
-
-
 ?>
 
 

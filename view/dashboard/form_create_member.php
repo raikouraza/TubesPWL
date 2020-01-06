@@ -15,7 +15,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="txtTanggalFilm">Masukkan Password</label>
-                                <input type="date" class="form-control" name="txtMemberPassword"
+                                <input type="password" class="form-control" name="txtMemberPassword"
                                        placeholder="Masukkan Password">
                             </div>
                             <div class="form-group">

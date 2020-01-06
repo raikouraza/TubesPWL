@@ -29,7 +29,7 @@ require 'util/SMTP.php';
 if (!isset($_SESSION['user_logged'])) {
     $_SESSION['user_logged'] = false;
 }
-
+ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +133,6 @@ if (!isset($_SESSION['user_logged'])) {
             case 'forgotPassword':
                 $loginMember = new LoginMemberLoginController();
                 $loginMember->index();
-
                 break;
             case 'out':
                 session_destroy();
@@ -142,6 +141,7 @@ if (!isset($_SESSION['user_logged'])) {
                 include_once 'view/home.php';
                 break;
         }
+        ob_end_flush();
         ?>
     </main>
     <!-- Jika User Belum Login -->
@@ -210,6 +210,7 @@ if (!isset($_SESSION['user_logged'])) {
                 include_once 'view/home.php';
                 break;
         }
+        ob_end_flush();
         ?>
     </main>
 <?php } ?>

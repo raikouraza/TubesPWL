@@ -1,7 +1,4 @@
 <!-- Page Content -->
-
-
-
 <div class="container">
     <!-- Jumbotron Header -->
 

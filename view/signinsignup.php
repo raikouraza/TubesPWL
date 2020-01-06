@@ -40,6 +40,7 @@
         </li>
     </ul>
     <!-- Tab panes -->
+    <form method="post" enctype="multipart/form-data">
     <!-- untuk sign in -->
     <div class="tab-content">
         <div id="signin" class="container tab-pane active"><br>
@@ -49,42 +50,42 @@
                         <div class="login100-pic js-tilt" data-tilt>
                             <img src="src/images/movieicon.png" alt="IMG">
                         </div>
-                        <form class="login100-form validate-form" method="post" enctype="multipart/form-data">
+                        <div class="login100-form validate-form">
                             <span class="login100-form-title">
                                 Member Login
                             </span>
-                                <div class="wrap-input100 validate-input"
-                                     data-validate="Registered User is Required">
-                                    <input class="input100" type="text" name="txtUsername" id="txtUsername"
-                                           placeholder="Username">
-                                    <span class="focus-input100"></span>
-                                    <span class="symbol-input100">
+                            <div class="wrap-input100 validate-input"
+                                 data-validate="Registered User is Required">
+                                <input class="input100" type="text" name="txtUsername" id="txtUsername"
+                                       placeholder="Username">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                 </span>
-                                </div>
-                                <div class="wrap-input100 validate-input" data-validate="Password is required">
-                                    <input class="input100" type="password" name="txtPassword" id="txtPassword"
-                                           placeholder="Password">
-                                    <span class="focus-input100"></span>
-                                    <span class="symbol-input100">
+                            </div>
+                            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                <input class="input100" type="password" name="txtPassword" id="txtPassword"
+                                       placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
                                     <i class="fa fa-lock" aria-hidden="true"></i>
                                 </span>
-                                </div>
-                                <div class="container-login100-form-btn">
-                                    <button class="login100-form-btn" type="submit" name="btnLogin">SIGN IN</button>
-                                </div>
-                                <div class="text-center p-t-12">
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#forgot">Forgot Password?</a>
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <button class="login100-form-btn" type="submit" name="btnLogin">SIGN IN</button>
+                            </div>
+                            <div class="text-center p-t-12">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#forgot">Forgot Password?</a>
 
-                                    </li>
-                                </div>
-                                <div class="text-center p-t-136">
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#signup">Create new account</a>
-                                    </li>
-                                </div>
-                        </form>
+                                </li>
+                            </div>
+                            <div class="text-center p-t-136">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#signup">Create new account</a>
+                                </li>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,51 +96,52 @@
             <div class="limiter">
                 <div class="container-login100">
                     <div class="wrap-login100">
-                        <form class="login100-form validate-form" method="post">
+                        <div class="login100-form validate-form">
                             <!-- untuk field pada form -->
                             <legend>SIGN UP</legend>
                             <label for="txtUsername" class="form-label"> Username </label>
                             <input type="text" id="txtUsername" name="txtSUUsername" placeholder="Username"
-                                   class="input100" required>
+                                   class="input100">
                             <label for="txtPassword" class="form-label"> Password </label>
                             <input type="password" id="txtPassword" name="txtSUPassword" placeholder="Password"
-                                   class="input100" required>
+                                   class="input100">
                             <label for="txtFirstName" class="txtFirstName"> First Name </label>
                             <input type="text" id="txtFirstName" name="txtSUFirstName" placeholder="Your First Name"
-                                   class="input100" required>
+                                   class="input100">
                             <label for="txtLastName" class="txtLastName"> Last Name </label>
                             <input type="text" id="txtLastName" name="txtSULastName" placeholder="Your Last Name"
-                                   class="input100" required>
+                                   class="input100">
                             <label for="txtEmail" class="txtEmail"> Email </label>
                             <input type="email" id="txtEmail" name="txtSUEmail" placeholder="xyz@email.com"
-                                   class="input100" required>
-
-                            <button class="login100-form-btn" name="btnSignup">Submit</button>
-                        </form>
+                                   class="input100">
+                            <br>
+                            <button type="submit" class="login100-form-btn" name="btnSignup">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-<!--        <!-- untuk sign up end -->-->
-<!--         untuk forgot password start-->
+        <!--        untuk sign up end -->
+        <!--         untuk forgot password start-->
         <div id="forgot" class="container tab-pane fade"><br>
             <div class="limiter">
                 <div class="container-login100">
                     <div class="wrap-login100">
-                        <form class="login100-form validate-form" method="post">
+                        <div class="login100-form validate-form">
                             <!-- untuk field pada form -->
                             <legend>Forgot Password</legend>
                             <label for="txtEmail" class="txtEmail"> Email: </label>
                             <input type="email" id="txtEmail" name="txtFPEmail" placeholder="xyz@email.com"
-                                   class="input100" required aria-errormessage="Email is Required">
-                            <button class="login100-form-btn" name="btnForgotPassword">Submit</button>
-
-                        </form>
+                                   class="input100" aria-errormessage="Email is Required">
+                            <br>
+                            <button class="login100-form-btn" type="submit" name="btnForgotPassword">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- untuk forgot password end -->
+    </form>
     </div>
 </div>
 <!-- CONTAINER TAB UNTUK SIGN IN DAN SIGN UP END-->

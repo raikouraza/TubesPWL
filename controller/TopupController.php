@@ -6,19 +6,15 @@ class TopupController
     private $memberDao;
     private $topupDao;
 
-
     public function __construct()
     {
         $this->memberDao = new MemberDao();
         $this->topupDao = new TopupDao();
 
     }
-
     public function Index()
     {
-
         ///TOP UP SALDO
-
         $submitted = filter_input(INPUT_POST, 'btnTopup');
         if (isset($submitted)) {
             $username = filter_input(INPUT_POST, 'txtUsername');
@@ -29,17 +25,17 @@ class TopupController
 
 
             $topupManual = new Topup();
-            if($result!=null ){
+            if ($result != null) {
                 $topupManual->setTopupAmount($amount);
                 $topupManual->setTbMemberMemberId($result->getMemberId());
                 $topupManual->setTopupStatus(1);
                 $topupManual->setTopupTanggal(date("Y-m-d"));
                 $this->topupDao->addTopup($topupManual);
 
-                $result->setMemberSaldo((int)$result->getMemberSaldo()+(int)$amount);
+                $result->setMemberSaldo((int)$result->getMemberSaldo() + (int)$amount);
                 $this->memberDao->addMemberSaldoById($result);
                 $errMessage = "Topup berhasil";
-            }else{
+            } else {
                 $errMessage = "Username tidak ditemukan";
             }
         }
@@ -50,6 +46,27 @@ class TopupController
         }
         $topups = $this->topupDao->getAllTopup();
         include_once '../../view/dashboard/form_topup_saldo_manual.php';
-    }
 
+    }
+    public function Index2()
+    {
+        $topups = $this->topupDao->getAllTopup();
+        include_once '../../view/dashboard/form_topup_verification.php';
+    }
+    public function accept(){
+        $submitted = filter_input(INPUT_POST, 'btnAccept');
+        if (isset($submitted)) {
+            $topupManual = new Topup();
+            $topupManual->setTopupStatus(1);
+        }
+
+    }
+    public function reject(){
+        $submitted = filter_input(INPUT_POST, 'btnReject');
+            if (isset($submitted)) {
+                $topupManual = new Topup();
+                $topupManual->setTopupStatus(0);
+            }
+
+    }
 }

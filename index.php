@@ -61,15 +61,20 @@ if (!isset($_SESSION['user_logged'])) {
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <style>
+        .navbar-brand {
+            color:#66fcf1;
+        }
+    </style>
 </head>
 <body style="  display:flex;
   flex-direction:column; ">
 <!-- Navigation -->
 <!-- Jika User Sudah Login -->
 <?php if ($_SESSION['user_logged']) { ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top text-white">
         <div class="container">
-            <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
+            <a class="navbar-brand" href="?menu=hm" style="text-decoration-color: #66fcf1">CINEMA YAS!</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -81,7 +86,7 @@ if (!isset($_SESSION['user_logged'])) {
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" >
                         <a class="nav-link" href="?menu=mov">Movies</a>
                     </li>
                     <li class="nav-item">
@@ -133,7 +138,6 @@ if (!isset($_SESSION['user_logged'])) {
             case 'forgotPassword':
                 $loginMember = new LoginMemberLoginController();
                 $loginMember->index();
-
                 break;
             case 'out':
                 session_destroy();

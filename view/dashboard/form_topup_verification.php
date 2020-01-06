@@ -6,7 +6,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5>Form Add Film</h5>
+                <h5>Form Accept or Reject Top Up</h5>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -24,7 +24,10 @@
                             </thead>
                             <tbody>
                             <?php
+                            $topupDao = new TopupDao();
+                            $topups = $topupDao->getAllTopup();
                             /* @var $topup Topup*/
+
                             foreach ($topups as $topup)
                             {
                                 echo '<tr align="center">';
@@ -39,8 +42,7 @@
                                 echo '<td>' . $topup->getTbMemberMemberId() . '</td>';
                                 echo '<td>' . $topup->getTopupStatus() . '</td>';
                                 echo '<td>' . $topup->getTopupAmount() . '</td>';
-                                echo '<td><button onclick="acceptTopup(\'' .$topup->getTopupId() . '\');">Delete</button><button onclick="rejectTopup(' . $topup->getTopupId() .')">Update</button></td>';
-
+                                echo '<td><button type="submit" name="btnAccept" onclick="accept(\'' .$topup->getTopupId() . '\');">Accept</button><button type="submit" name="btnReject" onclick="reject(' . $topup->getTopupId() .')">Reject</button></td>';
                                 echo '</tr>';
                             }
                             ?>

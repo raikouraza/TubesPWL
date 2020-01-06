@@ -182,13 +182,17 @@ if (isset($id)){
 </div>
     <!-- /.row -->
     <!-- Call to Action Well -->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card text-white bg-secondary my-5 py-4 text-center text">
         <div class="card-body">
             <p class="text-white m-0">Schedule</p>
+            <p class="text-white m-0">Gate Open</p>
+            <input type="submit" value="09:00" id="sesi1" name="sesi1">
+            <input type="submit" value="12:00" id="sesi2" name="sesi2">
+            <input type="submit" value="15:00" id="sesi3" name="sesi3">
+            <input type="submit" value="18:00" id="sesi4" name="sesi4">
+            <input type="submit" value="21:00" id="sesi5" name="sesi5">
         </div>
     </div>
-
-
 </div>
 <!-- /.container -->
 

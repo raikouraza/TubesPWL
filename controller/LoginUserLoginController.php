@@ -32,7 +32,7 @@ class UserLoginController
                 $_SESSION['name'] = $registeredUser->getUserName();
                 $_SESSION['role_id'] = (int)$registeredUser->getUserRole();
 
-                header("location:index.php");
+                header("location:view/dashboard/index.php");
             } else
             {
                 $errMsg = "Invalid username or password";
@@ -43,7 +43,7 @@ class UserLoginController
                 echo '<div class="err-msg">' . $errMsg . '</div>';
             }
         }
-        include_once 'view/login.php';
+        include_once 'view/dashboard/dashboardlogin.php';
     }
 }
 

@@ -49,7 +49,7 @@
 
                         Promo ini bisa kamu nikmati di seluruh bioskop YAS selama bulan Januari 2020. So, tunggu apalagi? Yuk beli tiketnya sekarang dan rasakan Nonton Hemat setiap hari!</p>                </div>
                 <div class="card-footer text-muted">
-                    Posted on January 1, 2017 by
+                    Posted on January 1, 2017 by Atta Halilintar
 
                 </div>
             </div>
@@ -65,7 +65,7 @@
 
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on January 1, 2017 by
+                    Posted on January 1, 2017 by Atta Halilintar
 
                 </div>
             </div>
@@ -81,7 +81,7 @@
 
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on January 1, 2017 by
+                    Posted on January 1, 2017 by Atta Halilintar
 
                 </div>
             </div>

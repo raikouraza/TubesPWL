@@ -111,8 +111,12 @@ $films = $filmDao->getAllFilm();
             </div>
         </div>
     </div>
+</div>
+<!-- /.container -->
     <!-- Page Features -->
     <h1><a><p align="center" style="font-size: 50pt">UPCOMING MOVIES</p></a></h1>
+<!-- Page Content -->
+<div class="container2">
     <!-- Jumbotron Header -->
     <div class="row text-center">
         <div class="col-sm-12 mt-5">
@@ -163,4 +167,5 @@ $films = $filmDao->getAllFilm();
             </div>
         </div>
     </div>
+</div>
     <!-- /.container -->

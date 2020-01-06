@@ -1,3 +1,10 @@
+<?php
+$filmDao = new FilmDao();
+$jadwalDao = new JadwalDao();
+
+$jadwals = $jadwalDao->getAllJadwal();
+$films = $filmDao->getAllFilm();
+?>
 <style type="text/css">
     div.container-fluid {
         width: 70%;
@@ -49,9 +56,6 @@
         -webkit-transition: all 0.2s ease-in;
         transition: all 0.2s ease-in;
     }
-
-
-
 </style>
 
 <h1><a><p align="center" style="font-size: 50pt">NOW PLAYING</p></a></h1>
@@ -63,28 +67,27 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" align="center" style="height: fit-content;width: 350px; margin:auto;">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="src/images/poster/grudge.jfif" alt="First slide">
+                        <img class="d-block w-100" src="src\images\poster\Stefanus.jpg">
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/frozen2.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/jumanji.jpg" alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/spies.jpg" alt="Fourth slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/starwars.jpg" alt="Fifth slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/charlieangels.jpg" alt="Fifth slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/ipman4.jpg" alt="Fifth slide">
-                    </div>    <div class="carousel-item">
-                        <img class="d-block w-100" src="src/images/poster/fordvferrari.jpg" alt="Fifth slide">
-                    </div>
+                    <?php
+                    /* @var $jadwal Jadwal*/
+                    foreach ($jadwals as $jadwal)
+                    {
+                        date_default_timezone_set("Asia/Jakarta");
+                        if($jadwal->getJadwalTanggal() == date("Y-m-d"))
+                        {
+                            $tempFilm = new Film();
+                            $tempFilm->setFilmId($jadwal->getTbFilmFilmId());
+                            $film = $filmDao->getFilmById($tempFilm);
+                            /* @var $film Film*/
+                            ?>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="<?php echo $film->getFilmPoster();?>">
+                            </div>
+                        <?php
+                        }
+                    }
+                    ?>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -108,7 +111,56 @@
             </div>
         </div>
     </div>
-        <!-- Page Features -->
+    <!-- Page Features -->
     <h1><a><p align="center" style="font-size: 50pt">UPCOMING MOVIES</p></a></h1>
+    <!-- Jumbotron Header -->
+    <div class="row text-center">
+        <div class="col-sm-12 mt-5">
+            <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" align="center" style="height: fit-content;width: 350px; margin:auto;">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="src\images\poster\Stefanus.jpg">
+                    </div>
+                    <?php
+                    /* @var $jadwal Jadwal*/
+                    foreach ($jadwals as $jadwal)
+                    {
+                        date_default_timezone_set("Asia/Jakarta");
+                        if($jadwal->getJadwalTanggal() != date("Y-m-d"))
+                        {
+                            $tempFilm = new Film();
+                            $tempFilm->setFilmId($jadwal->getTbFilmFilmId());
+                            $film = $filmDao->getFilmById($tempFilm);
+                            /* @var $film Film*/
+                            ?>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="<?php echo $film->getFilmPoster();?>">
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row text-center">
 
+            </div>
+            <div class="row text-center">
+
+            </div>
+            <div class="row text-center">
+
+            </div>
+        </div>
+    </div>
     <!-- /.container -->

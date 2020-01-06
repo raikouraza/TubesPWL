@@ -16,6 +16,19 @@ class JadwalDao
         return $result;
     }
 
+    function getAllJadwalNow()
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbjadwal WHERE jadwal_tanggal = NOW()";
+
+        $result = $link->query($query);
+
+        $result->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Jadwal");
+
+        return $result;
+    }
+
     function getAllJadwalDistinct()
     {
         $link = DBHelper::createMySQLConnection();

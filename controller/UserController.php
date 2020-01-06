@@ -90,4 +90,38 @@ class UserController
         $users = $this->userDao->getAllUser();
         include_once '../../view/dashboard/form_update_delete_user.php';
     }
+
+    public function indexLogin()
+    {
+        $loginPressed = filter_input(INPUT_POST, 'btnLogin');
+
+        if(isset($loginPressed))
+        {
+            $username = filter_input(INPUT_POST, 'txtUsername');
+            $password = filter_input(INPUT_POST, 'txtPassword');
+
+            $userLogin = new User();
+            $userLogin->setUserUsername($username);
+            $userLogin->setUserPassword($password);
+            $registeredUser = $this->userDao->login($userLogin);
+
+            if($registeredUser != null && $registeredUser->getUserUsername() == $username)
+            {
+                $_SESSION['user_logged'] = true;
+                $_SESSION['name'] = $registeredUser->getUserName();
+                $_SESSION['user_role'] = $registeredUser->getUserRole();
+
+                header("location:../../view/dashboard/index.php");
+            } else
+            {
+                $errMsg = "Invalid username or password";
+            }
+
+            if(isset($errMsg))
+            {
+                echo '<div class="err-msg">' . $errMsg . '</div>';
+            }
+        }
+        include_once '../../view/dashboard/dashboard_login.php';
+    }
 }

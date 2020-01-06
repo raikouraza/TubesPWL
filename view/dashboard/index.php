@@ -1,5 +1,4 @@
 <?php
-include_once '../../controller/LoginUserLoginController.php';
 include_once '../../controller/FilmController.php';
 include_once '../../controller/UserController.php';
 include_once '../../controller/StudioController.php';
@@ -63,7 +62,13 @@ if (!isset($_SESSION['user_logged'])) {
                         <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
                             <a href="?dashboard=home" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-home"></i></span><span
-                                        class="pcoded-mtext">Dashboard</span></a>
+                                        class="pcoded-mtext">Home</span></a>
+                        </li>
+                        <!-- LOGOUT -->
+                        <li data-username="form elements advance componant validation masking wizard picker select"
+                            class="nav-item">
+                            <a href="?dashboard=out" class="nav-link "><span class="pcoded-micon"><i
+                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Logging Out</span></a>
                         </li>
                         <!-- USER -->
                         <li class="nav-item pcoded-menu-caption">
@@ -121,7 +126,7 @@ if (!isset($_SESSION['user_logged'])) {
                             <a href="?dashboard=updateMember" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Member</span></a>
                         </li>
-                        <!--                         STUDIO -->
+                        <!-- STUDIO -->
                         <li class="nav-item pcoded-menu-caption">
                             <label>Form Studio</label>
                         </li>
@@ -135,23 +140,6 @@ if (!isset($_SESSION['user_logged'])) {
                             <a href="?dashboard=updateDeleteStudio" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
                         </li>
-                        <!-- DIRECT BOOKING -->
-                        <li class="nav-item pcoded-menu-caption">
-                            <label>Pembelian Langsung</label>
-                        </li>
-                        <li data-username="form elements advance componant validation masking wizard picker select"
-                            class="nav-item">
-                            <a href="?dashboard=directBooking" class="nav-link "><span class="pcoded-micon"><i
-                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
-                        </li>
-                        <!-- LOGOUT -->
-
-                        <li data-username="form elements advance componant validation masking wizard picker select"
-                            class="nav-item">
-                            <a href="?dashboard=out" class="nav-link "><span class="pcoded-micon"><i
-                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Logging Out</span></a>
-                        </li>
-
                     </ul>
                 </div>
             </div>
@@ -225,12 +213,12 @@ if (!isset($_SESSION['user_logged'])) {
                                         $jadwalController = new FilmController();
                                         $jadwalController->indexUpdateDelete();
                                         break;
-//                            case 'createMember':
-//                                include_once 'form_create_member.php';
-//                                break;
-//                            case 'updateMember':
-//                                include_once 'form_update_member.php';
-//                                break;
+                                    case 'createMember':
+                                        include_once 'form_create_member.php';
+                                        break;
+                                    case 'updateMember':
+                                        include_once 'form_update_member.php';
+                                        break;
                                     case 'createStudio':
                                         $studioController = new StudioController();
                                         $studioController->indexCreate();
@@ -249,12 +237,9 @@ if (!isset($_SESSION['user_logged'])) {
                                     case 'updateSesi':
                                         include_once 'form_update_sesi.php';
                                         break;
-                                    case 'directBooking':
-                                        include_once 'directbooking.php';
-                                        break;
                                     case 'out':
                                         session_destroy();
-                                        header('dashboard_home.php');
+                                        header('location:index.php');
                                     default;
                                         include_once 'dashboard_home.php';
                                 }
@@ -338,7 +323,7 @@ if (!isset($_SESSION['user_logged'])) {
                                         break;
                                     case 'out':
                                         session_destroy();
-                                        header('dashboard_home.php');
+                                        header('location:index.php');
                                     default;
                                         include_once 'dashboard_home.php';
                                 }
@@ -355,7 +340,8 @@ if (!isset($_SESSION['user_logged'])) {
         include_once 'dashboard_home.php';
     }
 } else {
-    include_once 'dashboardlogin.php';
+    $userController = new UserController();
+    $userController->indexLogin();
 }
 ?>
 </body>

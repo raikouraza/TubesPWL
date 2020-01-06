@@ -25,13 +25,14 @@
         <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="../src/vendor/bootstrap/css/blog-home.css" rel="stylesheet">
+        <link href="../src/vendor/bootstrap/css/membership.css" rel="stylesheet">
 
     </head>
     <body>
 
     <!-- Page Content -->
-    <div class="containerProfile" style="background-color: whitesmoke">
-        <div class="row profile">
+    <div class="containerProfile" style="background-color: #c5c6c7">
+        <div class="row profile" >
             <div class="col-md-1">
             </div>
             <div class="col-md-3" >

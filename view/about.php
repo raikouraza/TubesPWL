@@ -12,14 +12,24 @@
     <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../src/vendor/bootstrap/css/heroic-features.css" rel="stylesheet">
+    <style>
+        p {
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 1.7;
+            color:
+                    black;
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
 <!-- Navigation -->
 
 <!-- Page Content -->
-<div class="container">
+<div class="container" style="background-color: #c5c6c7">
    <fieldset>
-       <p style="background-color: whitesmoke ;text-align: center">
+       <p style="text-align: center">
            TENTANG PT YAS* CINEMAS INDONESIA
 
            PT. Yosmart Arief Stefanus, juga dikenal sebagai PT YAS* CINEMAS  adalah jaringan bioskop terkemuka di Indonesia yang pertama kali didirikan pada tahun 2004 yang membuka bioskop pertamanya di Paris Van Java, Bandung pada tahun 2006.

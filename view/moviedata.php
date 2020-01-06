@@ -124,14 +124,14 @@ if (isset($id)){
     ?>
 </main>
 <!-- Page Content -->
-<div class="container" style="background-color: whitesmoke">
-    <div class="row align-items-center my-8">
-        <div class="col-lg-5" >
-            <h1 align="center" style="background-color: whitesmoke"><?php echo $film->getFilmJudul(); ?></h1>
+<div class="container" style="background-color: #1f2833">
+    <div class="row align-items-center my-8 pt-3">
+        <div class="col-lg-12" >
+            <h1 align="center" style="color: #66FCF1; font-size: 50pt"><?php echo $film->getFilmJudul(); ?></h1>
         </div>
     </div>
     <!-- Heading Row -->
-    <div class="row align-items-center my-5">
+    <div class="row align-items-center my-4 pr-3 pl-3"  >
         <div class="col-lg-4">
             <img class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo $film->getFilmPoster()?>" alt="">
         </div>
@@ -147,7 +147,7 @@ if (isset($id)){
     <!-- /.row -->
     <!-- Content Row -->
     <div class="row">
-        <div class="col-md-4 mb-5">
+        <div class="col-md-4 mb-100 ">
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title">About : </h2>
@@ -172,13 +172,7 @@ if (isset($id)){
             </div>
         </div>
     </div>
-    <div class="col-md-8 mb-8">
-        <div class="card h-100">
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary btn-sm">Book Ticket</a>
-            </div>
-        </div>
-    </div>
+
 </div>
     <!-- /.row -->
     <!-- Call to Action Well -->

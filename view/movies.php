@@ -64,11 +64,7 @@ $bootstrapColWidth = 12 / $numOfCols;
             -webkit-transition: all 0.2s ease-in;
             transition: all 0.2s ease-in;
         }
-
-
-
     </style>
-
 </head>
 <body>
 <h1><a><p align="center" style="font-size: 50pt">NOW SHOWING</p></a></h1>

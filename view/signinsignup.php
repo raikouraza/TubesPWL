@@ -25,14 +25,87 @@
 
     <link rel="stylesheet" type="text/css" href="../src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
+    <style>
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: #66fcf1;
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+        .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+            border-color:
+                    #c5c6c7 #e9ecef
+                    #c5c6c7;
+        }
+        a {
+            color:
+                    #45a29e;
+            text-decoration: none;
+            background-color:
+                    transparent;
+        }
+        .wrap-login100 {
+            width: 960px;
+            background:
+                    #c5c6c7;
+            border-radius: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 80px 130px 33px 95px;
+        }
+        .input100 {
+            font-family: Poppins-Medium;
+            font-size: 15px;
+            line-height: 1.5;
+            color:
+                    #66fcf1;
+            display: block;
+            width: 100%;
+            background: #ffffff;
+            height: 50px;
+            border-radius: 10px;
+            padding: 0 30px 0 68px;
+        }
+        .login100-form-btn {
+            font-family: Montserrat-Bold;
+            font-size: 15px;
+            line-height: 1.5;
+            color:
+                    #fff;
+            text-transform: uppercase;
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            background:
+                    #45a29e;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+
+    </style>
 </head>
 <body>
 <!-- INI CONTAINER UNTUK TEMPLATE TABS, TAB SIGN IN DAN SIGN UP -->
 <div class="container mt-3">
-    <h2>SIGN IN & SIGN UP</h2>
+    <h2 ><p style="font-size: 30pt">SIGN IN & SIGN UP</p></h2>
     <br>
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs ">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#signin">Sign In</a>
         </li>

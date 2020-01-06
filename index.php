@@ -6,6 +6,7 @@ include_once 'entity/jadwal.php';
 include_once 'entity/Member.php';
 include_once 'entity/Tiket.php';
 include_once 'entity/Film.php';
+include_once 'entity/Topup.php';
 
 include_once 'db_function/MemberDao.php';
 include_once 'db_function/DBHelper.php';
@@ -13,6 +14,7 @@ include_once 'db_function/FilmDao.php';
 include_once 'db_function/UserDao.php';
 include_once 'db_function/GenreDao.php';
 include_once 'db_function/TiketDao.php';
+include_once 'db_function/TopupDao.php';
 
 
 include_once 'controller/LoginMemberLoginController.php';
@@ -58,6 +60,7 @@ if (!isset($_SESSION['user_logged'])) {
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/util.css">
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 </head>
 <body style="  display:flex;
   flex-direction:column; ">
@@ -242,5 +245,11 @@ if (!isset($_SESSION['user_logged'])) {
 <!--===============================================================================================-->
 <script src="src/vendor/bootstrap/js/main.js"></script>
 <script src="src/functions.js"></script>
+<script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();   $('#myTable2').DataTable();
+    });
+</script>
 </body>
 </html>

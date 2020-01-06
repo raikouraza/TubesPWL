@@ -109,6 +109,24 @@ class TopupDao{
 
     }
 
+    function getAllTopupByMemberId(Topup $topup)
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbtopup WHERE tbMember_member_id = ?";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $topup->getTbMemberMemberId(), PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetchObject("Topup");
+
+        $link = null;
+
+        return $result;
+
+    }
+
     function changeTopupStatus(Topup $topup)
     {
         $link = DBHelper::createMySQLConnection();

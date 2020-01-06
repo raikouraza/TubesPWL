@@ -107,4 +107,22 @@ class TiketDao{
         return $result;
 
     }
+
+    function getAllTiketByMemberId(Tiket $tiket)
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbtiket WHERE tbMember_member_id  = ?";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $tiket->getTbMemberMemberId(), PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetchObject("Tiket");
+
+        $link = null;
+
+        return $result;
+
+    }
 }

@@ -32,14 +32,16 @@
     <!-- Page Content -->
     <div class="containerProfile" style="background-color: whitesmoke">
         <div class="row profile">
-            <div class="col-md-3">
+            <div class="col-md-4" >
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
                         <?php
                         /* @var $member Member */
                         ?>
-                        <img class="card-img-top" src=<?php echo $member->getMemberPhoto(); ?> alt="<?php echo $member->getMemberNamaDepan(); ?>"  width="200" height="200">
+                        <img class="card-img-top"
+                             src=<?php echo $member->getMemberPhoto(); ?> alt="<?php echo $member->getMemberNamaDepan(); ?>"
+                             width="200" height="200">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
@@ -97,7 +99,8 @@
                                                                class="form-control" name="txtMemberFirstName">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="txtMemberLastName">Masukkan Nama Belakang Baru</label>
+                                                        <label for="txtMemberLastName">Masukkan Nama Belakang
+                                                            Baru</label>
                                                         <input type="text"
                                                                value="<?php echo $member->getMemberNamaBelakang(); ?>"
                                                                class="form-control" name="txtMemberLastName"
@@ -110,16 +113,13 @@
                                                                class="form-control" name="txtMemberPhoto"
                                                                placeholder="Masukkan Photo">
                                                     </div>
-                                                    <button class="btn btn-danger" name="btnMemberUpdate">Update</button>
+                                                    <center>
+                                                    <button class="btn btn-primary" name="btnMemberUpdate">Update
+                                                    </button></center>
                                                 </form>
                                             </div>
 
-<!--                                           Modal footer -->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    Close
-                                                </button>
-                                            </div>
+
 
                                         </div>
                                     </div>
@@ -154,10 +154,10 @@
                                                         <input type="text" class="form-control" id="txtAmount"
                                                                name="txtAmount" placeholder="Masukkan Jumlah Saldo">
                                                     </div>
-                                                    <br>
+
                                                     <!-- tanggal waktu -->
                                                     <label for="txtDate">Tanggal dan Waktu Pembayaran: </label><br>
-                                                         <input type="datetime-local" name="txtDate">
+                                                    <input type="datetime-local" name="txtDate">
                                                     <br><br>
                                                     <div class="form-group">
                                                         <label for="txtTransfer">Masukkan Bukti Transfer</label>
@@ -166,16 +166,58 @@
                                                                name="txtTransfer">
                                                     </div>
                                                     <br>
-                                                    <button type="submit" class="btn btn-primary" id="btnTopup">
+                                                    <center>
+                                                    <button type="submit" class="btn btn-primary" name="btnTopup">
                                                         Proses
-                                                    </button>
+                                                    </button></center>
                                             </div>
-                                            <!-- Modal footer -->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    Close
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Change Password -->
+                            &nbsp;
+                            &nbsp;
+                            <li class="active">
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#myModal3">
+                                    Change Password
+                                </button>
+                                <!-- The Modal Change PAssword -->
+                                <div class="modal" id="myModal3">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Change Password</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;
                                                 </button>
                                             </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <form method="post" enctype="multipart/form-data" id="filmForm">
+                                                    <div class="form-group">
+                                                        <label for="txtAmount">Masukkan Password Baru : </label>
+
+                                                        <input type="password" class="form-control" id="txtNewPassword"
+                                                               name="txtNewPassword" placeholder="**************">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="txtAmount">Masukkan Password Lagi : </label>
+                                                        <input type="password" class="form-control" id="txtNewPassword"
+                                                               name="txtNewPassword2" placeholder="**************">
+                                                    </div>
+                                                    <center>
+                                                    <button type="submit" class="btn btn-primary" name="btnChangePassword">
+                                                        Change Password
+                                                    </button>
+                                                    </center>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -185,20 +227,84 @@
                     <!-- END MENU -->
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="profile-content">
                     Username : <?php echo $member->getMemberUsername(); ?> <br>
                     Email : <?php echo $member->getMemberEmail(); ?> <br>
                     Saldo : Rp <?php echo $member->getMemberSaldo(); ?>.- <br>
                 </div>
             </div>
+            <br><br><br><br>
+            <div class="col-md-6" align="center">
+                <h5 align="center">HISTORI TRANSAKSI TIKET</h5>
+                <table id="myTable" >
+                    <thead>
+                        <tr>
+                            <th>Transaksi ID</th>
+                            <th>Tiket ID</th>
+                            <th>Judul Film</th>
+                            <th>Tanggal</th>
+                            <th>Tanggal Transaksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+//                        /* @var $pasien Pasien */
+//                        foreach ($pasiens as $pasien) {
+    //                        $tgl = date_create($pasien->getBirthDate());
+    //                        echo '<tr>';
+    //                        echo '<td>' . $pasien->getMedRecordNumber() . '</td>';
+    //                        echo '<td>' . $pasien->getCitizenIdNumber() . '</td>';
+    //                        echo '<td>' . $pasien->getName() . '</td>';
+    //                        echo '<td>' . $pasien->getAddress() . '</td>';
+    //                        echo '<td>' . $pasien->getBirthPlace() . '</td>';
+    //                        echo '</tr>';
+//                         }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <!--histori transaksi topup-->
+            <div class="col-md-6" align="center">
+                <h5 align="center">HISTORI TRANSAKSI TOP UP</h5>
+                <table id="myTable2" >
+                    <thead>
+                    <tr>
+                        <th>Topup ID</th>
+                        <th>Tanggal TopUp</th>
+                        <th>Jumlah</th>
+                        <th>Status</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                        $topid = new Topup();
+                        $topupDao = new TopupDao();
+                        $topid->setTbMemberMemberId($_SESSION['id']);
+                        $topups = $topupDao->getAllTopupByMemberId($topid);
+                        /* @var $topup Topup */
+                        foreach ($topups as $topup) {
+                        echo '<tr>';
+                        echo '<td>' . $topup->getTopupId() . '</td>';
+                        echo '<td>' . $topup . '</td>';
+                        echo '<td> Rp.' . $topup . '.-</td>';
+                        echo '<td>' . $topup . '</td>';
+                        echo '</tr>';
+                         }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
-    <center>
-        <!-- /.container -->
-        <!-- Bootstrap core JavaScript -->
-        <script src="../src/vendor/jquery/jquery.js"></script>
-        <script src="../src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="../src/vendor/jquery/jquery.js"></script>
+    <script src="../src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>
 </div>

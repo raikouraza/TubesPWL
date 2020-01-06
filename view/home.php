@@ -1,7 +1,7 @@
 <!-- Page Content -->
 <div class="container">
     <!-- Jumbotron Header -->
-    <header class="jumbotron my-3">
+    <header class="jumbotron my-3" style="max-width: 100%;">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">

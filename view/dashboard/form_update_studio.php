@@ -14,6 +14,12 @@
                                 <input value="<?php /* @var $studio Studio*/ echo $studio->getStudioNama(); ?>" type="text" class="form-control" name="txtStudioNama" placeholder="Masukkan Nama" >
                             </div>
                             <br>
+                            <div class="form-group">
+                                <label for="txtNamaStudio">Masukkan Kapasitas Studio</label>
+                                <hr>
+                                <input value="<?php /* @var $studio Studio*/ echo $studio->getStudioKapasitas(); ?>" type="number" class="form-control" name="txtStudioKapasitas" placeholder="Masukkan Kapasitas" >
+                            </div>
+                            <br>
                             <button type="submit" class="btn btn-primary" id="btnUpdate" name="btnUpdate">Update</button>
                         </form>
                     </div>

@@ -4,7 +4,23 @@
 class Studio{
     private $studio_id;
     private $studio_nama;
+    private $studio_kapasitas;
 
+    /**
+     * @return mixed
+     */
+    public function getStudioKapasitas()
+    {
+        return $this->studio_kapasitas;
+    }
+
+    /**
+     * @param mixed $studio_kapasitas
+     */
+    public function setStudioKapasitas($studio_kapasitas)
+    {
+        $this->studio_kapasitas = $studio_kapasitas;
+    }
 
     /**
      * @return mixed

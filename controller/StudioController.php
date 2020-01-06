@@ -16,11 +16,13 @@ class StudioController
         $submitted = filter_input(INPUT_POST, 'btnSubmit');
         if (isset($submitted)) {
             $studio_nama = filter_input(INPUT_POST, 'txtStudioNama');
+            $studio_kapasitas = filter_input(INPUT_POST, 'txtStudioKapasitas');
 
             $studio = new Studio();
             $studio->setStudioNama($studio_nama);
+            $studio->setStudioKapasitas($studio_kapasitas);
 
-            if (fieldNotEmpty(array($studio_nama))) {
+            if (fieldNotEmpty(array($studio_nama, $studio_kapasitas))) {
                 $this->studioDao->addStudio($studio);
             } else
                 $errMessage = 'Please check your input!';
@@ -45,11 +47,13 @@ class StudioController
         $submitted = filter_input(INPUT_POST, 'btnUpdate');
         if (isset($submitted)) {
             $studio_nama = filter_input(INPUT_POST, 'txtStudioNama');
+            $studio_kapasitas = filter_input(INPUT_POST, 'txtStudioKapasitas');
 
             $updatedStudio = new Studio();
             /* @var $studio Studio */
             $updatedStudio->setStudioId($studio->getStudioId());
             $updatedStudio->setStudioNama($studio_nama);
+            $updatedStudio->setStudioKapasitas($studio_kapasitas);
 
             if (fieldNotEmpty(array($studio_nama))) {
                 $this->studioDao->updateStudio($updatedStudio);

@@ -9,19 +9,19 @@
                     <div class="col-md-6">
                         <form method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="txtUsername">Masukkan Username </label>
+                                <label for="txtUsername">Masukkan Username User</label>
                                 <hr>
                                 <input type="text" class="form-control" name="txtUserUsername"  placeholder="Masukkan Judul">
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="txtPassword">Masukkan Password</label>
+                                <label for="txtPassword">Masukkan Password User</label>
                                 <hr>
                                 <input type="password" class="form-control" name="txtUserPassword" placeholder="Masukkan Password">
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="txtName">Masukkan Name</label>
+                                <label for="txtName">Masukkan Name User</label>
                                 <hr>
                                 <input type="text" class="form-control" name="txtUserName"  placeholder="Masukkan Name">
                             </div>

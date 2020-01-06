@@ -13,6 +13,11 @@
                                 <hr>
                                 <input type="text" class="form-control" name="txtStudioNama" placeholder="Masukkan Nama">
                             </div>
+                            <div class="form-group">
+                                <label for="txtNamaStudio">Masukkan Kapasitas Studio</label>
+                                <hr>
+                                <input type="number" class="form-control" name="txtStudioKapasitas" placeholder="Masukkan Kapasitas">
+                            </div>
                             <br>
                             <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
                         </form>
@@ -24,6 +29,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama</th>
+                                <th>Kapasitas</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,6 +40,7 @@
                                 echo '<tr align="center">';
                                 echo '<td>' . $studio->getStudioId() . '</td>';
                                 echo '<td>' . $studio->getStudioNama() . '</td>';
+                                echo '<td>' . $studio->getStudioKapasitas() . '</td>';
                                 echo '</tr>';
                             }
                             ?>

@@ -31,16 +31,3 @@
     </div>
 </div>
 <!-- [ Main Content ] end -->
-<!--<script>-->
-<!--    --><?php
-//    $topup = new Topup();
-//    $member = new Member();
-//    $total = (int)$topup->getTopupAmount()+(int)$member->getMemberSaldo();
-//    ?>
-//    function myFunction() {
-//        var total = <?php //(int)$member->getMemberSaldo() + (int)$topup->getTopupAmount() ?>//;
-//        var sebelum = <?php //$total ?>// - <?php //(int)$topup->getTopupAmount()?>// ;
-//
-//        alert("Saldo Telah Ditambahkan Sebesar :<?php //(int)$topup->getTopupAmount() ?>// . Saldo Sebelumnya adalah :" sebelum);
-//    }
-//</script>

@@ -16,6 +16,19 @@ class JadwalDao
         return $result;
     }
 
+    function getAllJadwalDistinct()
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT jadwal_tanggal, jadwal_id FROM tbjadwal GROUP BY jadwal_tanggal";
+
+        $result = $link->query($query);
+
+        $result->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Jadwal");
+
+        return $result;
+    }
+
     public function addJadwal(Jadwal $jadwal){
         $link = DBHelper::createMySQLConnection();
         $link->beginTransaction();
@@ -96,6 +109,5 @@ class JadwalDao
         $link = null;
 
         return $result;
-
     }
 }

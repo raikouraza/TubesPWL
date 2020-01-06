@@ -24,7 +24,7 @@
                     </div>
                     <br>
                     <div class="col-md-6">
-                        <table>
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>ID</th>

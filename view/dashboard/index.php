@@ -3,7 +3,7 @@ include_once '../../controller/FilmController.php';
 include_once '../../controller/UserController.php';
 include_once '../../controller/StudioController.php';
 include_once '../../controller/JadwalController.php';
-include_once '../../controller/TopupController.php';
+//include_once '../../controller/TopupController.php';
 include_once '../../db_function/FilmDao.php';
 include_once '../../db_function/UserDao.php';
 include_once '../../db_function/StudioDao.php';
@@ -124,20 +124,6 @@ if (!isset($_SESSION['user_logged'])) {
                             <a href="?dashboard=updateDeleteJadwal" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Jadwal</span></a>
                         </li>
-                        <!-- MEMBER -->
-                        <li class="nav-item pcoded-menu-caption">
-                            <label>Form Member</label>
-                        </li>
-                        <li data-username="form elements advance componant validation masking wizard picker select"
-                            class="nav-item">
-                            <a href="?dashboard=createMember" class="nav-link "><span class="pcoded-micon"><i
-                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Create Member</span></a>
-                        </li>
-                        <li data-username="form elements advance componant validation masking wizard picker select"
-                            class="nav-item">
-                            <a href="?dashboard=updateMember" class="nav-link "><span class="pcoded-micon"><i
-                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Member</span></a>
-                        </li>
                         <!-- STUDIO -->
                         <li class="nav-item pcoded-menu-caption">
                             <label>Form Studio</label>
@@ -225,12 +211,6 @@ if (!isset($_SESSION['user_logged'])) {
                                         $jadwalController = new JadwalController();
                                         $jadwalController->indexUpdateDelete();
                                         break;
-                                    case 'createMember':
-                                        include_once 'form_create_member.php';
-                                        break;
-                                    case 'updateMember':
-                                        include_once 'form_update_member.php';
-                                        break;
                                     case 'createStudio':
                                         $studioController = new StudioController();
                                         $studioController->indexCreate();
@@ -242,12 +222,6 @@ if (!isset($_SESSION['user_logged'])) {
                                     case 'updateDeleteStudio':
                                         $studioController = new StudioController();
                                         $studioController->indexUpdateDelete();
-                                        break;
-                                    case 'createSesi':
-                                        include_once 'form_create_sesi.php';
-                                        break;
-                                    case 'updateSesi':
-                                        include_once 'form_update_sesi.php';
                                         break;
                                     case 'out':
                                         session_destroy();

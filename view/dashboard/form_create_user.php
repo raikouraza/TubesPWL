@@ -32,7 +32,7 @@
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <table id="myTable" class="display">
+                        <table class="table">
                             <thead>
                             <tr>
                                 <th>ID User</th>

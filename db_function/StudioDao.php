@@ -17,6 +17,20 @@ class StudioDao
 
     }
 
+    function getAllStudioDistinct()
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT DISTINCT studio_nama, studio_id FROM tbstudio";
+
+        $result = $link->query($query);
+
+        $result->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Studio");
+
+        return $result;
+
+    }
+
     function addStudio(Studio $studio)
     {
         $link = DBHelper::createMySQLConnection();

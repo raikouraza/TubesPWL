@@ -10,6 +10,23 @@ class Film{
     private $film_aktor;
     private $film_durasi;
     private $film_rating;
+    private $film_genre;
+
+    /**
+     * @return mixed
+     */
+    public function getFilmGenre()
+    {
+        return $this->film_genre;
+    }
+
+    /**
+     * @param mixed $film_genre
+     */
+    public function setFilmGenre($film_genre)
+    {
+        $this->film_genre = $film_genre;
+    }
     /**
      * @return mixed
      */

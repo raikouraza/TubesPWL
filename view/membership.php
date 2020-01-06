@@ -200,7 +200,6 @@ if (isset($id)) {
                 <div class="profile-content">
                     Username : <?php echo $member->getMemberUsername(); ?> <br>
                     Email : <?php echo $member->getMemberEmail(); ?> <br>
-                    Member Id : <?php echo $member->getMemberId(); ?> <br>
                     Saldo : Rp <?php echo $member->getMemberSaldo(); ?>.- <br>
                 </div>
             </div>

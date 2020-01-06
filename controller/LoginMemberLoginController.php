@@ -87,7 +87,7 @@ class LoginMemberLoginController
 
 
              // generate new password
-             $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+             $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
              $pass = array(); //remember to declare $pass as an array
              $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
              for ($i = 0; $i < 6; $i++) {
@@ -96,17 +96,35 @@ class LoginMemberLoginController
              }
              $newPassword = implode($pass);
 
-            // SEND NEW PASSWORD TO EMAIl !!!
-
 
              $MemberWithNewPassword = new Member();
-             if($result!=null){
-                 $MemberWithNewPassword->setMemberId($result->getMemberId());
-                 $MemberWithNewPassword->setMemberPassword($newPassword);
-                 $this->memberDao->updatePassword($MemberWithNewPassword);
-
-                 $pesan = "Silakan cek folder inbox atau spam di email anda untuk mendapatkan password yang baru";
-             }else{
+             if($result!=null ){
+                 // SEND NEW PASSWORD TO EMAIl !!!
+                 date_default_timezone_set('Etc/UTC');
+                 $mail = new PHPMailer;
+                 $mail->isSMTP();
+                 $mail->SMTPDebug = 0;
+                 $mail->Host = 'smtp.gmail.com';
+                 $mail->Port = 587;
+                 $mail->SMTPSecure = 'tls';
+                 $mail->SMTPAuth = true;
+                 $mail->Username = "ariefk.tugas@gmail.com";
+                 $mail->Password = "ariefkurniawan123";
+                 $mail->setFrom('DoNotReply@YASCINEMA.com', 'CINEMA YAS');
+                 $mail->addAddress($result->getMemberEmail(), $result->getMemberNamaDepan());
+                 $mail->Subject = 'New Password - CINEMA YAS!';
+                 $mail->Body = 'Hallo, ' . $result->getMemberUsername() . "\nPassword baru anda adalah : " . $newPassword .
+                                "\nSILAKAN LOGIN DAN GANTI PASSWORD ANDA DENGAN PASSWORD YANG BARU!" .
+                                "\n\n\n TUGAS BESAR PWL 2020";
+                 if($mail->send()){
+                     $MemberWithNewPassword->setMemberId($result->getMemberId());
+                     $MemberWithNewPassword->setMemberPassword($newPassword);
+                     $this->memberDao->updatePassword($MemberWithNewPassword);
+                     $pesan = "Silakan cek folder inbox atau spam di email anda untuk mendapatkan password yang baru";
+                 }else{
+                     $pesan = "Email gagal dikirim,coba lagi " . $mail->ErrorInfo;
+                 }
+                 }else{
                  $pesan = "Email tidak ditemukan!";
              }
 

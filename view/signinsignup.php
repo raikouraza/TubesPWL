@@ -19,6 +19,10 @@
     <link rel="stylesheet" type="text/css" href="../src/vendor/bootstrap/css/select2.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="../src/vendor/bootstrap/css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../src/vendor/bootstrap/css/signinsignup.css">
+
     <link rel="stylesheet" type="text/css" href="../src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
 </head>

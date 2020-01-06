@@ -58,18 +58,22 @@ ob_start();
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/select2.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/navbar.css">
+
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
 </head>
 <body style="  display:flex;
   flex-direction:column; ">
 <!-- Navigation -->
 <!-- Jika User Sudah Login -->
 <?php if ($_SESSION['user_logged']) { ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
         <div class="container">
-            <a class="navbar-brand" href="?menu=hm">CINEMA YAS!</a>
+            <a class="navbar-brand" href="?menu=hm" style="text-decoration-color: #66fcf1">CINEMA YAS!</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -81,7 +85,7 @@ ob_start();
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" >
                         <a class="nav-link" href="?menu=mov">Movies</a>
                     </li>
                     <li class="nav-item">
@@ -215,7 +219,7 @@ ob_start();
     </main>
 <?php } ?>
 <!-- Footer -->
-<footer class="py-5 bg-dark" style="  margin-top:auto; height: 10%; ">
+<footer class="py-3 bg-dark" style="  margin-top:auto; height: 10%; ">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; YAS 2019</p>
     </div>

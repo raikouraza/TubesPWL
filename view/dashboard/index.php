@@ -352,7 +352,8 @@ if (!isset($_SESSION['user_logged'])) {
                                         $topupController->Index();
                                         break;
                                     case 'verification':
-                                        include_once 'form_topup_verification.php';
+                                        $topupController = new TopupController();
+                                        $topupController->Index2();
                                         break;
                                     case 'out':
                                         session_destroy();

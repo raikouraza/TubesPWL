@@ -63,6 +63,7 @@ class LoginMemberLoginController
                     $signedup = $this->memberDao->addMember($memberSignup);
                     if($signedup==1){
                         $errMsg = "Pendaftaran Akun Berhasil!,Silakan Login";
+                        header('location:index.php?menu=sin');
 
                     }else{
                         $errMsg = "Pendaftaran Akun Baru ERROR!,Silakan coba lagi";
@@ -83,6 +84,7 @@ class LoginMemberLoginController
          // FORGOT PASSWORD FUNCTION
          $fpPressed = filter_input(INPUT_POST,'btnForgotPassword');
          if(isset($fpPressed)){
+             var_dump($fpPressed);
              $fpemail =filter_input(INPUT_POST, 'txtFPEmail');
 
              $memberForgotPassword = new Member();
@@ -126,6 +128,7 @@ class LoginMemberLoginController
                      $MemberWithNewPassword->setMemberPassword($newPassword);
                      $this->memberDao->updatePassword($MemberWithNewPassword);
                      $pesan = "Silakan cek folder inbox atau spam di email anda untuk mendapatkan password yang baru";
+                     header('location:index.php?menu=hm');
                  }else{
                      $pesan = "Email gagal dikirim,coba lagi " . $mail->ErrorInfo;
                  }
@@ -137,12 +140,9 @@ class LoginMemberLoginController
                  echo '<script type="text/javascript">alert("' . $pesan . '")</script>';
              }
          }
-        include_once 'view\signinsignup.php';
+
+
+        include_once 'view/signinsignup.php';
     }
 }
 ?>
-
-
-
-
-

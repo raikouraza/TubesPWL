@@ -189,6 +189,23 @@ function addMemberSaldoById(Member $member){
     }
 
 
+    function addMemberSaldoByUsername(Member $member){
+        $link = DBHelper::createMySQLConnection();
+        $link->beginTransaction();
+        $query = "UPDATE tbmember SET member_saldo=?
+                                WHERE member_username=?";
 
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $member->getMemberSaldo(), PDO::PARAM_INT);
+        $stmt->bindValue(2, $member->getMemberUsername(), PDO::PARAM_STR);
+        if ($stmt->execute()) {
+            $link->commit();
+        } else {
+            $link->rollBack();
+        }
+
+        $link = null;
+
+    }
 
 }

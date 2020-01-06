@@ -86,7 +86,6 @@ class TopupDao{
         } else {
             $link->rollBack();
         }
-
         $link = null;
 
     }
@@ -94,19 +93,13 @@ class TopupDao{
     function getTopupById(Topup $topup)
     {
         $link = DBHelper::createMySQLConnection();
-
-        $query = "SELECT * FROM tbtopup WHERE topup_id = ? LIMIT 1";
-
+        $query = "SELECT * FROM tbtopup WHERE Topup_id = ? LIMIT 1";
         $stmt = $link->prepare($query);
         $stmt->bindValue(1, $topup->getTopupId(), PDO::PARAM_INT);
         $stmt->execute();
-
         $result = $stmt->fetchObject("Topup");
-
         $link = null;
-
         return $result;
-
     }
 
     function getAllTopupByMemberId(Topup $topup)

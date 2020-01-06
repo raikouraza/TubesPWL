@@ -6,13 +6,16 @@ class MemberController
     private $memberDao;
     private $topupDao;
     private $tiketDao;
+
     public function __construct()
     {
         $this->memberDao = new MemberDao();
         $this->topupDao = new TopupDao();
         $this->tiketDao = new TiketDao();
     }
-    public function Index()  {
+
+    public function Index()
+    {
         $id = $_SESSION['id'];
         if (isset($id)) {
             $member = new Member();
@@ -53,33 +56,46 @@ class MemberController
 
         }
 
-        // CHANGE PASSWORD
+        ///TOP UP SALDO
         $submitted = filter_input(INPUT_POST, 'btnTopup');
-        if (isset($submitted)){
+        if (isset($submitted)) {
             $tfImage = filter_input(INPUT_POST, 'txtTransfer');
             $date = filter_input(INPUT_POST, 'txtDate');
             $amount = filter_input(INPUT_POST, 'txtAmount');
-            $inputTopup =  new Topup();
-            $inputTopup->setTopupImage($tfImage);
-            $inputTopup->setTopupTanggal($date);
-            $inputTopup->setTopupAmount($amount);
-            $inputTopup->setTbMemberMemberId($_SESSION['id']);
-            $inputTopup->setTopupStatus(0);
-            $this->topupDao->addTopup($inputTopup);
+            $inputTopup = new Topup();
+            if (!Empty(array($date, $amount))) {
+                try {
+                    if (isset($_FILES['txtTransfer']['name'])) {
+                        $targetDirectory = 'src/images/topup/';
+                        $targetFile = $targetDirectory . $tfImage . '.' . pathinfo($_FILES['txtTransfer']['name'], PATHINFO_EXTENSION);
+                        move_uploaded_file($_FILES['txtTransfer']['tmp_name'], $targetFile);
+                        $inputTopup->setTopupImage($targetFile);
+                        $inputTopup->setTopupTanggal($date);
+                        $inputTopup->setTopupAmount($amount);
+                        $inputTopup->setTbMemberMemberId($_SESSION['id']);
+                        $inputTopup->setTopupStatus(0);
+                        $this->topupDao->addTopup($inputTopup);
+                    } else {
+                        $errMessage = "Bukti Transfer Tidak Boleh Kosong!!";
+                    }
 
+                } catch (Exception $e) {
+                    echo $errMessage;
+                }
+            }
         }
 
 
-        // TOP UP SALDO
+        //CHANGE PASSWORD
         $submitted = filter_input(INPUT_POST, 'btnChangePassword');
         if (isset($submitted)) {
             $pass1 = filter_input(INPUT_POST, 'txtNewPassword');
             $pass2 = filter_input(INPUT_POST, 'txtNewPassword2');
-            if($pass1===$pass2){
+            if ($pass1 === $pass2) {
                 $member->setMemberPassword($pass1);
                 $this->memberDao->updatePassword($member);
                 $errMessage = "Password berhasil diganti";
-            }else{
+            } else {
                 $errMessage = "Password tidak sama, coba lagi";
             }
         }
@@ -95,7 +111,7 @@ class MemberController
         $tikets = $this->tiketDao->getAllTiketByMemberId($tiketid);
 
 
-        if (isset($errMessage)){
+        if (isset($errMessage)) {
             echo '<script type="text/javascript">alert("' . $errMessage . '")</script>';
         }
         include_once 'view/membership.php';

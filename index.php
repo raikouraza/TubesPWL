@@ -105,7 +105,6 @@ ob_start();
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=pro">Promotions</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=ab">About</a>
                     </li>
@@ -141,6 +140,9 @@ ob_start();
                 break;
             case 'mov':
                 include_once 'view/movies.php';
+                break;
+            case 'pay':
+                include_once 'view/payment.php';
                 break;
             case 'movd':
                 include_once 'view/moviedata.php';

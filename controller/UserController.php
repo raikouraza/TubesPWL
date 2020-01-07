@@ -33,8 +33,10 @@ class UserController
                 $errMessage = 'Please check your input!';
         }
 
-        if(isset($errMessage))
-            echo '<div class="err-msg">' . $errMessage . '</div>';
+        if(isset($errMessage)){
+            echo '<script type="text/javascript">alert("' . $errMessage . '")</script>';
+        }
+
         $users = $this->userDao->getAllUser();
         include_once '../../view/dashboard/form_create_user.php';
     }
@@ -74,8 +76,9 @@ class UserController
                 $errMessage = 'Please check your input!';
         }
 
-        if(isset($errMessage))
-            echo '<div class="err-msg">' . $errMessage . '</div>';
+        if(isset($errMessage)){
+            echo '<script type="text/javascript">alert("' . $errMessage . '")</script>';
+        }
         include_once '../../view/dashboard/form_update_user.php';
     }
 
@@ -119,9 +122,8 @@ class UserController
                 $errMsg = "Invalid username or password";
             }
 
-            if(isset($errMsg))
-            {
-                echo '<div class="err-msg">' . $errMsg . '</div>';
+            if(isset($errMsg)){
+                echo '<script type="text/javascript">alert("' . $errMsg . '")</script>';
             }
         }
         include_once '../../view/dashboard/dashboard_login.php';

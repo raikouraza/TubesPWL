@@ -258,28 +258,29 @@
                         </tr>
                     </thead>
                     <tbody>
-<!--                    --><?php
-//
-//                    /* @var $trx Transaksi */
-//                    foreach ($topups as $topup) {
-//
-//                        $cek = $topup["Topup_status"];
-//                        if($cek=="1"){
-//                            $status = "berhasil";
-//                        }else if($cek=="0"){
-//                            $status = "Gagal";
-//                        }else {
-//                            $status = "sedang diproses";
-//                        }
-//                        echo '<tr>';
-//                        echo '<td>' . $topup["Topup_id"] . '</td>';
-//                        echo '<td>' . $topup["Topup_tanggal"] . '</td>';
-//                        echo '<td> Rp.' . $topup["Topup_amount"] . '.-</td>';
-//                        echo '<td>' . $status . '</td>';
-//                        echo '</tr>';
-//                    }
-//
-//                    ?>
+                    <?php
+                    $film = new Film();
+                    $filmDao = new FilmDao();
+                    $transaksis = new Transaksi();
+                    $transaksis->setTbTiketTbMemberMemberId($_SESSION['id']);
+                    $trxDao = new TransaksiDao();
+                    $result= $trxDao->getAllTransaksiByMemberId($transaksis);
+                    /* @var $trx Transaksi */
+                    foreach ($result as $trx) {
+                        $film->setFilmId($trx["tbFilm_film_id"]);
+                        $rsfilm = $filmDao->getFilmById($film);
+
+
+                        echo '<tr>';
+                        echo '<td>' . $trx["transaksi_tanggal"] . '</td>';
+                        echo '<td>' . $trx["transaksi_id"] . '</td>';
+                        echo '<td> ' . $trx["tbTiket_tiket_id"] . '</td>';
+                        echo '<td>' . $rsfilm->getFilmJudul() . '</td>';
+                        echo '<td>' . $trx["transaksi_totalprice"] . '</td>';
+                        echo '</tr>';
+                    }
+
+                    ?>
                     </tbody>
                 </table>
             </div>

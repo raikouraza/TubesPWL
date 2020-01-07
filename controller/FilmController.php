@@ -37,7 +37,7 @@ class FilmController
 
             if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating, $film_genre))) {
                 if (isset($_FILES['txtFilmPoster']['name'])) {
-                    $targetDirectory = '../../src/images/poster/';
+                    $targetDirectory = 'src/images/poster/';
                     $targetFile = $targetDirectory . $_FILES['txtFilmPoster']['name'];
                     move_uploaded_file($_FILES['txtFilmPoster']['tmp_name'], $targetFile);
                     $film->setFilmPoster($targetFile);
@@ -91,7 +91,7 @@ class FilmController
 
             if (fieldNotEmpty(array($film_judul, $film_deskripsi, $film_poster, $film_trailer, $film_sutradara, $film_nama_aktor, $film_durasi, $film_rating,$film_genre))) {
                 if (isset($_FILES['txtFilmPoster']['name'])) {
-                    $targetDirectory = '../../src/images/poster/';
+                    $targetDirectory = 'src/images/poster/';
                     $targetFile = $targetDirectory . $_FILES['txtFilmPoster']['name'];
                     move_uploaded_file($_FILES['txtFilmPoster']['tmp_name'], $targetFile);
                     $updatedFilm->setFilmPoster($targetFile);

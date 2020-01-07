@@ -258,28 +258,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-
-                    /* @var $trx Transaksi */
-                    foreach ($topups as $topup) {
-
-                        $cek = $topup["Topup_status"];
-                        if($cek=="1"){
-                            $status = "berhasil";
-                        }else if($cek=="0"){
-                            $status = "Gagal";
-                        }else {
-                            $status = "sedang diproses";
-                        }
-                        echo '<tr>';
-                        echo '<td>' . $topup["Topup_id"] . '</td>';
-                        echo '<td>' . $topup["Topup_tanggal"] . '</td>';
-                        echo '<td> Rp.' . $topup["Topup_amount"] . '.-</td>';
-                        echo '<td>' . $status . '</td>';
-                        echo '</tr>';
-                    }
-
-                    ?>
+<!--                    --><?php
+//
+//                    /* @var $trx Transaksi */
+//                    foreach ($topups as $topup) {
+//
+//                        $cek = $topup["Topup_status"];
+//                        if($cek=="1"){
+//                            $status = "berhasil";
+//                        }else if($cek=="0"){
+//                            $status = "Gagal";
+//                        }else {
+//                            $status = "sedang diproses";
+//                        }
+//                        echo '<tr>';
+//                        echo '<td>' . $topup["Topup_id"] . '</td>';
+//                        echo '<td>' . $topup["Topup_tanggal"] . '</td>';
+//                        echo '<td> Rp.' . $topup["Topup_amount"] . '.-</td>';
+//                        echo '<td>' . $status . '</td>';
+//                        echo '</tr>';
+//                    }
+//
+//                    ?>
                     </tbody>
                 </table>
             </div>

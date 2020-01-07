@@ -4,6 +4,7 @@ include_once '../../controller/UserController.php';
 include_once '../../controller/StudioController.php';
 include_once '../../controller/JadwalController.php';
 include_once '../../controller/TopupController.php';
+include_once '../../controller/TransaksiController.php';
 
 include_once '../../db_function/FilmDao.php';
 include_once '../../db_function/UserDao.php';
@@ -11,6 +12,7 @@ include_once '../../db_function/StudioDao.php';
 include_once '../../db_function/JadwalDao.php';
 include_once '../../db_function/TopupDao.php';
 include_once '../../db_function/MemberDao.php';
+include_once '../../db_function/TransaksiDao.php';
 
 include_once '../../entity/Film.php';
 include_once '../../entity/User.php';
@@ -18,6 +20,7 @@ include_once '../../entity/Studio.php';
 include_once '../../entity/Jadwal.php';
 include_once '../../entity/Member.php';
 include_once '../../entity/Topup.php';
+include_once '../../entity/Transaksi.php';
 
 
 include_once '../../db_function/DBHelper.php';

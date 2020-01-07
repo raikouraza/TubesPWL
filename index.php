@@ -8,6 +8,7 @@ include_once 'entity/Tiket.php';
 include_once 'entity/Film.php';
 include_once 'entity/Topup.php';
 include_once 'entity/Studio.php';
+include_once 'entity/Transaksi.php';
 
 include_once 'db_function/MemberDao.php';
 include_once 'db_function/DBHelper.php';
@@ -17,12 +18,14 @@ include_once 'db_function/GenreDao.php';
 include_once 'db_function/TiketDao.php';
 include_once 'db_function/TopupDao.php';
 include_once 'db_function/JadwalDao.php';
+include_once 'db_function/TransaksiDao.php';
 
 include_once 'controller/LoginMemberLoginController.php';
 include_once 'controller/FilmController.php';
 include_once 'controller/MemberController.php';
 include_once 'controller/UserController.php';
 include_once 'controller/JadwalController.php';
+include_once 'controller/TransaksiController.php';
 
 require 'util/Exception.php';
 require 'util/PHPMailer.php';

@@ -139,6 +139,9 @@ ob_start();
             case 'mov':
                 include_once 'view/movies.php';
                 break;
+            case 'pay':
+                include_once 'view/payment.php';
+                break;
             case 'movd':
                 include_once 'view/moviedata.php';
                 break;

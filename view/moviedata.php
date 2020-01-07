@@ -67,8 +67,15 @@ if (isset($id)){
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="?menu=mov">Movies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=book">Book Ticket!</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="?menu=mem">Membership</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=pro">Promotions</a>

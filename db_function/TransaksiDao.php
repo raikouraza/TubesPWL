@@ -120,4 +120,24 @@ class TransaksiDao{
         return $result;
 
     }
+
+    function getAllTransaksiByMemberId(Transaksi $transaksi)
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbtransaksi WHERE tbTiket_tbMember_member_id = ?";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $transaksi->getTbTiketTbMemberMemberId(), PDO::PARAM_INT);
+        $stmt->execute();
+
+        //$result = $stmt->fetchObject("Topup");
+        $result = $stmt->fetchAll();
+
+
+        $link = null;
+
+        return $result;
+
+    }
 }

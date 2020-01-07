@@ -250,27 +250,36 @@
                 <table id="myTable" >
                     <thead>
                         <tr>
+                            <th>Tanggal Transaksi</th>
                             <th>Transaksi ID</th>
                             <th>Tiket ID</th>
                             <th>Judul Film</th>
-                            <th>Tanggal</th>
-                            <th>Tanggal Transaksi</th>
+                            <th>Total Harga</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-//                        /* @var $pasien Pasien */
-//                        foreach ($pasiens as $pasien) {
-    //                        $tgl = date_create($pasien->getBirthDate());
-    //                        echo '<tr>';
-    //                        echo '<td>' . $pasien->getMedRecordNumber() . '</td>';
-    //                        echo '<td>' . $pasien->getCitizenIdNumber() . '</td>';
-    //                        echo '<td>' . $pasien->getName() . '</td>';
-    //                        echo '<td>' . $pasien->getAddress() . '</td>';
-    //                        echo '<td>' . $pasien->getBirthPlace() . '</td>';
-    //                        echo '</tr>';
-//                         }
-                        ?>
+                    <?php
+
+                    /* @var $trx Transaksi */
+                    foreach ($topups as $topup) {
+
+                        $cek = $topup["Topup_status"];
+                        if($cek=="1"){
+                            $status = "berhasil";
+                        }else if($cek=="0"){
+                            $status = "Gagal";
+                        }else {
+                            $status = "sedang diproses";
+                        }
+                        echo '<tr>';
+                        echo '<td>' . $topup["Topup_id"] . '</td>';
+                        echo '<td>' . $topup["Topup_tanggal"] . '</td>';
+                        echo '<td> Rp.' . $topup["Topup_amount"] . '.-</td>';
+                        echo '<td>' . $status . '</td>';
+                        echo '</tr>';
+                    }
+
+                    ?>
                     </tbody>
                 </table>
             </div>

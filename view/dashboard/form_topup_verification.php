@@ -47,16 +47,10 @@
 
                                 echo '<td>' . $topup["Topup_amount"] . '</td>';
 
-                                $cek = $topup["Topup_status"];
-                                if($cek=="1"){
-                                    echo "Berhasil di Topup";
-                                }elseif ($cek=="0"){
-                                    echo "Topup Ditolak";
-                                }else {
                                     echo '<td><button onclick="accTopup(\'' . $topup["Topup_id"]  . '\')">Accept</button>';
                                     echo '<button onclick="rejectTopup(\'' . $topup["Topup_id"]  . '\')">Reject</button></td>';
 
-                                }
+
                                 echo '</tr>';
                             }
                             ?>

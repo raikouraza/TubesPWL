@@ -57,15 +57,17 @@ class TopupController
         $topup = new Topup();
         $member = new Member();
 
-
         if (isset($_POST['btnAcc'])) {
-            $topup->setTopupId($topup["Topup_id"]);
-            $topup->setTopupStatus("1");
+            $topup->setTopupId($_POST["Topup_id"]);
+            $topup->setTopupStatus(1);
             $this->topupDao->changeTopupStatus($topup);
-            $member->setMemberUsername($topup["tbMember_member_id"]);
-            $result = $this->memberDao->getMemberByUsername($member);
-            $result->setMemberSaldo((int)$result->getMemberSaldo() + (int)$topup["Topup_amount"]);
-
+            $member->setMemberId($_POST["tbMember_member_id"]);
+            $result = $this->memberDao->getMemberById($member);
+            /* @var $result Member */
+            $hasil = (int)$result->getMemberSaldo() + (int)$_POST["Topup_amount"];
+            $result->setMemberSaldo($hasil);
+            $this->memberDao->addMemberSaldoById($result);
+            header('location:../../view/dashboard/index.php?dashboard=verification');
         }
 
 
@@ -75,8 +77,6 @@ class TopupController
             $this->topupDao->changeTopupStatus($topup);
 
         }
-
-
 
         include_once '../../view/dashboard/form_topup_verification.php';
 

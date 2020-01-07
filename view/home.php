@@ -60,7 +60,7 @@ $films2 = $filmDao->getAllFilm();
     }
 </style>
 
-<h1><a><p align="center" style="font-size: 50pt">NOW PLAYING</p></a></h1>
+<h1><a><p align="center" style="font-size: 50pt">POPULAR THIS WEEK</p></a></h1>
 <!-- Page Content -->
 <div class="container">
     <!-- Jumbotron Header -->

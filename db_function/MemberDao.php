@@ -105,6 +105,25 @@ function updateMember(Member $member){
 
 }
 
+    function updateSaldoMember(Member $member){
+        $link = DBHelper::createMySQLConnection();
+        $link->beginTransaction();
+        $query = "UPDATE tbmember SET   member_saldo=?,
+                                    WHERE member_id=?";
+
+        $stmt = $link->prepare($query);
+        $stmt->bindValue(1, $member->getMemberSaldo(), PDO::PARAM_STR);
+        $stmt->bindValue(2, $member->getMemberId(), PDO:: PARAM_INT);
+        if ($stmt->execute()) {
+            $link->commit();
+        } else {
+            $link->rollBack();
+        }
+
+        $link = null;
+
+    }
+
 function updatePassword(Member $member)
 {
     $link = DBHelper::createMySQLConnection();

@@ -40,11 +40,9 @@ CREATE TABLE `tbfilm` (
                           `film_rating` varchar(45) DEFAULT NULL,
                           `film_genre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `tbfilm`
 --
-
 INSERT INTO `tbfilm` (`film_id`, `film_judul`, `film_deskripsi`, `film_poster`, `film_trailer`, `film_sutradara`, `film_aktor`, `film_durasi`, `film_rating`, `film_genre`) VALUES
 (1, 'Frozen 2', 'Anna, Elsa, Kristoff, Olaf dan Sven meninggalkan Arendelle untuk melakukan perjalanan ke hutan misterius di musim gugur, hutan tersebut terikat dengan tanah ajaib. Mereka berangkat untuk menemukan asal usul kekuatan Elsa untuk menyelamatkan kerajaan mereka.', 'src/images/poster/frozen2.jpg', 'https://www.youtube.com/embed/MJVqb5ftrDs', 'Chris Buck, Jennifer Lee', 'Kristen Bell, Jason Ritter, Jonathan Groff', '103 Menit', 'SU', 'Animation'),
 (2, 'Black Christmas', 'Sekelompok mahasisw di ikuti oleh orang asing, saat sedang liburan Natal mereka. Itu sampai seorang mahasiswi muda menemukan bahwa ada pembunuh dari perguruan tinggi ', 'src/images/poster/blackchristmas.jpg', 'https://www.youtube.com/embed/dodAe3bn9aY', 'Sophia Takal', 'Imogen Poots, Cary Elwes, Brittany O\'Grady ', '92 Minutes', 'R', 'Thriller'),

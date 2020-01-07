@@ -2,6 +2,12 @@
     color:
             #66fcf1;
 }
+.navbar
+{
+    border:1px solid rgba(102, 252, 241, 0.32);
+
+}
+
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
     color:
             #66fcf1;
@@ -19,4 +25,6 @@
 .bg-dark {
     background-color:
             #0b0c10 !important;
+
 }
+

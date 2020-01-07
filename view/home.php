@@ -67,7 +67,7 @@ $films = $filmDao->getAllFilm();
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" align="center" style="height: fit-content;width: 350px; margin:auto;">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="src\images\poster\Stefanus.jpg">
+                        <img class="d-block w-100" src="src\images\poster\jumanji.jpg">
                     </div>
                     <?php
                     /* @var $jadwal Jadwal*/
@@ -123,7 +123,7 @@ $films = $filmDao->getAllFilm();
             <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" align="center" style="height: fit-content;width: 350px; margin:auto;">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="src\images\poster\Stefanus.jpg">
+                        <img class="d-block w-100" src="src\images\poster\sonic.jpg">
                     </div>
                     <?php
                     /* @var $jadwal Jadwal*/

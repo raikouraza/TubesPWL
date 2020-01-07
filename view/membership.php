@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Blog Home - Start Bootstrap Template</title>
+        <title>Membership</title>
         <!-- Bootstrap core CSS -->
         <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -151,6 +151,8 @@
                                             <!-- Modal body -->
                                             <div class="modal-body">
                                                 <form method="post" enctype="multipart/form-data" id="filmForm">
+                                                    Anda bisa melakukan topup saldo melalui OVO/GOPAY dengan cara kirimkan jumlah saldo  ke 0812-1111-1111 dan KOnfirmasi melalui form dibawah ini.
+                                                    <br><br>
                                                     <div class="form-group">
                                                         <label for="txtAmount">Masukkan Jumlah Saldo : </label>
 
@@ -286,21 +288,26 @@
                     </thead>
                     <tbody>
                         <?php
-                        $topid = new Topup();
-                        $topupDao = new TopupDao();
-                        $topid->setTbMemberMemberId($_SESSION['id']);
-                        $topups = $topupDao->getAllTopupByMemberId($topid);
+
                         /* @var $topup Topup */
-                        if (is_array($topups) || is_object($topups)) {
                             foreach ($topups as $topup) {
+
+                               $cek = $topup["Topup_status"];
+                                if($cek=="1"){
+                                    $status = "berhasil";
+                                }else if($cek=="0"){
+                                    $status = "Gagal";
+                                }else {
+                                    $status = "sedang diproses";
+                                }
                                 echo '<tr>';
-                                echo '<td>' . $topup->getTopupId() . '</td>';
-                                echo '<td>' . $topup->getTbMemberMemberId() . '</td>';
-                                echo '<td> Rp.' . $topup . '.-</td>';
-                                echo '<td>' . $topup . '</td>';
+                                echo '<td>' . $topup["Topup_id"] . '</td>';
+                                echo '<td>' . $topup["Topup_tanggal"] . '</td>';
+                                echo '<td> Rp.' . $topup["Topup_amount"] . '.-</td>';
+                                echo '<td>' . $status . '</td>';
                                 echo '</tr>';
                             }
-                        }
+
                         ?>
                     </tbody>
                 </table>

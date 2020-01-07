@@ -34,14 +34,11 @@ class TopupController
 
                 $result->setMemberSaldo((int)$result->getMemberSaldo() + (int)$amount);
                 $this->memberDao->addMemberSaldoById($result);
-//<<<<<<< HEAD
-//                $errMessage = "Topup berhasil";
-//            } else {
-//=======
-//                $total = (int)$result->getMemberSaldo()+(int)$amount;
-//                $errMessage = "Topup senilai Rp." . $amount. " berhasil, Saldo awal = Rp." . $result->getMemberSaldo() . " menjadi Rp." . $total;
-//            }else{
-//>>>>>>> d96c3cc09e2198a9ab9b62b0062029f3a40f7ea0
+
+                $total = (int)$result->getMemberSaldo()+(int)$amount;
+                $errMessage = "Topup senilai Rp." . $amount. " berhasil, Saldo awal = Rp." . $result->getMemberSaldo() . " menjadi Rp." . $total;
+            }else{
+
                 $errMessage = "Username tidak ditemukan";
             }
         }

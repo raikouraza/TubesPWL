@@ -10,39 +10,53 @@
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                        <table id="myTable" class="display compact">
+                        <table id="myTabletopup" class="display compact">
                             <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Image</th>
                                 <th>Tanggal</th>
                                 <th>Member ID</th>
-                                <th>Status</th>
                                 <th>Amount</th>
-                                <th>Action</th>
+                                <th>Status</th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <?php
                             $topupDao = new TopupDao();
-                            $topups = $topupDao->getAllTopup();
+                            $topups = $topupDao->getAllTopupBelumProses();
+                            $member = new Member();
+                            $memberDao = new MemberDao();
+
                             /* @var $topup Topup*/
 
-                            foreach ($topups as $topup)
-                            {
+                            foreach ($topups as $topup){
+                                $member->setMemberId($topup["tbMember_member_id"]);
+                                $result = $memberDao->getMemberById($member);
                                 echo '<tr align="center">';
-                                echo '<td>' . $topup->getTopupId() . '</td>';
-                                if (!empty($topup->getTopupImage())) {
-                                    echo '<td> <img src="../../' . $topup->getTopupImage() . '" width="100" height="100" alt="Photo" class="photo-list"> </td>';
+                                echo '<td>' . $topup["Topup_id"] . '</td>';
+                                if (!empty($topup["Topup_image"])) {
+                                    echo '<td> <img src="../../' . $topup["Topup_image"] . '" width="100" height="100" alt="Photo" class="photo-list"> </td>';
                                 }
                                 else {
                                     echo '<td width="100" height="100">';
                                 }
-                                echo '<td>' . $topup->getTopupTanggal() . '</td>';
-                                echo '<td>' . $topup->getTbMemberMemberId() . '</td>';
-                                echo '<td>' . $topup->getTopupStatus() . '</td>';
-                                echo '<td>' . $topup->getTopupAmount() . '</td>';
-                                echo '<td><button type="submit" name="btnAccept" onclick="accept(\'' .$topup->getTopupId() . '\');">Accept</button><button type="submit" name="btnReject" onclick="reject(' . $topup->getTopupId() .')">Reject</button></td>';
+                                echo '<td>' . $topup["Topup_tanggal"] . '</td>';
+                                echo '<td>' . $result->getMemberUsername() . '</td>';
+
+                                echo '<td>' . $topup["Topup_amount"] . '</td>';
+
+                                $cek = $topup["Topup_status"];
+                                if($cek=="1"){
+                                    echo "Berhasil di Topup";
+                                }elseif ($cek=="0"){
+                                    echo "Topup Ditolak";
+                                }else {
+                                    echo '<td><button onclick="accTopup(\'' . $topup["Topup_id"]  . '\')">Accept</button>';
+                                    echo '<button onclick="rejectTopup(\'' . $topup["Topup_id"]  . '\')">Reject</button></td>';
+
+                                }
                                 echo '</tr>';
                             }
                             ?>

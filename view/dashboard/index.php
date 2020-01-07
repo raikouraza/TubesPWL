@@ -3,7 +3,7 @@ include_once '../../controller/FilmController.php';
 include_once '../../controller/UserController.php';
 include_once '../../controller/StudioController.php';
 include_once '../../controller/JadwalController.php';
-//include_once '../../controller/TopupController.php';
+include_once '../../controller/TopupController.php';
 
 include_once '../../db_function/FilmDao.php';
 include_once '../../db_function/UserDao.php';
@@ -358,10 +358,11 @@ if (!isset($_SESSION['user_logged'])) {
 <script src="../../src/vendor/bootstrap/js/vendor-all.min.js"></script>
 <script src="../../src/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../src/vendor/bootstrap/js/pcoded.min.js"></script>
-<!--<script type="text/javascript" charset="utf8" src="../../src/vendor/datatables/datatables.min.js"></script>-->
-<!--<script type="text/javascript">-->
-<!--    $(document).ready(function () {-->
-<!--        $('#myTable').DataTable();-->
-<!--    });-->
-<!--</script>-->
+<script src="/src/functions.js"></script>
+<script type="text/javascript" charset="utf8" src="../../src/vendor/datatables/datatables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTabletopup').DataTable();
+    });
+</script>
 </html>

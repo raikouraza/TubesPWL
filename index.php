@@ -228,7 +228,7 @@ ob_start();
                 break;
             case 'out':
                 session_destroy();
-                header('view/home.php');
+                header('location:view/home.php');
                 break;
             default:
                 include_once 'view/home.php';

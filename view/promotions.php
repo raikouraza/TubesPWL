@@ -45,7 +45,7 @@
                 <img class="card-img-top" src="src/images/promo1.png" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">Nonton Hemat dengan Cashbac Bisa Dapet 100.000 Point</h2>
-                    <p class="card-text">Hai Teman Seru! Sudah siap menghadapi 2020? Supaya kamu tetap semangat, CGV dan Cashbac mau ngasih kamu promo istimewa berupa rewards point hingga 100.000.
+                    <p class="card-text">Hai Teman Seru! Sudah siap menghadapi 2020? Supaya kamu tetap semangat, YAS dan Cashbac mau ngasih kamu promo istimewa berupa rewards point hingga 100.000.
 
                         Promo ini bisa kamu nikmati di seluruh bioskop YAS selama bulan Januari 2020. So, tunggu apalagi? Yuk beli tiketnya sekarang dan rasakan Nonton Hemat setiap hari!</p>                </div>
                 <div class="card-footer text-muted">

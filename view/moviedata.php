@@ -34,7 +34,9 @@ if (isset($id)){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><?php echo $film->getFilmJudul(); ?> = Movie Details</title>
+
+    <title> CINEMA YAS!</title>
+
     <!-- Bootstrap core CSS -->
     <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>

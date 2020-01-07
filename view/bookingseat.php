@@ -150,7 +150,6 @@
             <div class="seat" id="83">83</div>
             <div class="seat" id="97">97</div>
         </div>
-
         <div class="cinema-row row-7">
             <div class="seat" id="14">14</div>
             <div class="seat" id="28">28</div>

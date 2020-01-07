@@ -40,7 +40,9 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title> CINEMA YAS</title>
+
     <!-- Bootstrap core CSS -->
     <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -49,7 +51,9 @@ ob_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/png" href="src/images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/seating.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="src/vendor/bootstrap/js/seating.js"></script>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/bootstrap.css">
     <!--===============================================================================================-->
@@ -66,6 +70,7 @@ ob_start();
     <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/css/main.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="shortcut icon" type="image/jpg" href="src/images/movie.ico"/>
 
 </head>
 <body style="  display:flex;
@@ -90,14 +95,19 @@ ob_start();
                     <li class="nav-item" >
                         <a class="nav-link" href="?menu=mov">Movies</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="?menu=pro">Promotions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?menu=ab">About</a>
+                        <a class="nav-link" href="?menu=book">Book Ticket!</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=mem">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=pro">Promotions</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="?menu=ab">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=out">Log Out</a>
@@ -121,6 +131,9 @@ ob_start();
                 break;
             case 'boo':
                 include_once 'view/bookingseat.php';
+                break;
+            case 'book':
+                include_once 'view/bookingticket.php';
                 break;
             case 'mem':
                 $memberController = new MemberController();

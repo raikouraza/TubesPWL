@@ -141,6 +141,15 @@ if (!isset($_SESSION['user_logged'])) {
                             <a href="?dashboard=updateDeleteStudio" class="nav-link "><span class="pcoded-micon"><i
                                             class="feather icon-file-text"></i></span><span class="pcoded-mtext">Form Update & Delete Studio</span></a>
                         </li>
+                        <!-- Transaksi -->
+                        <li class="nav-item pcoded-menu-caption">
+                            <label>Transaksi</label>
+                        </li>
+                        <li data-username="form elements advance componant validation masking wizard picker select"
+                            class="nav-item">
+                            <a href="?dashboard=viewTransaksi" class="nav-link "><span class="pcoded-micon"><i
+                                            class="feather icon-file-text"></i></span><span class="pcoded-mtext">View Transaksi</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -181,6 +190,10 @@ if (!isset($_SESSION['user_logged'])) {
                                     case 'createUser':
                                         $userController = new UserController();
                                         $userController->indexCreate();
+                                        break;
+                                    case 'viewTransaksi':
+                                        $transaksiController = new transaksiController();
+                                        $transaksiController->indexCreate();
                                         break;
                                     case 'updateUser':
                                         $userController = new UserController();

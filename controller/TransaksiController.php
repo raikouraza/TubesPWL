@@ -19,6 +19,7 @@ class TransaksiController
 <<<<<<< HEAD
         $transaksis = $this->transaksiDao->getAllTransaksi();
 =======
+//        $transaksis = $this->transaksiDao->getAllTransaksi();
 >>>>>>> f8c05fe65ac3d39b53954d18851fb51b5474d96c
         include_once '../../view/dashboard/form_view_transaksi.php';
     }

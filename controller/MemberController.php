@@ -35,7 +35,7 @@ class MemberController
             if (!Empty(array($member_email, $member_first_name, $member_last_name))) {
                 try {
                     if (isset($_FILES['txtMemberPhoto']['name'])) {
-                        $targetDirectory = 'src/images/poster/';
+                        $targetDirectory = 'src/images/members/';
                         $targetFile = $targetDirectory . $member_first_name . '.' . pathinfo($_FILES['txtMemberPhoto']['name'], PATHINFO_EXTENSION);
                         move_uploaded_file($_FILES['txtMemberPhoto']['tmp_name'], $targetFile);
                         $member->setMemberEmail($member_email);

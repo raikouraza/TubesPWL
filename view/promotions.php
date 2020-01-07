@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Home - Start Bootstrap Template</title>
+    <title>Promotions</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

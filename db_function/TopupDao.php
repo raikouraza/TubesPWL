@@ -8,9 +8,9 @@ class TopupDao{
 
         $query = "SELECT * FROM tbtopup";
 
-        $result = $link->query($query);
+        $result = $link->query($query)->fetchAll();
 
-        $result->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Topup");
+        //$result->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Topup");
 
         return $result;
 
@@ -112,7 +112,9 @@ class TopupDao{
         $stmt->bindValue(1, $topup->getTbMemberMemberId(), PDO::PARAM_INT);
         $stmt->execute();
 
-        $result = $stmt->fetchObject("Topup");
+        //$result = $stmt->fetchObject("Topup");
+        $result = $stmt->fetchAll();
+
 
         $link = null;
 
@@ -137,6 +139,20 @@ class TopupDao{
         }
 
         $link = null;
+
+    }
+
+    function getAllTopupBelumProses()
+    {
+        $link = DBHelper::createMySQLConnection();
+
+        $query = "SELECT * FROM tbtopup WHERE topup_status is null";
+
+        $result = $link->query($query)->fetchAll();
+
+        //$result->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Topup");
+
+        return $result;
 
     }
 }

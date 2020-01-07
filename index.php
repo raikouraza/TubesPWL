@@ -103,7 +103,6 @@ ob_start();
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=pro">Promotions</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="?menu=ab">About</a>
                     </li>

@@ -12,8 +12,9 @@ class TransaksiController
 
     }
 
-    public function Index()
+    public function index()
     {
-
+        $transaksis = $this->transaksiDao->getAllTransaksi();
+        include_once '../../view/dashboard/form_view_transaksi.php';
     }
 }

@@ -15,7 +15,6 @@ class TransaksiDao{
         return $result;
 
     }
-
     function addTransaksi(Transaksi $transaksi)
     {
         $link = DBHelper::createMySQLConnection();

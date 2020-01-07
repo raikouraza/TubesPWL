@@ -192,8 +192,8 @@ if (!isset($_SESSION['user_logged'])) {
                                         $userController->indexCreate();
                                         break;
                                     case 'viewTransaksi':
-                                        $transaksiController = new transaksiController();
-                                        $transaksiController->indexCreate();
+                                        $transaksiController = new TransaksiController();
+                                        $transaksiController->index();
                                         break;
                                     case 'updateUser':
                                         $userController = new UserController();
@@ -379,6 +379,7 @@ if (!isset($_SESSION['user_logged'])) {
 <script type="text/javascript">
     $(document).ready(function () {
         $('#myTabletopup').DataTable();
+        $('#myTableTrx').DataTable();
     });
 </script>
 </html>

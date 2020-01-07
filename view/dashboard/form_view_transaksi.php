@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <table id="myTable" class="display compact">
+                        <table id="myTableTrx" class="display compact">
                             <thead>
                             <tr>
                                 <th>Transaksi ID</th>
@@ -17,26 +17,42 @@
                                 <th>Tanggal</th>
                                 <th>Tiket ID</th>
                                 <th>Jadwal ID</th>
-                                <th>Member ID</th>
-                                <th>Studio ID</th>
-                                <th>Film ID</th>
+                                <th>Member</th>
+                                <th>Studio</th>
+                                <th>Judul Film</th>
 
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            /* @var $film Film */
-                            foreach ($films as $film) {
+                            /* @var $transaksi Transaksi */
+
+                            foreach ($transaksis as $transaksi) {
                                 echo '<tr align="center">';
-                                echo '<td>' . $film->getFilmId() . '</td>';
+                                echo '<td>' . $transaksi["transaksi_id"] . '</td>';
+                                echo '<td>' . $transaksi["transaksi_totalprice"] . '</td>';
+                                echo '<td>' . $transaksi["transaksi_payment_method"] . '</td>';
+                                echo '<td>' . $transaksi["transaksi_tanggal"]  . '</a></td>';
+                                echo '<td>' . $transaksi["tbTiket_tiket_id"] . '</td>';
+                                echo '<td>' . $transaksi["tbTiket_tbJadwal_jadwal_id"] . '</td>';
+                                $member = new Member();
+                                $memberDao = new MemberDao();
+                                $member->setMemberId($transaksi["tbTiket_tbMember_member_id"]);
+                                /* @var $member Member */
+                                $member = $memberDao->getMemberById($member);
+                                echo '<td>' . $member->getMemberUsername() . '</td>';
+                                $studio = new Studio();
+                                $studioDao = new StudioDao();
+                                $studio->setStudioId($transaksi["tbTiket_tbStudio_studio_id"]);
+                                /* @var $studio Studio */
+                                $studio = $studioDao->getStudioById($studio);
+                                echo '<td>' . $studio->getStudioNama() . '</td>';
+                                $film = new Film();
+                                $filmDao = new filmDao();
+                                $film->setFilmId($transaksi["tbFilm_film_id"]);
+                                /* @var $film Film */
+                                $film = $filmDao->getFilmById($film);
                                 echo '<td>' . $film->getFilmJudul() . '</td>';
-                                echo '<td>' . $film->getFilmDeskripsi() . '</td>';
-                                echo '<td> <a href=" ' . $film->getFilmTrailer() . '" target="_blank">' . $film->getFilmTrailer() . '</a></td>';
-                                echo '<td>' . $film->getFilmSutradara() . '</td>';
-                                echo '<td>' . $film->getFilmAktor() . '</td>';
-                                echo '<td>' . $film->getFilmDurasi() . '</td>';
-                                echo '<td>' . $film->getFilmRating() . '</td>';
-                                echo '<td>' . $film->getFilmGenre() . '</td>';
                                 echo '</tr>';
                             }
                             ?>

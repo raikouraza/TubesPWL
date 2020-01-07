@@ -51,25 +51,34 @@ class TopupController
         include_once '../../view/dashboard/form_topup_saldo_manual.php';
 
     }
-    public function Index2()
-    {
-        $topups = $this->topupDao->getAllTopup();
-        include_once '../../view/dashboard/form_topup_verification.php';
-    }
-    public function accept(){
-        $submitted = filter_input(INPUT_POST, 'btnAccept');
-        if (isset($submitted)) {
-            $topupManual = new Topup();
-            $topupManual->setTopupStatus(1);
+
+
+    public function Index2(){
+        $topup = new Topup();
+        $member = new Member();
+
+
+        if (isset($_POST['btnAcc'])) {
+            $topup->setTopupId($topup["Topup_id"]);
+            $topup->setTopupStatus("1");
+            $this->topupDao->changeTopupStatus($topup);
+            $member->setMemberUsername($topup["tbMember_member_id"]);
+            $result = $this->memberDao->getMemberByUsername($member);
+            $result->setMemberSaldo((int)$result->getMemberSaldo() + (int)$topup["Topup_amount"]);
+
         }
 
-    }
-    public function reject(){
-        $submitted = filter_input(INPUT_POST, 'btnReject');
-            if (isset($submitted)) {
-                $topupManual = new Topup();
-                $topupManual->setTopupStatus(0);
-            }
+
+        if (isset($_POST['btnReject'])) {
+            $topup->setTopupId($topup["Topup_id"]);
+            $topup->setTopupStatus("0");
+            $this->topupDao->changeTopupStatus($topup);
+
+        }
+
+
+
+        include_once '../../view/dashboard/form_topup_verification.php';
 
     }
 }

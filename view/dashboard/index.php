@@ -371,6 +371,7 @@ if (!isset($_SESSION['user_logged'])) {
 </body>
 <!-- Required Js -->
 <script type="text/javascript" src="../../src/crudView.js"></script>
+<script type="text/javascript" src="../../src/functions.js"></script>
 <script src="../../src/vendor/bootstrap/js/vendor-all.min.js"></script>
 <script src="../../src/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../src/vendor/bootstrap/js/pcoded.min.js"></script>

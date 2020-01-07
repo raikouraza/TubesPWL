@@ -30,7 +30,6 @@
                             $memberDao = new MemberDao();
 
                             /* @var $topup Topup*/
-
                             foreach ($topups as $topup){
                                 $member->setMemberId($topup["tbMember_member_id"]);
                                 $result = $memberDao->getMemberById($member);
@@ -44,11 +43,10 @@
                                 }
                                 echo '<td>' . $topup["Topup_tanggal"] . '</td>';
                                 echo '<td>' . $result->getMemberUsername() . '</td>';
-
                                 echo '<td>' . $topup["Topup_amount"] . '</td>';
 
-                                    echo '<td><button onclick="accTopup(\'' . $topup["Topup_id"]  . '\')">Accept</button>';
-                                    echo '<button onclick="rejectTopup(\'' . $topup["Topup_id"]  . '\')">Reject</button></td>';
+                                    echo '<td><button name="btnAcc"  onclick="accTopup()">Accept</button>';
+                                    echo '<button name="btnReject" onclick="rejectTopup()">Reject</button></td>';
 
 
                                 echo '</tr>';

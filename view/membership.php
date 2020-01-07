@@ -269,8 +269,6 @@
                     foreach ($result as $trx) {
                         $film->setFilmId($trx["tbFilm_film_id"]);
                         $rsfilm = $filmDao->getFilmById($film);
-
-
                         echo '<tr>';
                         echo '<td>' . $trx["transaksi_tanggal"] . '</td>';
                         echo '<td>' . $trx["transaksi_id"] . '</td>';

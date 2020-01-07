@@ -79,6 +79,8 @@ class StudioController
             $this->studioDao->deleteStudio($toBeDeletedStudio);
         }
 
+
+
         $studios = $this->studioDao->getAllStudio();
         include_once '../../view/dashboard/form_update_delete_studio.php';
     }

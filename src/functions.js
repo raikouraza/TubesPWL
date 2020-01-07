@@ -2,16 +2,16 @@ function movieDetails(id) {
     window.location = "index.php?menu=movd&id=" + id;
 }
 
-function accTopup(id) {
+function accTopup() {
     var com = window.confirm("yakin Accept Topup?");
     if (com){
-        window.location = "index.php?menu=verification&accom=1&id=" + id;
+        window.location = "index.php?dashboard=verification";
     }
 }
 
-function rejectTopup(id) {
+function rejectTopup() {
     var com = window.confirm("yakin Reject Topup?");
     if (com){
-        window.location = "index.php?menu=verification&rjcom=0&id=" + id;
+        window.location = "index.php?dashboard=verification";
     }
 }

@@ -72,9 +72,10 @@ class TopupController
 
 
         if (isset($_POST['btnReject'])) {
-            $topup->setTopupId($topup["Topup_id"]);
+            $topup->setTopupId($_POST["Topup_id"]);
             $topup->setTopupStatus("0");
             $this->topupDao->changeTopupStatus($topup);
+            header('location:../../view/dashboard/index.php?dashboard=verification');
 
         }
 
